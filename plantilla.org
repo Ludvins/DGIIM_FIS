@@ -12,4 +12,5 @@ El sistema informático debe ser eficiente en la resolución y asignacion de pac
  - Facilitar el uso del software a un nivel básico, ya que cualquier persona que no tenga manejo con la tecnologia pueda utilizar el software con facilidad teniendo en cuenta que puede ser utilizado por personasmayores.
  + Respuesta de calidad y eficiente en el tiempo a los pacientes y clientes, evitando errores y atendiendo en un orden segun prioridad.
  - Gestión de los trabajadores, sus horarios de trabajo, salas. gestión de la economia interna del centro, mensajeria entre trabajadores y gestion de cargos.
-  
+ + Control de toda la información de los clientes para cada médico, para consulta rapida y eficiente.
+ 
