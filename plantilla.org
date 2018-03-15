@@ -1,0 +1,15 @@
+
+
+* Descripcion del sistema: 
+El principal objetivo de este proyecto es crear y desarrollar un sistema informático para contorlar y mejorar la eficiencia de la gestión y administracion de un hospital, en concreto, todo lo relacionado con los pacientes, empresas farmaceuticas, médicos, enfermeros, etc. Además se permitirá la consulta y la reserva de citas con un especialista asignado.
+El software debe gestionar la privacidad de los pacientes, su historial médico y también permitirnos analizar datos sobre los pacientes para una mejor organización o solución a un problema.
+
+Debe poder controlar las instalaciones dle centro para asegurar la calidad y el funcionamiento de las máquinas.
+
+El sistema informático debe ser eficiente en la resolución y asignacion de pacientes a salas  dependiendo de varios parámetros, como pueden ser la gravedad del problema o la edad.
+
+* Objetivos principales:
+ - Facilitar el uso del software a un nivel básico, ya que cualquier persona que no tenga manejo con la tecnologia pueda utilizar el software con facilidad teniendo en cuenta que puede ser utilizado por personasmayores.
+ + Respuesta de calidad y eficiente en el tiempo a los pacientes y clientes, evitando errores y atendiendo en un orden segun prioridad.
+ - Gestión de los trabajadores, sus horarios de trabajo, salas. gestión de la economia interna del centro, mensajeria entre trabajadores y gestion de cargos.
+  
