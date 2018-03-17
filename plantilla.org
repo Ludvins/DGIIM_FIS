@@ -22,5 +22,5 @@ El sistema informático debe ser eficiente en la resolución y asignacion de pac
  
 * Requisitos Funcionales
  - Gestión de Enfermos.
- - Permitir ingresar a un paciente en una determinada cama y/o habitación.
- + Permitir dar de alta a un paciente ingresado.
+  - Permitir ingresar a un paciente en una determinada cama y/o habitación.
+  + Permitir dar de alta a un paciente ingresado.
