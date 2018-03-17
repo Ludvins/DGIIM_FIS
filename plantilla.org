@@ -20,3 +20,7 @@ El sistema informático debe ser eficiente en la resolución y asignacion de pac
  - Gestión de los trabajadores, sus horarios de trabajo, salas. gestión de la economia interna del centro, mensajeria entre trabajadores y gestion de cargos.
  + Control de toda la información de los clientes para cada médico, para consulta rapida y eficiente.
  
+* Requisitos Funcionales
+ - Gestión de Enfermos.
+ - Permitir ingresar a un paciente en una determinada cama y/o habitación.
+ + Permitir dar de alta a un paciente ingresado.
