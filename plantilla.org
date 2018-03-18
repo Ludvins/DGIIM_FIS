@@ -39,7 +39,7 @@ Descripción        &  Padece alguna enfermedad y necesita ser atendido\\ \hline
 Responsabilidades  &  Pedir una cita. Seguir las instrucciones del doctor. Pagar. \\ \hline
 Criterios de éxito &  Que funcione la medicación y que pague. \\ \hline
 Implicación        &  Usa el sistema para pedir una cita, consultar su estado\\ \hline
-\end{tabular}
+\end{tabular} \\
 
 \begin{tabular}{|l|l|}
 \hline
@@ -48,7 +48,7 @@ Descripción        &  Atiende a un paciente y le asigna medicación\\ \hline
 Responsabilidades  &  Asistir a la cita. Asignar una medicación a un cliente. \\ \hline
 Criterios de éxito &  Que funcione la medicación y que pague. \\ \hline
 Implicación        &  Usa el sistema para pedir una cita, consultar su estado\\ \hline
-\end{tabular}
+\end{tabular} \\
 
 \begin{tabular}{|l|l|}
 \hline
@@ -57,7 +57,7 @@ Descripción        &  Se encarga gestionar todo lo relacionado con el edificio 
 Responsabilidades  &  Manejar el sistema. Controlar la ocupación del edificio y el inventario \\ \hline
 Criterios de éxito &  Que no haya fallos en la planificación ni falte nada del inventario \\ \hline
 Implicación        &  Usa el sistema para dar citas, organizar horarios, etc. \\ \hline
-\end{tabular}
+\end{tabular}\\
 
 
 * Objetivos principales
@@ -187,3 +187,6 @@ Implicación        &  Usa el sistema para dar citas, organizar horarios, etc. \
 - Médico: persona que se encarga de atender a los pacientes e intentar diagnosticar y proporcionar una solución a sus enfermedades.
 - Suministro: cualquier cosa que pueda ser utilizada en el hospital para atender o auxiliar a un paciente. Pueden ser medicamentos, 
   utensilios de médicos o máquinas de detección de enfermedades.
+- Historial médico: Registro que se mantiene sobre todas las patologías que ha sufrido un paciente a lo largo de su pertenencia en el centro.
+- Hospital: Lugar donde se utilizará nuestra aplicación. Es un edificio en el que se encuentran médicos que atienderán a los pacientes.
+- Personal administrativo o de administración: Persona que tabaja en el hospital y no es un médico, si no que se encarga de otras tareas en el centro como asignación de citas y asegurarse del buen funcionamiento del sistema.
