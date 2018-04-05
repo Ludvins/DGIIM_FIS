@@ -1,0 +1,192 @@
+#+TITLE: Práctica 1. Lista inicial de requisitos de un supuesto práctico.
+
+#+latex_header: \usepackage{colortbl}
+#+latex_header: \usepackage{multirow}
+
+
+
+\section{Descripción del sistema}
+\label{sec-1}
+
+El principal objetivo de este proyecto es crear y desarrollar un sistema informático para controlar y mejorar la eficiencia de la gestión y administración de un hospital, por ejemplo, todo lo relacionado con los pacientes, empresas farmacéuticas, médicos, enfermeros, etc. Además se permitirá la consulta y la reserva de citas con especialistas.
+
+El software debe gestionar la privacidad de los pacientes, su historial médico y también permitirnos analizar datos sobre los pacientes para una mejor organización o solución a un problema.
+
+La idea principal consiste en un sistema informático principal alojado en el propio hospital, con distintos niveles de acceso y restricciones dependiendo de la identificación del usuario. Así:
+
+\begin{itemize}
+\item Si se es un paciente sólo se tendrá acceso a la información más básica, como puede ser pedir citas e información sobre los servicios que ofrece el hospital o su localización.
+\item Si se es un trabajador del hospital se tendrá acceso a otros detalles, como la gestión de las camas y equipo del hospital.
+\item Si se tiene un cargo importante dentro del manejo del hospital se podría considerar el proporcionar acceso restringido a otras zonas de control del software.
+\item Finalmente, el equipo informático de mantenimiento del software tendrá acceso a todos y cada uno de los detalles de este.
+\end{itemize}
+
+Debe poder controlar las instalaciones del centro para asegurar la calidad y el funcionamiento de las máquinas.
+
+El sistema informático debe ser eficiente en la resolución y asignacion de pacientes a salas  dependiendo de varios parámetros, como pueden ser la gravedad del problema o la edad.
+
+También permitirá que todo lo que se pueda hacer desde dentro del sistema, se podrá hacer también de forma online para poder hacer uso del mismo desde cualquier sitio.
+
+\subsection{Actores}
+\label{sec-1-1}
+
+Describiremos brevemente los principales actores de nuestro sistema:
+
+\begin{tabular}{|l|l|}
+\hline
+Tipo               &  Cliente \\ \hline
+Descripción        &  Padece alguna enfermedad y necesita ser atendido\\ \hline
+Responsabilidades  &  Pedir una cita. Seguir las instrucciones del doctor. Pagar. \\ \hline
+Criterios de éxito &  Que funcione la medicación y que pague. \\ \hline
+Implicación        &  Usa el sistema para pedir una cita, consultar su estado\\ \hline
+\end{tabular} \\
+
+\begin{tabular}{|l|l|}
+\hline
+Tipo               &  Médico \\ \hline
+Descripción        &  Atiende a un paciente y le asigna medicación\\ \hline
+Responsabilidades  &  Asistir a la cita. Asignar una medicación a un cliente. \\ \hline
+Criterios de éxito &  Que funcione la medicación y que pague. \\ \hline
+Implicación        &  Usa el sistema para pedir una cita, consultar su estado\\ \hline
+\end{tabular} \\
+
+\begin{tabular}{|l|l|}
+\hline
+Tipo               &  Personal administrativo \\ \hline
+Descripción        &  Se encarga gestionar todo lo relacionado con el edificio y sus recursos\\ \hline
+Responsabilidades  &  Manejar el sistema. Controlar la ocupación del edificio y el inventario \\ \hline
+Criterios de éxito &  Que no haya fallos en la planificación ni falte nada del inventario \\ \hline
+Implicación        &  Usa el sistema para dar citas, organizar horarios, etc. \\ \hline
+\end{tabular}\\
+
+
+* Objetivos principales
+ - Respuesta de calidad y eficiente en el tiempo a los pacientes y clientes, evitando errores y atendiendo en orden según la prioridad que se establezca.
+ - Gestión de los trabajadores, sus horarios de trabajo, salas. 
+ - Gestión de la economía interna del centro, mensajería entre trabajadores y gestión de cargos.
+ - Control de toda la información de los clientes para cada médico, para consulta rápida y eficiente.
+ 
+* Requisitos funcionales
+
+- Gestión de enfermos.
+  - Permitir ingresar a un paciente en una determinada cama y/o habitación.
+  - Modificar la sala en la que está un paciente.
+  - Permitir dar de alta a un paciente ingresado.
+  - Asignar dieta y régimen de ingesta de medicamentos a un paciente.
+  - Modificar dieta y régimen de ingesta de medicamentos de un paciente.
+  - Asignar y modificar recomendaciones sobre hábitos de vida al paciente. 
+
+- Control de citas.
+  - Permitir la solicitud de una cita con el personal correspondiente.
+  - Permitir modificar una solicitud de cita.
+  - Permitir cancelar una solicitud de cita.
+  - Permitir cancelar una cita.
+  - Permitir la modificación o cancelación de una cita por el personal médico o administrativo, incluyendo justificación del motivo.
+  - Gestión de lista de espera.
+
+- Gestión de pruebas médicas.
+  - Asignación de prueba médica a paciente en fecha determinada.
+  - Consulta de resultados sobre una prueba ya realizada.
+  - Inserción de datos sobre una prueba.
+  - Modificación de datos sobre una prueba, teniendo registro de las anteriores versiones de los datos de una prueba y de la persona que modifica los datos.
+  - Borrado de pruebas pasado el tiempo suficiente desde el fallecimiento de la persona.
+  - Envío de notificación automático cuando haya habido alguna modificación en algún campo de una prueba.
+
+- Gestión de instalaciones y aparatos de prueba médica.
+  - Asignación de instalación a un paciente en una fecha.
+  - Modificación de la ocupación de una instalación.
+  - Asignación de turnos y espacios de limpieza.
+  - Asignación de fecha de revisión de instalaciones y aparatos médicos.
+  
+- Gestión de servicios de urgencia.
+  - Asignación de una cita urgente a un paciente.
+  - Priorización de los pacientes en la sala de espera según la gravedad.
+  - Control del censo de urgencias.
+  - Control de trabajadores ocupados con una urgencia o de guardia.
+
+- Gestión de seguridad y administración del software.
+  - Creación de nuevos usuarios para el sistema.
+  - Asignación de permisos a usuarios del sistema.
+  - Modificación y borrado de usuarios del sistema.
+
+- Facturación.
+  - Emisión de facturas a los pacientes.
+  - Registro de cobros y pagos de las facturas.
+  - Envío de recordatorio de pago de facturas.
+  - Pago de facturas a proveedores.
+  - Registro de pago al personal.
+
+- Gestión de suministros necesarios.
+  - Registro de suministros que hay que adquirir.
+  - Control de stocks, inventario y consumo.
+  
+- Gestión del personal.
+  - Asignación de turnos para el personal.
+  - Asignación de las guardias.
+  - Control de las vacaciones del personal.
+  - Pago al personal.
+
+* Requisitos informativos.
+
+- Sobre los pacientes.
+  - Informacion sobre los datos del paciente así como la informacion necesaria para el pago de las facturas.
+  - Patologías crónicas del paciente.
+  - Historial médico del paciente.
+  - Registro de operaciones del paciente.
+  - Tratamiento actual del paciente.
+  - Registro de citas del paciento. 
+  - Historial de médicos que lo han tratado.
+
+- Sobre los suministros.
+  - Datos sobre el suministro como nombre, fecha de compra, tipo de suministro, utilidad del suministro.
+  - Composición química de los medicamentos.
+  - Proveedor del medicamento.
+  - Unidades disponibles de cada suministro.
+  - Unidades solicitadas del suministro.
+  - Posibles efectos secundarios del suministro.
+
+- Sobre los trabajadores.
+  - Información sobre los datos del trabajador, así como la información necesaria para el pago de las facturas.
+  - Puesto de trabajo que ocupa.
+  - Jefes que tiene o personas a su cargo.
+  - Antiguedad y tipo de contrato. Salario.
+  - Horario del trabajador. Horas extras y guardias.
+  - Calendario de vacaciones escogido por el trabajador.
+  - Historial de pacientes.
+
+- Sobre las instalaciones.
+  - Información de uso sobre la instalación.
+  - Ocupación por tiempo de la instalación.
+  - Posibles peligros que puedan darse con la instalación.
+  - Localización geográfica e identificación de la instalación.
+  - Personal asignado a la instalación.
+
+* Requisitos no funcionales
+
+- Usabilidad
+  - Facilitar el uso del software a un nivel básico, de modo que cualquier persona, independientemente de su nivel de competencia tecnológica (incluso en el caso usual de analfabetismo tecnológico) pueda utilizar el software con facilidad teniendo en cuenta que pueda ser utilizado por personas mayores.
+  - Sistema de ayuda en línea o por correo para el uso del software.
+  - El sistema debe garantizar el acceso de múltiples usuarios a la vez.
+  - Debe cumplir con los requisitos estándar de accesibilidad.
+
+- Seguridad
+  - Debe garantizarse que no hay fallos ante un uso poco habitual del sistema.
+  - Debe garantizarse que hay una fácil recuperación del sistema si ocurre un fallo.
+
+- Rendimiento
+  - El sistema debe hacer un uso eficiente de los recursos, empleando poco tiempo para obtener el resultado esperado.
+
+- Soporte
+  - El sistema debe tener un mantenimiento fácil por parte de los proveedores del mismo.
+  - El sistema debe ser fácilmente adaptable a diferentes sistemas informáticos.
+
+
+* Glosario de términos
+
+- Paciente: persona que accede al sistema para recibir una cita o consultar el estado de sus peticiones y/o enfermedades.
+- Médico: persona que se encarga de atender a los pacientes e intentar diagnosticar y proporcionar una solución a sus enfermedades.
+- Suministro: cualquier cosa que pueda ser utilizada en el hospital para atender o auxiliar a un paciente. Pueden ser medicamentos, 
+  utensilios de médicos o máquinas de detección de enfermedades.
+- Historial médico: Registro que se mantiene sobre todas las patologías que ha sufrido un paciente a lo largo de su pertenencia en el centro.
+- Hospital: Lugar donde se utilizará nuestra aplicación. Es un edificio en el que se encuentran médicos que atienderán a los pacientes.
+- Personal administrativo o de administración: Persona que tabaja en el hospital y no es un médico, si no que se encarga de otras tareas en el centro como asignación de citas y asegurarse del buen funcionamiento del sistema.

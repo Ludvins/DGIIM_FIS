@@ -1,0 +1,268 @@
+% Created 2018-03-18 dom 23:49
+% Intended LaTeX compiler: pdflatex
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{grffile}
+\usepackage{longtable}
+\usepackage{wrapfig}
+\usepackage{rotating}
+\usepackage[normalem]{ulem}
+\usepackage{amsmath}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{capt-of}
+\usepackage{hyperref}
+\usepackage{colortbl}
+\usepackage{multirow}
+\author{fjsaezm}
+\date{\today}
+\title{Práctica 1. Lista inicial de requisitos de un supuesto práctico.}
+\hypersetup{
+ pdfauthor={fjsaezm},
+ pdftitle={Práctica 1. Lista inicial de requisitos de un supuesto práctico.},
+ pdfkeywords={},
+ pdfsubject={},
+ pdfcreator={Emacs 25.3.1 (Org mode 9.1.2)}, 
+ pdflang={English}}
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{Descripción del sistema}
+\label{sec-1}
+
+El principal objetivo de este proyecto es crear y desarrollar un sistema informático para controlar y mejorar la eficiencia de la gestión y administración de un hospital, por ejemplo, todo lo relacionado con los pacientes, empresas farmacéuticas, médicos, enfermeros, etc. Además se permitirá la consulta y la reserva de citas con especialistas.
+
+El software debe gestionar la privacidad de los pacientes, su historial médico y también permitirnos analizar datos sobre los pacientes para una mejor organización o solución a un problema.
+
+La idea principal consiste en un sistema informático principal alojado en el propio hospital, con distintos niveles de acceso y restricciones dependiendo de la identificación del usuario. Así:
+
+\begin{itemize}
+\item Si se es un paciente sólo se tendrá acceso a la información más básica, como puede ser pedir citas e información sobre los servicios que ofrece el hospital o su localización.
+\item Si se es un trabajador del hospital se tendrá acceso a otros detalles, como la gestión de las camas y equipo del hospital.
+\item Si se tiene un cargo importante dentro del manejo del hospital se podría considerar el proporcionar acceso restringido a otras zonas de control del software.
+\item Finalmente, el equipo informático de mantenimiento del software tendrá acceso a todos y cada uno de los detalles de este.
+\end{itemize}
+
+Debe poder controlar las instalaciones del centro para asegurar la calidad y el funcionamiento de las máquinas.
+
+El sistema informático debe ser eficiente en la resolución y asignacion de pacientes a salas  dependiendo de varios parámetros, como pueden ser la gravedad del problema o la edad.
+
+También permitirá que todo lo que se pueda hacer desde dentro del sistema, se podrá hacer también de forma online para poder hacer uso del mismo desde cualquier sitio.
+
+\subsection{Actores}
+\label{sec-1-1}
+
+Describiremos brevemente los principales actores de nuestro sistema:
+
+\begin{tabular}{|l|l|}
+\hline
+Tipo               &  Cliente \\ \hline
+Descripción        &  Padece alguna enfermedad y necesita ser atendido\\ \hline
+Responsabilidades  &  Pedir una cita. Seguir las instrucciones del doctor. Pagar. \\ \hline
+Criterios de éxito &  Que funcione la medicación y que pague. \\ \hline
+Implicación        &  Usa el sistema para pedir una cita, consultar su estado\\ \hline
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline
+Tipo               &  Médico \\ \hline
+Descripción        &  Atiende a un paciente y le asigna medicación\\ \hline
+Responsabilidades  &  Asistir a la cita. Asignar una medicación a un cliente. \\ \hline
+Criterios de éxito &  Que funcione la medicación y que pague. \\ \hline
+Implicación        &  Usa el sistema para pedir una cita, consultar su estado\\ \hline
+\end{tabular} 
+
+\begin{tabular}{|l|l|}
+\hline
+Tipo               &  Personal administrativo \\ \hline
+Descripción        &  Se encarga gestionar todo lo relacionado con el edificio y sus recursos\\ \hline
+Responsabilidades  &  Manejar el sistema. Controlar la ocupación del edificio y el inventario \\ \hline
+Criterios de éxito &  Que no haya fallos en la planificación ni falte nada del inventario \\ \hline
+Implicación        &  Usa el sistema para dar citas, organizar horarios, etc. \\ \hline
+\end{tabular}
+
+
+\section{Objetivos principales}
+\label{sec:orge584ad9}
+\begin{itemize}
+\item Respuesta de calidad y eficiente en el tiempo a los pacientes y clientes, evitando errores y atendiendo en orden según la prioridad que se establezca.
+\item Gestión de los trabajadores, sus horarios de trabajo, salas.
+\item Gestión de la economía interna del centro, mensajería entre trabajadores y gestión de cargos.
+\item Control de toda la información de los clientes para cada médico, para consulta rápida y eficiente.
+\end{itemize}
+
+\section{Requisitos funcionales}
+\label{sec:org297742e}
+
+\begin{itemize}
+\item Gestión de enfermos.
+\begin{itemize}
+\item Permitir ingresar a un paciente en una determinada cama y/o habitación.
+\item Modificar la sala en la que está un paciente.
+\item Permitir dar de alta a un paciente ingresado.
+\item Asignar dieta y régimen de ingesta de medicamentos a un paciente.
+\item Modificar dieta y régimen de ingesta de medicamentos de un paciente.
+\item Asignar y modificar recomendaciones sobre hábitos de vida al paciente.
+\end{itemize}
+
+\item Control de citas.
+\begin{itemize}
+\item Permitir la solicitud de una cita con el personal correspondiente.
+\item Permitir modificar una solicitud de cita.
+\item Permitir cancelar una solicitud de cita.
+\item Permitir cancelar una cita.
+\item Permitir la modificación o cancelación de una cita por el personal médico o administrativo, incluyendo justificación del motivo.
+\item Gestión de lista de espera.
+\end{itemize}
+
+\item Gestión de pruebas médicas.
+\begin{itemize}
+\item Asignación de prueba médica a paciente en fecha determinada.
+\item Consulta de resultados sobre una prueba ya realizada.
+\item Inserción de datos sobre una prueba.
+\item Modificación de datos sobre una prueba, teniendo registro de las anteriores versiones de los datos de una prueba y de la persona que modifica los datos.
+\item Borrado de pruebas pasado el tiempo suficiente desde el fallecimiento de la persona.
+\item Envío de notificación automático cuando haya habido alguna modificación en algún campo de una prueba.
+\end{itemize}
+
+\item Gestión de instalaciones y aparatos de prueba médica.
+\begin{itemize}
+\item Asignación de instalación a un paciente en una fecha.
+\item Modificación de la ocupación de una instalación.
+\item Asignación de turnos y espacios de limpieza.
+\item Asignación de fecha de revisión de instalaciones y aparatos médicos.
+\end{itemize}
+
+\item Gestión de servicios de urgencia.
+\begin{itemize}
+\item Asignación de una cita urgente a un paciente.
+\item Priorización de los pacientes en la sala de espera según la gravedad.
+\item Control del censo de urgencias.
+\item Control de trabajadores ocupados con una urgencia o de guardia.
+\end{itemize}
+
+\item Gestión de seguridad y administración del software.
+\begin{itemize}
+\item Creación de nuevos usuarios para el sistema.
+\item Asignación de permisos a usuarios del sistema.
+\item Modificación y borrado de usuarios del sistema.
+\end{itemize}
+
+\item Facturación.
+\begin{itemize}
+\item Emisión de facturas a los pacientes.
+\item Registro de cobros y pagos de las facturas.
+\item Envío de recordatorio de pago de facturas.
+\item Pago de facturas a proveedores.
+\item Registro de pago al personal.
+\end{itemize}
+
+\item Gestión de suministros necesarios.
+\begin{itemize}
+\item Registro de suministros que hay que adquirir.
+\item Control de stocks, inventario y consumo.
+\end{itemize}
+
+\item Gestión del personal.
+\begin{itemize}
+\item Asignación de turnos para el personal.
+\item Asignación de las guardias.
+\item Control de las vacaciones del personal.
+\item Pago al personal.
+\end{itemize}
+\end{itemize}
+
+\section{Requisitos informativos.}
+\label{sec:orgc9a3a25}
+
+\begin{itemize}
+\item Sobre los pacientes.
+\begin{itemize}
+\item Informacion sobre los datos del paciente así como la informacion necesaria para el pago de las facturas.
+\item Patologías crónicas del paciente.
+\item Historial médico del paciente.
+\item Registro de operaciones del paciente.
+\item Tratamiento actual del paciente.
+\item Registro de citas del paciento.
+\item Historial de médicos que lo han tratado.
+\end{itemize}
+
+\item Sobre los suministros.
+\begin{itemize}
+\item Datos sobre el suministro como nombre, fecha de compra, tipo de suministro, utilidad del suministro.
+\item Composición química de los medicamentos.
+\item Proveedor del medicamento.
+\item Unidades disponibles de cada suministro.
+\item Unidades solicitadas del suministro.
+\item Posibles efectos secundarios del suministro.
+\end{itemize}
+
+\item Sobre los trabajadores.
+\begin{itemize}
+\item Información sobre los datos del trabajador, así como la información necesaria para el pago de las facturas.
+\item Puesto de trabajo que ocupa.
+\item Jefes que tiene o personas a su cargo.
+\item Antiguedad y tipo de contrato. Salario.
+\item Horario del trabajador. Horas extras y guardias.
+\item Calendario de vacaciones escogido por el trabajador.
+\item Historial de pacientes.
+\end{itemize}
+
+\item Sobre las instalaciones.
+\begin{itemize}
+\item Información de uso sobre la instalación.
+\item Ocupación por tiempo de la instalación.
+\item Posibles peligros que puedan darse con la instalación.
+\item Localización geográfica e identificación de la instalación.
+\item Personal asignado a la instalación.
+\end{itemize}
+\end{itemize}
+
+\section{Requisitos no funcionales}
+\label{sec:orgfe90b2e}
+
+\begin{itemize}
+\item Usabilidad
+\begin{itemize}
+\item Facilitar el uso del software a un nivel básico, de modo que cualquier persona, independientemente de su nivel de competencia tecnológica (incluso en el caso usual de analfabetismo tecnológico) pueda utilizar el software con facilidad teniendo en cuenta que pueda ser utilizado por personas mayores.
+\item Sistema de ayuda en línea o por correo para el uso del software.
+\item El sistema debe garantizar el acceso de múltiples usuarios a la vez.
+\item Debe cumplir con los requisitos estándar de accesibilidad.
+\end{itemize}
+
+\item Seguridad
+\begin{itemize}
+\item Debe garantizarse que no hay fallos ante un uso poco habitual del sistema.
+\item Debe garantizarse que hay una fácil recuperación del sistema si ocurre un fallo.
+\end{itemize}
+
+\item Rendimiento
+\begin{itemize}
+\item El sistema debe hacer un uso eficiente de los recursos, empleando poco tiempo para obtener el resultado esperado.
+\end{itemize}
+
+\item Soporte
+\begin{itemize}
+\item El sistema debe tener un mantenimiento fácil por parte de los proveedores del mismo.
+\item El sistema debe ser fácilmente adaptable a diferentes sistemas informáticos.
+\end{itemize}
+\end{itemize}
+
+
+\section{Glosario de términos}
+\label{sec:org16a329e}
+
+\begin{itemize}
+\item Paciente: persona que accede al sistema para recibir una cita o consultar el estado de sus peticiones y/o enfermedades.
+\item Médico: persona que se encarga de atender a los pacientes e intentar diagnosticar y proporcionar una solución a sus enfermedades.
+\item Suministro: cualquier cosa que pueda ser utilizada en el hospital para atender o auxiliar a un paciente. Pueden ser medicamentos, 
+utensilios de médicos o máquinas de detección de enfermedades.
+\item Historial médico: Registro que se mantiene sobre todas las patologías que ha sufrido un paciente a lo largo de su pertenencia en el centro.
+\item Hospital: Lugar donde se utilizará nuestra aplicación. Es un edificio en el que se encuentran médicos que atienderán a los pacientes.
+\item Personal administrativo o de administración: Persona que tabaja en el hospital y no es un médico, si no que se encarga de otras tareas en el centro como asignación de citas y asegurarse del buen funcionamiento del sistema.
+\end{itemize}
+\end{document}
