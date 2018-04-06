@@ -1,4 +1,4 @@
-% Created 2018-04-05 jue 18:36
+% Created 2018-04-06 vie 19:40
 % Intended LaTeX compiler: pdflatex
 \documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
@@ -35,7 +35,7 @@ Luis Ortega Andrés, Javier Sáez Maldonado},
 
 
 \section{Casos de Uso}
-\label{sec:org51ef979}
+\label{sec:org46092c4}
 
 \begin{center}
 \begin{tabular}{ll}
@@ -52,7 +52,7 @@ Precondicion & Condiciones para que se pueda realizar el CU\\
 \hline
 Postcondicion & Efectos que tiene la realizacion del CU\\
 \hline
-Autor & <esta linea se podria repetir para mantener una historia de cambios del CU \vline Fecha \vline \version \vline\\
+Autor & <esta linea se podria repetir para mantener una historia de cambios del CU \vline Fecha \vline version \vline\\
 \hline
 \end{tabular}
 \end{center}
@@ -92,4 +92,222 @@ Curso normal &  &  & \\
 \hline
 \end{tabular}
 \end{center}
+
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Cursos Alternos & \\
+\hline
+1a & \\
+\hline
+1b & \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{llll}
+\hline
+Otros Datos &  & Rendimiento & \\
+\hline
+Frecuencia Esperada &  & Urgencia & \\
+\hline
+Importancia &  & Estabilidad & \\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{itemize}
+\item Comentarios:
+\end{itemize}
+
+\noindent\rule{\textwidth}{0.5pt}
+
+
+
+
+
+
+
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Caso de Uso & Ingreso de paciente en cama/habitación      \vline CU1\\
+\hline
+Actores & Cliente, Personal administrativo\\
+\hline
+Tipo & Primario\\
+\hline
+Referencias & Habitaciones libres\\
+\hline
+Precondicion & Se necesita que el paciente tenga una enfermedad y haya una habitación libre\\
+\hline
+Postcondicion & El paciente tendrá una habitación asignada\\
+\hline
+Autor & Sistema\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{l}
+\hline
+Proposito\\
+\hline
+Que el paciente tenga una sala en la que ser atendido\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{l}
+\hline
+Resumen\\
+\hline
+El sistema buscará una sala libre para el paciente y asignará a la sala el nombre de este paciente\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{rlll}
+\hline
+Curso normal &  &  & \\
+\hline
+1 & Cliente: Solicita una sala &  & \\
+\hline
+2 & Personal administrativo:Comprueba que necesita una sala &  & \\
+\hline
+3 & Personal administrativo: Indica al sistema que asigne una sala & 4 & Sistema: Busca una sala\\
+\hline
+ &  & 5 & Sistema: Asigna una sala\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Cursos Alternos & \\
+\hline
+2a & Personal administrativo: El cliente no necesita una sala\\
+\hline
+2a.2 & Personal administrativo: Indica al cliente que no está enfermo\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{llll}
+\hline
+Otros Datos &  & Rendimiento & Alto\\
+\hline
+Frecuencia Esperada & Alta & Urgencia & Media\\
+\hline
+Importancia & Alta & Estabilidad & Alta\\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Caso de Uso & Modificar la sala en la que está un paciente                 \vline CU2\\
+\hline
+Actores & Personal administrativo\\
+\hline
+Tipo & Secundario\\
+\hline
+Referencias & \\
+\hline
+Precondicion & Se necesita que el paciente esté en una sala\\
+\hline
+Postcondicion & El paciente estará en una sala diferente a la anterior\\
+\hline
+Autor & Personal administrativo\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{l}
+\hline
+Proposito\\
+\hline
+El propósito es dejar una sala libre y ocupar otra\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{l}
+\hline
+Resumen\\
+\hline
+Se solicitará por parte del paciente o del médico que se cambie al paciente de sala. Entonces, el sistema buscará otra y se la asignará.\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{center}
+\begin{tabular}{rlrl}
+\hline
+Curso normal &  &  & \\
+\hline
+1 & Cliente/Médico: Solicita nueva sala &  & \\
+\hline
+2 & Personal administrativo: Pide al sistema nueva sala & 3 & Sistema: Asigna nueva sala\\
+\hline
+ &  & 4 & Sistema: Comunica nueva sala\\
+\hline
+5 & Personal administrativo: Comunica al cliente/médico la nueva sala &  & \\
+\hline
+\end{tabular}
+\end{center}
+
+
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+Cursos Alternos & \\
+\hline
+3a & Sistema:No hay salas disponibles\\
+\hline
+4b & Sistema: comunica que no hay salas disponibles\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{center}
+\begin{tabular}{llll}
+\hline
+Otros Datos &  & Rendimiento & Alto\\
+\hline
+Frecuencia Esperada & Baja & Urgencia & Media\\
+\hline
+Importancia & Media & Estabilidad & Alta\\
+\hline
+\end{tabular}
+\end{center}
+
+
+\begin{itemize}
+\item Comentarios:
+\end{itemize}
+Si es el paciente el que solicita cambiar de sala, el personal administrativo deberá consultarle al paciente los motivos por los que solicita el cambio de sala y comprobar si son motivos suficientes para el cambio.
 \end{document}
