@@ -1,0 +1,403 @@
+% David Sánchez Jiménez
+% davidsanchezjimenez@correo.ugr.es
+
+\documentclass[10pt,a4paper,spanish]{report}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsthm}
+\usepackage{amsfonts, amssymb, latexsym}
+\usepackage{enumerate}
+\usepackage[official]{eurosym}
+\usepackage{graphicx}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{pseudocode}
+\usepackage[all]{xy}
+\usepackage{minted}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.5}
+
+% a4large.sty -- fill an A4 (210mm x 297mm) page
+% Note: 1 inch = 25.4 mm = 72.27 pt
+%       1 pt = 3.5 mm (approx)
+
+% vertical page layout -- one inch margin top and bottom
+\topmargin      0 mm    % top margin less 1 inch
+\headheight     0 mm    % height of box containing the head
+\headsep       10 mm    % space between the head and the body of the page
+\textheight   250 mm
+\footskip      14 mm    % distance from bottom of body to bottom of foot
+
+% horizontal page layout -- one inch margin each side
+%\oddsidemargin    0   mm    % inner margin less one inch on odd pages
+%\evensidemargin   0   mm    % inner margin less one inch on even pages
+%\textwidth      159.2 mm    % normal width of text on page
+
+\usepackage[math]{iwona}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+
+\usepackage[pdftex, bookmarks=true,
+bookmarksnumbered=false, % true means bookmarks in
+% left window are numbered
+bookmarksopen=false,     % true means only level 1
+% are displayed.
+colorlinks=true,
+linkcolor=webblue]{hyperref}
+
+\definecolor{webgreen}{rgb}{0, 0.5, 0} % less intense green
+\definecolor{webblue}{rgb}{0, 0, 0.5}  % less intense blue
+\definecolor{webred}{rgb}{0.5, 0, 0}   % less intense red
+\definecolor{dblackcolor}{rgb}{0.0,0.0,0.0}
+\definecolor{dbluecolor}{rgb}{.01,.02,0.7}
+\definecolor{dredcolor}{rgb}{0.8,0,0}
+\definecolor{dgraycolor}{rgb}{0.30,0.3,0.30}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\pagestyle{fancy}
+
+\renewcommand{\chaptermark}[1]{%
+\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{%
+\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt}
+\fancypagestyle{plain}{
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+}
+
+\usepackage{sectsty}
+\chapterfont{\fontfamily{pag}\selectfont}
+\sectionfont{\fontfamily{pag}\selectfont}
+\subsectionfont{\fontfamily{pag}\selectfont}
+\subsubsectionfont{\fontfamily{pag}\selectfont}
+
+\renewcommand{\labelenumi}{\arabic{enumi}. }
+\renewcommand{\labelenumii}{\labelenumi\alph{enumii}) }
+\renewcommand{\labelenumiii}{\labelenumii\roman{enumiii}: }
+
+\begin{document}
+%%FIXME:Primer grupo de tablas
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+
+	\hline
+  %Actor e Identificador
+	\textbf{Actor} & \multicolumn{5}{p{155pt}|}{Personal}	& \multicolumn{2}{p{39pt}|}{\textbf{AP-0}}\tabularnewline
+
+	\hline
+  %Descripcion
+	\textbf{Descripción} & \multicolumn{7}{p{265pt}|}{Clase padre de AP-1,AP-2 y AP-3}\tabularnewline
+
+	\hline
+  %Caracteristicas
+	\textbf{Características} & \multicolumn{7}{p{265pt}|}{Los atributos en común que contienen todos los trabajadores del hospital, están contenidos dentro de esta.}\tabularnewline
+
+	\hline
+  %Relaciones
+	\textbf{Relaciones} & \multicolumn{7}{p{265pt}|}{AP-1,AP-2 y AP-3 son hijos de este.}\tabularnewline
+	\hline
+  %Referencias
+	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Elementos del desarrollo en los que interviene el	Actor (Caso de Uso, Diagrama de secuencia, ...}\tabularnewline
+	\hline
+  %Autor, Fecha y Versión
+	\textbf{Autor} & Laura Gómez Garrido  & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 1/4/18 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+
+	\vspace{0.5cm}	\begin{tabular}{|>{\raggedright}p{61pt}|>{\raggedright}p{190pt}|>{\raggedright}p{61pt}|}
+	\hline
+  %Atributos
+	 \multicolumn{3}{|p{313pt}|}{
+	\textbf{Atributos}}\tabularnewline
+	\hline
+  %Nombre, Descripción y Tipo
+	\textbf{Nombre}  & \textbf{Descripción} & \textbf{Tipo}\tabularnewline
+	\hline
+ID & Identificador único y personal de cada trabajador. A partir de este se localizan todos sus datos en las distintas tablas que se vayan creando. & String \tabularnewline
+	\hline
+Trabajadores & Puntero a la base de datos que contiene toda la información de nuestros trabajadores. & BaseDatos\tabularnewline
+	\hline
+Pacientes & Puntero a la base de datos que contiene toda la información de nuestros pacientes. & BaseDatos\tabularnewline
+	\hline
+Equipo & Puntero a la base de datos que contiene toda la información de la maquinaria y suministros & BaseDatos\tabularnewline
+	\hline
+
+	\end{tabular}
+
+	\vspace{0.5cm}
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+	\hline
+  %Comentarios
+	\textbf{Comentarios}\tabularnewline
+	\hline
+	Apartir del ID, podremos acceder a toda la información necesaria para nuestro personal, sea cual sea la base de datos en la que esté almacenada. Por ello no es necesario de más campos para los distintos datos y detalles del personal, pues estos estarían correctamente almacenados en las bases de datos y serían modificadas en los distintos métodos.
+	Así mismo, cabe mencionar que con el tiempo puede verse la idea de juntar las bases de datos en una sóla o crear nuevas.
+\tabularnewline
+	\hline
+	\end{tabular}
+	
+	
+	\vspace{2.0cm}
+	%%FIXME:Segundo grupo de tablas
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+
+	\hline
+  %Actor e Identificador
+	\textbf{Actor} & \multicolumn{5}{p{155pt}|}{Personal Médico}	& \multicolumn{2}{p{39pt}|}{\textbf{AP-1}}\tabularnewline
+
+	\hline
+  %Descripcion
+	\textbf{Descripción} & \multicolumn{7}{p{265pt}|}{Se encarga de atender correctamente a los pacientes, así como controlar y modificar algunos datos de este relacionados con su tratamiento.}\tabularnewline
+
+	\hline
+  %Caracteristicas
+	\textbf{Características} & \multicolumn{7}{p{265pt}|}{Alto conocimiento médico y con cierto grado de autoridad.}\tabularnewline
+
+	\hline
+  %Relaciones
+	\textbf{Relaciones} & \multicolumn{7}{p{265pt}|}{Atiende a los pacientes, así como coopera con el personal admistrativo. Hereda de AP-0.}\tabularnewline
+	\hline
+  %Referencias
+	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Elementos del desarrollo en los que interviene el	Actor (Caso de Uso, Diagrama de secuencia, ...}\tabularnewline
+	\hline
+  %Autor, Fecha y Versión
+	\textbf{Autor} & Laura Gómez Garrido  & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 1/4/18 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+
+	\vspace{0.5cm}	\begin{tabular}{|>{\raggedright}p{61pt}|>{\raggedright}p{190pt}|>{\raggedright}p{61pt}|}
+	\hline
+  %Atributos
+	 \multicolumn{3}{|p{313pt}|}{
+	\textbf{Atributos}}\tabularnewline
+	\hline
+  %Nombre, Descripción y Tipo
+	\textbf{Nombre}  & \textbf{Descripción} & \textbf{Tipo}\tabularnewline
+	\hline
+	 &  & \tabularnewline
+	\hline
+	 &  & \tabularnewline
+	\hline
+	 &  & \tabularnewline
+	\hline
+
+	\end{tabular}
+
+	\vspace{0.5cm}
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+	\hline
+  %Comentarios
+	\textbf{Comentarios}\tabularnewline
+	\hline
+	Comentarios adicionales sobre el actor \tabularnewline
+	\hline
+	\end{tabular}
+	
+	\vspace{2.0cm}
+	%%FIXME:Tercer grupo de tablas
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+
+	\hline
+  %Actor e Identificador
+	\textbf{Actor} & \multicolumn{5}{p{155pt}|}{Personal Sanitario}	& \multicolumn{2}{p{39pt}|}{\textbf{AP-2}}\tabularnewline
+
+	\hline
+  %Descripcion
+	\textbf{Descripción} & \multicolumn{7}{p{265pt}|}{Sigue las intrucciones del médico en cuanto al cuidado del paciente. }\tabularnewline
+
+	\hline
+  %Caracteristicas
+	\textbf{Características} & \multicolumn{7}{p{265pt}|}{Conocimiento médico variable según al puesto concreto que ocupe. Por lo general, carece de permisos más allá de lectura. }\tabularnewline
+
+	\hline
+  %Relaciones
+	\textbf{Relaciones} & \multicolumn{7}{p{265pt}|}{Siguen instrucciones de los distintos médicos, así como indicarse entre ellos mismos según su trabajo concreto. Hereda de AP-0.}\tabularnewline
+	\hline
+  %Referencias
+	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Elementos del desarrollo en los que interviene el	Actor (Caso de Uso, Diagrama de secuencia, ...}\tabularnewline
+	\hline
+  %Autor, Fecha y Versión
+	\textbf{Autor} & Laura Gómez Garrido  & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 1/4/18 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+
+	\vspace{0.5cm}	\begin{tabular}{|>{\raggedright}p{61pt}|>{\raggedright}p{190pt}|>{\raggedright}p{61pt}|}
+	\hline
+  %Atributos
+	 \multicolumn{3}{|p{313pt}|}{
+	\textbf{Atributos}}\tabularnewline
+	\hline
+  %Nombre, Descripción y Tipo
+	\textbf{Nombre}  & \textbf{Descripción} & \textbf{Tipo}\tabularnewline
+	\hline
+	 &  & \tabularnewline
+	\hline
+	 &  & \tabularnewline
+	\hline
+	 &  & \tabularnewline
+	\hline
+
+	\end{tabular}
+
+	\vspace{0.5cm}
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+	\hline
+  %Comentarios
+	\textbf{Comentarios}\tabularnewline
+	\hline
+	Comentarios adicionales sobre el actor \tabularnewline
+	\hline
+	\end{tabular}
+	
+		\vspace{2.0cm}
+	%%FIXME:Cuarto grupo de tablas
+  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+
+	\hline
+  %Actor e Identificador
+	\textbf{Actor} & \multicolumn{5}{p{155pt}|}{Personal Administrativo}	& \multicolumn{2}{p{39pt}|}{\textbf{AP-3}}\tabularnewline
+
+	\hline
+  %Descripcion
+	\textbf{Descripción} & \multicolumn{7}{p{265pt}|}{Se encarga de gestionar todos datos del paciente, así como también los recursos del hospital.}\tabularnewline
+
+	\hline
+  %Caracteristicas
+	\textbf{Características} & \multicolumn{7}{p{265pt}|}{No necesita de conocimiento médico para desempeñar su labor. Posee permisos de gestión, pero no puede modificar ningún dato médico de ningún paciente.}\tabularnewline
+
+	\hline
+  %Relaciones
+	\textbf{Relaciones} & \multicolumn{7}{p{265pt}|}{Coopera con todos los actores.Hereda de AP-0.}\tabularnewline
+	\hline
+  %Referencias
+	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Elementos del desarrollo en los que interviene el	Actor (Caso de Uso, Diagrama de secuencia, ...}\tabularnewline
+	\hline
+  %Autor, Fecha y Versión
+	\textbf{Autor} & Laura Gómez Garrido  & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 1/4/18 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+
+	\vspace{0.5cm}	\begin{tabular}{|>{\raggedright}p{61pt}|>{\raggedright}p{190pt}|>{\raggedright}p{61pt}|}
+	\hline
+  %Atributos
+	 \multicolumn{3}{|p{313pt}|}{
+	\textbf{Atributos}}\tabularnewline
+	\hline
+  %Nombre, Descripción y Tipo
+	\textbf{Nombre}  & \textbf{Descripción} & \textbf{Tipo}\tabularnewline
+	\hline
+	 &  & \tabularnewline
+	\hline
+	 &  & \tabularnewline
+	\hline
+	 &  & \tabularnewline
+	\hline
+
+	\end{tabular}
+
+	\vspace{0.5cm}
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+	\hline
+  %Comentarios
+	\textbf{Comentarios}\tabularnewline
+	\hline
+El grado de interacción con cada uno de los actores depende de su puesto asignado,que puede ser variable según el momento y necesidades del hospital, y este no afecta a sus permisos al sistema.
+ \tabularnewline
+	\hline
+	\end{tabular}
+	
+	\vspace{2.0cm}
+	
+%%FIXME:Quinto grupo de tablas
+	
+	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+
+	\hline
+  %Actor e Identificador
+	\textbf{Actor} & \multicolumn{5}{p{155pt}|}{Cliente}	& \multicolumn{2}{p{39pt}|}{\textbf{AC}}\tabularnewline
+
+	\hline
+  %Descripcion
+	\textbf{Descripción} & \multicolumn{7}{p{265pt}|}{Padece alguna enfermedad y necesita ser atendido por nuestro personal.}\tabularnewline
+
+	\hline
+  %Caracteristicas
+	\textbf{Características} & \multicolumn{7}{p{265pt}|}{Por lo general, carece de conocimiento médico y tampoco posee permisos salvo modificar sus propios datos personales.}\tabularnewline
+
+	\hline
+  %Relaciones
+	\textbf{Relaciones} & \multicolumn{7}{p{265pt}|}{Es atendido por el personal médico y el personal administrativo mantiene actualizados sus datos.}\tabularnewline
+	\hline
+  %Referencias
+	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Elementos del desarrollo en los que interviene el	Actor (Caso de Uso, Diagrama de secuencia, ...}\tabularnewline
+	\hline
+  %Autor, Fecha y Versión
+	\textbf{Autor} & Laura Gómez Garrido  & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 1/4/18 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+
+	\vspace{0.5cm}	\begin{tabular}{|>{\raggedright}p{61pt}|>{\raggedright}p{190pt}|>{\raggedright}p{61pt}|}
+	\hline
+  %Atributos
+	 \multicolumn{3}{|p{313pt}|}{
+	\textbf{Atributos}}\tabularnewline
+	\hline
+  %Nombre, Descripción y Tipo
+	\textbf{Nombre}  & \textbf{Descripción} & \textbf{Tipo}\tabularnewline
+	\hline
+	 ID & Identificador único y personal de cada paciente. A partir de este se localizan todos sus datos en las distintas tablas que se vayan creando. & String \tabularnewline
+	\hline
+Pacientes & Puntero a la base de datos que contiene toda la información de nuestros pacientes. & BaseDatos\tabularnewline
+	\hline
+	 &  & \tabularnewline
+	\hline
+
+	\end{tabular}
+
+	\vspace{0.5cm}
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+	\hline
+  %Comentarios
+	\textbf{Comentarios}\tabularnewline
+	\hline
+	Cuando indicamos que puede modificar sus propios datos personales, nos referimos datos como su dirección actual o número de teléfono. Por supuesto, los datos relacionados estrictamente con su salud no pueden ser modificados por el paciente.\tabularnewline
+	\hline
+	\end{tabular}
+	
+	
+	\vspace{2.0cm}
+	
+	
+	
+\end{document}
