@@ -1,0 +1,10 @@
+
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor "Personal Administrativo" as PA
+
+rectangle "Gestión de suministros necesarios" {
+  PA -- (Control de stock, inventario y consumo)
+}
+@enduml

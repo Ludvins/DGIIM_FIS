@@ -1,0 +1,19 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor "Personal Administrativo" as admin
+actor "Pacientes" as pa
+actor "Proveedores" as pro
+actor "Banco" as b
+rectangle Facturación {
+
+admin -- (Emisión de facturas a los pacientes)
+pa -- (Emisión de facturas a los pacientes)
+
+admin -- (Pago de facturas a proveedores)
+pro -- (Pago de facturas a proveedores)
+b -- (Pago de facturas a proveedores)
+
+
+}
+@enduml

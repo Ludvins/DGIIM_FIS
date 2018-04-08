@@ -1,0 +1,11 @@
+
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor "Personal Administrativo" as PA
+rectangle "Gestión de seguridad y administración del software" {
+
+PA --> (Modificación, borrado y creación de usuarios del sistema.)
+}
+@enduml
+
