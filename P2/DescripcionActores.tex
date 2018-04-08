@@ -133,8 +133,6 @@ ID & Identificador único y personal de cada trabajador. A partir de este se loc
 	\hline
 Trabajadores & Puntero a la base de datos que contiene toda la información de nuestros trabajadores. & BaseDatos\tabularnewline
 	\hline
-Pacientes & Puntero a la base de datos que contiene toda la información de nuestros pacientes. & BaseDatos\tabularnewline
-	\hline
 Equipo & Puntero a la base de datos que contiene toda la información de la maquinaria y suministros & BaseDatos\tabularnewline
 	\hline
 
@@ -175,7 +173,7 @@ Equipo & Puntero a la base de datos que contiene toda la información de la maqu
 	\textbf{Relaciones} & \multicolumn{7}{p{265pt}|}{Atiende a los pacientes, así como coopera con el personal admistrativo. Hereda de AP-0.}\tabularnewline
 	\hline
   %Referencias
-	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Gestión del Personal.}\tabularnewline
+	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Gestión del Personal; Gestión de Citas; Gestión de Enfermos.}\tabularnewline
 	\hline
   %Autor, Fecha y Versión
 	\textbf{Autor} & Grupo 9  & \multicolumn{2}{p{30pt}|}{
@@ -194,13 +192,8 @@ Equipo & Puntero a la base de datos que contiene toda la información de la maqu
   %Nombre, Descripción y Tipo
 	\textbf{Nombre}  & \textbf{Descripción} & \textbf{Tipo}\tabularnewline
 	\hline
-	 &  & \tabularnewline
+Pacientes & Puntero a la base de datos que contiene toda la información de nuestros pacientes. & BaseDatos\tabularnewline
 	\hline
-	 &  & \tabularnewline
-	\hline
-	 &  & \tabularnewline
-	\hline
-
 	\end{tabular}
 
 	\vspace{0.5cm}
@@ -235,7 +228,7 @@ Equipo & Puntero a la base de datos que contiene toda la información de la maqu
 	\textbf{Relaciones} & \multicolumn{7}{p{265pt}|}{Siguen instrucciones de los distintos médicos, así como indicarse entre ellos mismos según su trabajo concreto. Hereda de AP-0.}\tabularnewline
 	\hline
   %Referencias
-	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Gestión del personal.}\tabularnewline
+	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Gestión del personal; Gestión de Urgencias; Gestión de Instalaciones y Aparatos; Gestión de Pruebas Médicas.}\tabularnewline
 	\hline
   %Autor, Fecha y Versión
 	\textbf{Autor} & Grupo 9  & \multicolumn{2}{p{30pt}|}{
@@ -254,11 +247,7 @@ Equipo & Puntero a la base de datos que contiene toda la información de la maqu
   %Nombre, Descripción y Tipo
 	\textbf{Nombre}  & \textbf{Descripción} & \textbf{Tipo}\tabularnewline
 	\hline
-	 &  & \tabularnewline
-	\hline
-	 &  & \tabularnewline
-	\hline
-	 &  & \tabularnewline
+Pacientes & Puntero a la base de datos que contiene toda la información de nuestros pacientes. & BaseDatos\tabularnewline
 	\hline
 
 	\end{tabular}
@@ -295,7 +284,7 @@ Equipo & Puntero a la base de datos que contiene toda la información de la maqu
 	\textbf{Relaciones} & \multicolumn{7}{p{265pt}|}{Coopera con todos los actores.Hereda de AP-0.}\tabularnewline
 	\hline
   %Referencias
-	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Gestión del personal, Facturación y Gestión de Seguridad.}\tabularnewline
+	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Gestión del personal; Facturación; Gestión de Citas; Gestión de Enfermos; Gestión de Seguridad y Administración del Software; Gestión de Suministros; Gestión de Servicios de Urgencia; Gestión de Pruebas Médicas; Gestión de Instalaciones y Aparatos.}\tabularnewline
 	\hline
   %Autor, Fecha y Versión
 	\textbf{Autor} & Grupo 9  & \multicolumn{2}{p{30pt}|}{
@@ -314,11 +303,7 @@ Equipo & Puntero a la base de datos que contiene toda la información de la maqu
   %Nombre, Descripción y Tipo
 	\textbf{Nombre}  & \textbf{Descripción} & \textbf{Tipo}\tabularnewline
 	\hline
-	 &  & \tabularnewline
-	\hline
-	 &  & \tabularnewline
-	\hline
-	 &  & \tabularnewline
+Pacientes & Puntero a la base de datos que contiene toda la información de nuestros pacientes. & BaseDatos\tabularnewline
 	\hline
 
 	\end{tabular}
@@ -366,32 +351,13 @@ El grado de interacción con cada uno de los actores depende de su puesto asigna
 	\hline
 	\end{tabular}
 
-
-	\vspace{0.5cm}	\begin{tabular}{|>{\raggedright}p{61pt}|>{\raggedright}p{190pt}|>{\raggedright}p{61pt}|}
-	\hline
-  %Atributos
-	 \multicolumn{3}{|p{313pt}|}{
-	\textbf{Atributos}}\tabularnewline
-	\hline
-  %Nombre, Descripción y Tipo
-	\textbf{Nombre}  & \textbf{Descripción} & \textbf{Tipo}\tabularnewline
-	\hline
-	 &  & \tabularnewline
-	\hline
-	 &  & \tabularnewline
-	\hline
-	 &  & \tabularnewline
-	\hline
-
-	\end{tabular}
-
 	\vspace{0.5cm}
 	\begin{tabular}{|>{\raggedright}p{337pt}|}
 	\hline
   %Comentarios
 	\textbf{Comentarios}\tabularnewline
 	\hline
-
+De primeras no requiere de ningún Atributo extra más allá de los proporcionados por AP-0.
  \tabularnewline
 	\hline
 	\end{tabular}
@@ -419,7 +385,7 @@ El grado de interacción con cada uno de los actores depende de su puesto asigna
 	\textbf{Relaciones} & \multicolumn{7}{p{265pt}|}{Es atendido por el personal médico y el personal administrativo mantiene actualizados sus datos.}\tabularnewline
 	\hline
   %Referencias
-	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Facturación.}\tabularnewline
+	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Facturación; Gestión de Citas; Gestión de Enfermos; Gestión de Servicios de Urgencia; Gestión de Pruebas Médicas; Gestión de Instalaciones y Aparatos.}\tabularnewline
 	\hline
   %Autor, Fecha y Versión
 	\textbf{Autor} & Grupo 9  & \multicolumn{2}{p{30pt}|}{
@@ -441,8 +407,6 @@ El grado de interacción con cada uno de los actores depende de su puesto asigna
 	 ID & Identificador único y personal de cada paciente. A partir de este se localizan todos sus datos en las distintas tablas que se vayan creando. & String \tabularnewline
 	\hline
 Pacientes & Puntero a la base de datos que contiene toda la información de nuestros pacientes. & BaseDatos\tabularnewline
-	\hline
-	 &  & \tabularnewline
 	\hline
 
 	\end{tabular}
@@ -480,7 +444,7 @@ Pacientes & Puntero a la base de datos que contiene toda la información de nues
 	\textbf{Relaciones} & \multicolumn{7}{p{265pt}|}{Los pacientes pagan a través de este, ya sea por ingreso o transferencia bancaria,}\tabularnewline
 	\hline
   %Referencias
-	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Facturación.}\tabularnewline
+	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Facturación; Gestión del Personal.}\tabularnewline
 	\hline
   %Autor, Fecha y Versión
 	\textbf{Autor} & Grupo 9  & \multicolumn{2}{p{30pt}|}{
@@ -503,49 +467,6 @@ Pacientes & Puntero a la base de datos que contiene toda la información de nues
 	
 	\vspace{2.0cm}
 	
-		%%FIXME:Séptimo grupo de tablas
-	
-	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
-
-	\hline
-  %Actor e Identificador
-	\textbf{Actor} & \multicolumn{5}{p{155pt}|}{Banco}	& \multicolumn{2}{p{39pt}|}{\textbf{AB}}\tabularnewline
-
-	\hline
-  %Descripcion
-	\textbf{Descripción} & \multicolumn{7}{p{265pt}|}{Intermediario entre nuestro hospital y el paciente para el tema monetario.}\tabularnewline
-
-	\hline
-  %Caracteristicas
-	\textbf{Características} & \multicolumn{7}{p{265pt}|}{Se trata de una entidad por sí misma, gracias a ella se gestiona más cómodamente el dinero del hospital.}\tabularnewline
-
-	\hline
-  %Relaciones
-	\textbf{Relaciones} & \multicolumn{7}{p{265pt}|}{Los pacientes pagan a través de este, ya sea por ingreso o transferencia bancaria,}\tabularnewline
-	\hline
-  %Referencias
-	\textbf{Referencias} & \multicolumn{7}{p{265pt}|}{Facturación.}\tabularnewline
-	\hline
-  %Autor, Fecha y Versión
-	\textbf{Autor} & Grupo 9  & \multicolumn{2}{p{30pt}|}{
-	\textbf{Fecha}} & 1/4/18 & \multicolumn{2}{p{30pt}|}{
-	\textbf{Versión}} & 1.0 \tabularnewline
-	\hline
-	\end{tabular}
-
-
-	\vspace{0.5cm}
-	\begin{tabular}{|>{\raggedright}p{337pt}|}
-	\hline
-  %Comentarios
-	\textbf{Comentarios}\tabularnewline
-	\hline
-	Carece de atributos porque no es una entidad que nosotros programemos, sino una con la que colaboramos y utilizamos sus recursos para algunas prestaciones de nuestra aplicación, como es el tema del pago y mantener actualizada algunas bases de datos.\tabularnewline
-	\hline
-	\end{tabular}
-	
-	
-	\vspace{2.0cm}
 	
 	%%FIXME:Octavo grupo de tablas
 	
