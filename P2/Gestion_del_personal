@@ -5,12 +5,17 @@ skinparam packageStyle rectangle
 actor "Personal Administrativo" as PA
 actor Medicos
 actor "Personal de limpieza" as PL
+actor "Personal sanitario" as PS
 actor Banco
 rectangle "Gestion del personal" {
+  PS -- (Asignación de turnos y guardias)
+  PS -- (Control de vacaciones del personal)
+  PS -- (Pago al personal)
+
   PA -- (Asignación de turnos y guardias)
   PA -- (Control de vacaciones del personal)
   PA -- (Pago al personal)
-  (Pago al personal) .> (Registro de pago al personal) : include
+  (Pago al personal) . (Registro de pago al personal) : include
 
   Medicos -up- (Asignación de turnos y guardias)
   Medicos -up- (Pago al personal)
