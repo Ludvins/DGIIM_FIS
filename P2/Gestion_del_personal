@@ -1,0 +1,24 @@
+
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor "Personal Administrativo" as PA
+actor Medicos
+actor "Personal de limpieza" as PL
+actor Banco
+rectangle "Gestion del personal" {
+  PA -- (Asignación de turnos y guardias)
+  PA -- (Control de vacaciones del personal)
+  PA -- (Pago al personal)
+  (Pago al personal) .> (Registro de pago al personal) : include
+
+  Medicos -up- (Asignación de turnos y guardias)
+  Medicos -up- (Pago al personal)
+  Medicos -up- (Control de vacaciones del personal)
+
+  Banco -- (Pago al personal)
+  PL -up- (Asignación de turnos y guardias)
+  PL -up- (Control de vacaciones del personal)
+  PL -up- (Pago al personal)
+}
+@enduml
