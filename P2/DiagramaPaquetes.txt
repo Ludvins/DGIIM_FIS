@@ -1,0 +1,36 @@
+@startuml
+
+package "Gestión de Citas" as Citas
+package "Gestión de Enfermos" as Enfermos
+package "Gestión de Seguridad y Administración del Software" as Seguridad
+package "Gestión de Suministros" as Suministros
+package "Gestión del Personal" as Personal
+package "Gestión de Pruebas Médicas" as Pruebas
+package "Gestión de Instalaciones y Aparatos" as Aparatos
+package "Gestión de Servicios de Urgencia" as Urgencias
+
+Personal --> Urgencias
+Personal --> Pruebas
+Personal --> Aparatos
+Personal --> Suministros
+Personal --> Citas
+Personal --> Enfermos
+Personal --> Seguridad
+
+Citas <--> Enfermos
+Pruebas <--> Enfermos
+Urgencias <--> Pruebas
+Urgencias <--> Enfermos
+
+Suministros <--> Aparatos
+Aparatos <--> Urgencias
+Urgencias <--> Suministros
+Suministros <--> Enfermos
+
+Seguridad --> Citas
+Seguridad --> Aparatos
+Seguridad --> Urgencias
+Seguridad --> Pruebas
+Seguridad --> Enfermos
+
+@enduml
