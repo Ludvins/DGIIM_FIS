@@ -78,6 +78,12 @@ linkcolor=webblue]{hyperref}
 \renewcommand{\headrulewidth}{0pt}
 }
 
+\title{\textbf{Práctica 2 FIS}}
+\author{Laura Gómez Garrido\\
+		Javier Sáez Maldonado\\
+		Daniel Pozo Escalona\\
+		Luis Ortega Andrés}
+
 \usepackage{sectsty}
 \chapterfont{\fontfamily{pag}\selectfont}
 \sectionfont{\fontfamily{pag}\selectfont}
@@ -89,6 +95,31 @@ linkcolor=webblue]{hyperref}
 \renewcommand{\labelenumiii}{\labelenumii\roman{enumiii}: }
 
 \begin{document}
+
+
+\maketitle
+
+\section*{Diagrama de Casos de Uso}
+
+Incluiremos primero todos los diagramas de casos de uso según los requisitos funcionales que determinamos en la práctica anterior.
+
+\begin{center}
+	\includegraphics[scale=0.4]{GestionDeEnfermos}\\
+	\includegraphics[scale=0.5]{GestionDeCitas}\\
+	\includegraphics[scale=0.4]{gestion-de-pruebas-medicas}\\
+	\includegraphics[scale=0.4]{gestion-instalaciones-y-aparatos}\\
+	\includegraphics[scale=0.4]{gestion-servicios-urgencia}\\
+	\includegraphics[scale=0.5]{Gestion_de_seguridad_y_administracion_del_software}\\
+	\includegraphics[scale=0.5]{Facturacion}\\
+	\includegraphics[scale=0.5]{Gestion_de_suministros_necesarios}\\
+	\includegraphics[scale=0.5]{Gestion_del_personal}\\
+\end{center}
+
+
+\section*{Descripción de los actores.}
+
+Han aparecido una serie de actores en nuestros diagramas de casos de uso. Su descripción detallada es la siguiente:
+
 %%FIXME:Primer grupo de tablas
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
   \begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
@@ -466,7 +497,8 @@ Pacientes & Puntero a la base de datos que contiene toda la información de nues
 	
 	
 	\vspace{2.0cm}
-	
+
+
 	
 	%%FIXME:Octavo grupo de tablas
 	
@@ -512,6 +544,28 @@ Pacientes & Puntero a la base de datos que contiene toda la información de nues
 	
 	\vspace{2.0cm}
 	
+	\section*{Descripción de casos de uso}
+	Una vez que tenemos los actores y los diagramas de casos de uso, pasamos a describir todos los casos de uso de forma completa:
+	
+	\input{CU1-12.tex}
+	\input{cu13}
+	\input{cu14}
+	\input{cu15}
+	\input{cu16}
+	\input{cu17}
+	\input{cu18}
+	\input{cu19}
+	\input{cu20}
+	\input{cu21}
+	\input{cu22}
+	\input{cu23}
+	\input{cu24}
+	\input{casosdeuso}
+	
+	\section*{Diagrama de paquetes}	
+	Con los datos que tenemos, el diagrama de paquetes obtenido es el siguiente:
+	
+	\includegraphics[scale=0.4]{DiagramaPaquetes}
 	
 	
 \end{document}

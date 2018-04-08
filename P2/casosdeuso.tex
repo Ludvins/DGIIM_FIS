@@ -1,82 +1,4 @@
-\documentclass[10pt,a4paper,spanish]{report}
 
-\usepackage[spanish]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath, amsthm}
-\usepackage{amsfonts, amssymb, latexsym}
-\usepackage{enumerate}
-\usepackage[official]{eurosym}
-\usepackage{graphicx}
-\usepackage[usenames, dvipsnames]{color}
-\usepackage{colortbl}
-\usepackage{multirow}
-\usepackage{fancyhdr}
-\usepackage{fancybox}
-\usepackage{pseudocode}
-\usepackage[all]{xy}
-\usepackage{hyperref}
-\usepackage{tikz}
-\usepackage{pgfplots}
-
-\pgfplotsset{compat=1.5}
-
-% a4large.sty -- fill an A4 (210mm x 297mm) page
-% Note: 1 inch = 25.4 mm = 72.27 pt
-%       1 pt = 3.5 mm (approx)
-
-% vertical page layout -- one inch margin top and bottom
-\topmargin      0 mm    % top margin less 1 inch
-\headheight     0 mm    % height of box containing the head
-\headsep       10 mm    % space between the head and the body of the page
-\textheight   250 mm
-\footskip      14 mm    % distance from bottom of body to bottom of foot
-
-% horizontal page layout -- one inch margin each side
-%\oddsidemargin    0   mm    % inner margin less one inch on odd pages
-%\evensidemargin   0   mm    % inner margin less one inch on even pages
-%\textwidth      159.2 mm    % normal width of text on page
-
-\usepackage[math]{iwona}
-\usepackage[T1]{fontenc}
-\usepackage{inconsolata}
-
-\definecolor{webgreen}{rgb}{0, 0.5, 0} % less intense green 
-\definecolor{webblue}{rgb}{0, 0, 0.5}  % less intense blue
-\definecolor{webred}{rgb}{0.5, 0, 0}   % less intense red
-\definecolor{dblackcolor}{rgb}{0.0,0.0,0.0}
-\definecolor{dbluecolor}{rgb}{.01,.02,0.7}
-\definecolor{dredcolor}{rgb}{0.8,0,0}
-\definecolor{dgraycolor}{rgb}{0.30,0.3,0.30}
-
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-
-\pagestyle{fancy}
-
-\renewcommand{\chaptermark}[1]{%
-\markboth{#1}{}}
-\renewcommand{\sectionmark}[1]{%
-\markright{\thesection\ #1}}
-\fancyhf{}
-\fancyhead[LE,RO]{\bfseries\thepage}
-\fancyhead[LO]{\bfseries\leftmark}
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0pt}
-\addtolength{\headheight}{0.5pt}
-\fancypagestyle{plain}{
-\fancyhead{}
-\renewcommand{\headrulewidth}{0pt}
-}
-
-\usepackage{sectsty}
-\chapterfont{\fontfamily{pag}\selectfont} %% for chapter if you want
-\sectionfont{\fontfamily{pag}\selectfont}
-\subsectionfont{\fontfamily{pag}\selectfont}
-\subsubsectionfont{\fontfamily{pag}\selectfont}
-
-\renewcommand{\labelenumi}{\arabic{enumi}. }
-\renewcommand{\labelenumii}{\labelenumi\alph{enumii}) }
-\renewcommand{\labelenumiii}{\labelenumii\roman{enumiii}: }
-\begin{document}
 
 	
 		\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
@@ -84,7 +6,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Modificacion, creació y borrado de usuarios del sistema}	& \multicolumn{2}{p{39pt}|}{\textbf{34}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Modificacion, creació y borrado de usuarios del sistema}	& \multicolumn{2}{p{39pt}|}{\textbf{25}}\tabularnewline
 
 	\hline
 
@@ -143,7 +65,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Emision de facturas a los pacientes}	& \multicolumn{2}{p{39pt}|}{\textbf{35}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Emision de facturas a los pacientes}	& \multicolumn{2}{p{39pt}|}{\textbf{26}}\tabularnewline
 
 	\hline
 
@@ -204,7 +126,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Pago de facturas a proveedores}	& \multicolumn{2}{p{39pt}|}{\textbf{36}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Pago de facturas a proveedores}	& \multicolumn{2}{p{39pt}|}{\textbf{27}}\tabularnewline
 
 	\hline
 
@@ -266,7 +188,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Control de stock, inventario y consumo.}	& \multicolumn{2}{p{39pt}|}{\textbf{37}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Control de stock, inventario y consumo.}	& \multicolumn{2}{p{39pt}|}{\textbf{28}}\tabularnewline
 
 	\hline
 
@@ -327,7 +249,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Asignacion de turnos y guardias}	& \multicolumn{2}{p{39pt}|}{\textbf{38}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Asignacion de turnos y guardias}	& \multicolumn{2}{p{39pt}|}{\textbf{29}}\tabularnewline
 
 	\hline
 
@@ -387,7 +309,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Control de las vacaciones del personal}	& \multicolumn{2}{p{39pt}|}{\textbf{39}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Control de las vacaciones del personal}	& \multicolumn{2}{p{39pt}|}{\textbf{30}}\tabularnewline
 
 	\hline
 
@@ -448,7 +370,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Pago al personal}	& \multicolumn{2}{p{39pt}|}{\textbf{40}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Pago al personal}	& \multicolumn{2}{p{39pt}|}{\textbf{31}}\tabularnewline
 
 	\hline
 
@@ -503,7 +425,3 @@
 	\end{tabular}
 	\vspace{0.5cm}
 	
-
- 
-
-\end{document}

@@ -1,84 +1,4 @@
-\documentclass[10pt,a4paper,spanish]{report}
 
-\usepackage[spanish]{babel}
-\usepackage[utf8]{inputenc}
-\usepackage{amsmath, amsthm}
-\usepackage{amsfonts, amssymb, latexsym}
-\usepackage{enumerate}
-\usepackage[official]{eurosym}
-\usepackage{graphicx}
-\usepackage[usenames, dvipsnames]{color}
-\usepackage{colortbl}
-\usepackage{multirow}
-\usepackage{fancyhdr}
-\usepackage{fancybox}
-\usepackage{pseudocode}
-\usepackage[all]{xy}
-\usepackage{hyperref}
-\usepackage{tikz}
-\usepackage{pgfplots}
-
-\pgfplotsset{compat=1.5}
-
-% a4large.sty -- fill an A4 (210mm x 297mm) page
-% Note: 1 inch = 25.4 mm = 72.27 pt
-%       1 pt = 3.5 mm (approx)
-
-% vertical page layout -- one inch margin top and bottom
-\topmargin      0 mm    % top margin less 1 inch
-\headheight     0 mm    % height of box containing the head
-\headsep       10 mm    % space between the head and the body of the page
-\textheight   250 mm
-\footskip      14 mm    % distance from bottom of body to bottom of foot
-
-% horizontal page layout -- one inch margin each side
-%\oddsidemargin    0   mm    % inner margin less one inch on odd pages
-%\evensidemargin   0   mm    % inner margin less one inch on even pages
-%\textwidth      159.2 mm    % normal width of text on page
-
-\usepackage[math]{iwona}
-\usepackage[T1]{fontenc}
-\usepackage{inconsolata}
-
-
-
-\definecolor{webgreen}{rgb}{0, 0.5, 0} % less intense green
-\definecolor{webblue}{rgb}{0, 0, 0.5}  % less intense blue
-\definecolor{webred}{rgb}{0.5, 0, 0}   % less intense red
-\definecolor{dblackcolor}{rgb}{0.0,0.0,0.0}
-\definecolor{dbluecolor}{rgb}{.01,.02,0.7}
-\definecolor{dredcolor}{rgb}{0.8,0,0}
-\definecolor{dgraycolor}{rgb}{0.30,0.3,0.30}
-
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-
-\pagestyle{fancy}
-
-\renewcommand{\chaptermark}[1]{%
-\markboth{#1}{}}
-\renewcommand{\sectionmark}[1]{%
-\markright{\thesection\ #1}}
-\fancyhf{}
-\fancyhead[LE,RO]{\bfseries\thepage}
-\fancyhead[LO]{\bfseries\leftmark}
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0pt}
-\addtolength{\headheight}{0.5pt}
-\fancypagestyle{plain}{
-\fancyhead{}
-\renewcommand{\headrulewidth}{0pt}
-}
-
-\usepackage{sectsty}
-\chapterfont{\fontfamily{pag}\selectfont} %% for chapter if you want
-\sectionfont{\fontfamily{pag}\selectfont}
-\subsectionfont{\fontfamily{pag}\selectfont}
-\subsubsectionfont{\fontfamily{pag}\selectfont}
-
-\renewcommand{\labelenumi}{\arabic{enumi}. }
-\renewcommand{\labelenumii}{\labelenumi\alph{enumii}) }
-\renewcommand{\labelenumiii}{\labelenumii\roman{enumiii}: }
-\begin{document}
 
 	
 	
@@ -112,7 +32,7 @@
 	\hline
 
 	%Autor y fecha
-	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
 	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
 	\textbf{Versión}} & 1.0 \tabularnewline
 	\hline
@@ -172,7 +92,7 @@
 	\hline
 
 	%Autor y fecha
-	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
 	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
 	\textbf{Versión}} & 1.0 \tabularnewline
 	\hline
@@ -232,7 +152,7 @@
 	\hline
 
 	%Autor y fecha
-	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
 	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
 	\textbf{Versión}} & 1.0 \tabularnewline
 	\hline
@@ -267,7 +187,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Asignar/Modificar Dieta-medicamentos-régimen de ingesta a paciente}	& \multicolumn{2}{p{39pt}|}{\textbf{CU4}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Asignar/Modificar Dieta-medicamentos-régimen de ingesta a paciente}	& \multicolumn{2}{p{39pt}|}{\textbf{CU4-5}}\tabularnewline
 
 	\hline
 
@@ -292,7 +212,7 @@
 	\hline
 
 	%Autor y fecha
-	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
 	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
 	\textbf{Versión}} & 1.0 \tabularnewline
 	\hline
@@ -327,7 +247,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Asignar hábitos de vida la paciente}	& \multicolumn{2}{p{39pt}|}{\textbf{CU5}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Asignar hábitos de vida la paciente}	& \multicolumn{2}{p{39pt}|}{\textbf{CU6}}\tabularnewline
 
 	\hline
 
@@ -352,7 +272,7 @@
 	\hline
 
 	%Autor y fecha
-	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
 	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
 	\textbf{Versión}} & 1.0 \tabularnewline
 	\hline
@@ -387,7 +307,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Permitir la solicitud de una cita}	& \multicolumn{2}{p{39pt}|}{\textbf{CU6}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Permitir la solicitud de una cita}	& \multicolumn{2}{p{39pt}|}{\textbf{CU7}}\tabularnewline
 
 	\hline
 
@@ -412,7 +332,7 @@
 	\hline
 
 	%Autor y fecha
-	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
 	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
 	\textbf{Versión}} & 1.0 \tabularnewline
 	\hline
@@ -447,7 +367,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Modificar/Cancelar Cita para el cliente}	& \multicolumn{2}{p{39pt}|}{\textbf{CU7}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Modificar/Cancelar Cita para el cliente}	& \multicolumn{2}{p{39pt}|}{\textbf{CU8-9}}\tabularnewline
 
 	\hline
 
@@ -472,7 +392,7 @@
 	\hline
 
 	%Autor y fecha
-	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
 	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
 	\textbf{Versión}} & 1.0 \tabularnewline
 	\hline
@@ -507,7 +427,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Modificación de cita por parte del médico}	& \multicolumn{2}{p{39pt}|}{\textbf{CU8}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Modificación de cita por parte del médico}	& \multicolumn{2}{p{39pt}|}{\textbf{CU10}}\tabularnewline
 
 	\hline
 
@@ -532,7 +452,7 @@
 	\hline
 
 	%Autor y fecha
-	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
 	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
 	\textbf{Versión}} & 1.0 \tabularnewline
 	\hline
@@ -569,7 +489,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Modificación de la lista de espera}	& \multicolumn{2}{p{39pt}|}{\textbf{CU9}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Modificación de la lista de espera}	& \multicolumn{2}{p{39pt}|}{\textbf{CU11}}\tabularnewline
 
 	\hline
 
@@ -594,7 +514,7 @@
 	\hline
 
 	%Autor y fecha
-	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
 	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
 	\textbf{Versión}} & 2.0 \tabularnewline
 	\hline
@@ -629,7 +549,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Asignación de prueba médica a paciente}	& \multicolumn{2}{p{39pt}|}{\textbf{CU1}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Asignación de prueba médica a paciente}	& \multicolumn{2}{p{39pt}|}{\textbf{CU12}}\tabularnewline
 
 	\hline
 
@@ -654,7 +574,7 @@
 	\hline
 
 	%Autor y fecha
-	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
 	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
 	\textbf{Versión}} & 1.0 \tabularnewline
 	\hline
@@ -686,4 +606,3 @@
 
 
 
-\end{document}
