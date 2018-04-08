@@ -1,0 +1,20 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Personal sanitario" as ps
+actor "Paciente" as p
+actor "Personal administrativo" as pa
+actor "Sistema" as s
+
+rectangle "Gestión de instalaciones y aparatos de prueba médica" {
+  pa -- (Asignación de una instalación a un paciente)
+
+  pa -- (Modificación de la ocupación de una instalación)
+
+  pa -- (Asignación de turnos y espacios de limpieza)
+
+  pa -- (Asignación de fecha de revisión de instalaciones y aparatos médicos)
+}
+
+@enduml
