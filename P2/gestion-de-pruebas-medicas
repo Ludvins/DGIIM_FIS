@@ -1,0 +1,24 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Personal sanitario" as ps
+actor "Paciente" as p
+actor "Personal administrativo" as pa
+actor "Sistema" as s
+
+rectangle "Gestión de pruebas médicas" {
+ ps -- (Consulta de resultados de una prueba)
+ p -- (Consulta de resultados de una prueba)
+
+ ps -- (Inserción de datos sobre una prueba)
+
+ ps -- (Modificación de datos sobre una prueba)
+ pa -- (Modificación de datos sobre una prueba)
+
+ pa -- (Borrado de pruebas)
+
+ s -- (Envío de notificación tras modificación de datos sobre una prueba)
+}
+
+@enduml
