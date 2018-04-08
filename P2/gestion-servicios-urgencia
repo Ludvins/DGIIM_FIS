@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+
+actor "Personal sanitario" as ps
+actor "Paciente" as p
+actor "Personal administrativo" as pa
+actor "Sistema" as s
+
+rectangle "Gestión de instalaciones y aparatos de prueba médica" {
+  pa -- (Asignación de cita urgente a un paciente)
+  ps -- (Asignación de cita urgente a un paciente)
+
+  pa -- (Priorización de pacientes en la sala de espera)
+  ps --	(Priorización de pacientes en la sala de espera)
+
+  pa -- (Control del censo de urgencias)
+  ps -- (Control del censo de urgencias)
+}
+
+@enduml
