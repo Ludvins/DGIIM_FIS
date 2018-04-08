@@ -1,0 +1,21 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor "Personal Administrativo" as PA
+actor Medicos as ME
+actor Cliente as C
+
+rectangle "Citas" {
+
+  C  --  (Solicitud de cita)
+  C  --  (Modificar/Cancelar una cita)
+  ME --  (Modificar/Cancelar una cita por el médico)
+  PA --  (Gestión de la lista de espera)
+
+  (Solicitud de cita) -- ME
+  (Modificar/Cancelar una cita) -- ME
+  (Modificar/Cancelar una cita por el médico) -- C
+  (Gestión de la lista de espera) -- C
+  
+}
+@enduml

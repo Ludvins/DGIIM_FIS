@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+skinparam packageStyle rectangle
+actor "Personal Administrativo" as PA
+actor Medicos as ME
+actor Cliente as C
+
+rectangle "Gestion de Enfermos" {
+  PA --  (Ingreso de paciente en habitación) 
+  PA --  (Modificación de sala de paciente) 
+  ME --  (Dar de Alta a paciente)
+  ME --  (Asignar y modificar dieta y régimen de ingesta a un paciente)
+  ME --  (Asignar y modificar recomendaciones sobre hábitos de vida a un paciente)
+
+  (Asignar y modificar dieta y régimen de ingesta a un paciente) -- C
+  (Asignar y modificar recomendaciones sobre hábitos de vida a un paciente) -- C
+  (Dar de Alta a paciente) -- C
+  (Modificación de sala de paciente) -- C
+  (Ingreso de paciente en habitación) -- C
+  
+}
+@enduml
