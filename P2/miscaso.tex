@@ -1,0 +1,689 @@
+\documentclass[10pt,a4paper,spanish]{report}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsthm}
+\usepackage{amsfonts, amssymb, latexsym}
+\usepackage{enumerate}
+\usepackage[official]{eurosym}
+\usepackage{graphicx}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{pseudocode}
+\usepackage[all]{xy}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.5}
+
+% a4large.sty -- fill an A4 (210mm x 297mm) page
+% Note: 1 inch = 25.4 mm = 72.27 pt
+%       1 pt = 3.5 mm (approx)
+
+% vertical page layout -- one inch margin top and bottom
+\topmargin      0 mm    % top margin less 1 inch
+\headheight     0 mm    % height of box containing the head
+\headsep       10 mm    % space between the head and the body of the page
+\textheight   250 mm
+\footskip      14 mm    % distance from bottom of body to bottom of foot
+
+% horizontal page layout -- one inch margin each side
+%\oddsidemargin    0   mm    % inner margin less one inch on odd pages
+%\evensidemargin   0   mm    % inner margin less one inch on even pages
+%\textwidth      159.2 mm    % normal width of text on page
+
+\usepackage[math]{iwona}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+
+
+
+\definecolor{webgreen}{rgb}{0, 0.5, 0} % less intense green
+\definecolor{webblue}{rgb}{0, 0, 0.5}  % less intense blue
+\definecolor{webred}{rgb}{0.5, 0, 0}   % less intense red
+\definecolor{dblackcolor}{rgb}{0.0,0.0,0.0}
+\definecolor{dbluecolor}{rgb}{.01,.02,0.7}
+\definecolor{dredcolor}{rgb}{0.8,0,0}
+\definecolor{dgraycolor}{rgb}{0.30,0.3,0.30}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\pagestyle{fancy}
+
+\renewcommand{\chaptermark}[1]{%
+\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{%
+\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt}
+\fancypagestyle{plain}{
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+}
+
+\usepackage{sectsty}
+\chapterfont{\fontfamily{pag}\selectfont} %% for chapter if you want
+\sectionfont{\fontfamily{pag}\selectfont}
+\subsectionfont{\fontfamily{pag}\selectfont}
+\subsubsectionfont{\fontfamily{pag}\selectfont}
+
+\renewcommand{\labelenumi}{\arabic{enumi}. }
+\renewcommand{\labelenumii}{\labelenumi\alph{enumii}) }
+\renewcommand{\labelenumiii}{\labelenumii\roman{enumiii}: }
+\begin{document}
+
+	
+	
+		\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Permitir ingresar paciente en cama/habitación}	& \multicolumn{2}{p{39pt}|}{\textbf{CU1}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Cliente, Personal Administrativo}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Primario}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{} & \multicolumn{5}{p{84pt}|}{Modificar habitación/cama del cliente}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{El cliente debe padecer alguna enfermedad y debe haber espacio libre}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{El cliente tendrá asignada una habitación y habrá una habitación libre menos}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Dar una habitación a un cliente que la solicita o la necesita
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			El cliente o alguna persona en nombre del cliente solicitará una habitación, el personal administrativo solicitará al sistema que se le asigne una habitación al paciente , el sistema buscará esta habitación y se la comunicará al personal.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+	
+	
+	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Modificar sala del cliente}	& \multicolumn{2}{p{39pt}|}{\textbf{CU2}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Cliente/Médico, Personal administrativo}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Secundario}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{Que el cliente esté ya en una sala} & \multicolumn{5}{p{84pt}|}{}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Se necesita que el cliente siga enfermo, que haya salas disponibles y que el cliente esté ya en una sala}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Que la habitación anterior quede libre, y haya otra diferente ocupada}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Cambiar de habitación a paciente
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			Se solicitará por motivo justificado que a un cliente se le cambie la habitación en la que está. El personal administrativo le pedirá al sistema que lo haga y el sistema hará la labor de dejar la sala anterior libre, buscar una nueva y comunicarla al personal administrativo.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+
+	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Permitir dar de alta a un paciente ingresado}	& \multicolumn{2}{p{39pt}|}{\textbf{CU3}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Médico}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Primario, Esencial}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{Indicamos que requisitos se pueden incluir dentro} & \multicolumn{5}{p{84pt}|}{CU que tienen relación con este}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{El paciente debe estar ingresado y con una habitación asignada}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{El paciente ya no estará en el sistema como enfermo, y habrá una habitación libre más.}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Indicar que el paciente ya no está en el hospital
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			El médico, tras comprobar que el paciente puede irse, indicará al sistema que eliminte al paciente de los pacientes que están en ese momento en el hospital. El sistema eliminará al paciente de esta lista y marcará la sala en la que estaba el paciente como "libre".
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+
+	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Asignar/Modificar Dieta-medicamentos-régimen de ingesta a paciente}	& \multicolumn{2}{p{39pt}|}{\textbf{CU4}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Médico}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Secundario}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{Puede que el paciente ya tenga una dieta asignada} & \multicolumn{5}{p{84pt}|}{}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{El paciente deberá estar con una sala asignada y marcado en su ficha como "enfermo actualmente"}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{En la ficha del paciente estará la dieta-medicamentos asignados al paciente para que este o el médico puedan consultarlos}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Se pretende que el paciente y el médico tengan guardada la información sobre la dieta-medicamentos-régimen que debe seguir el paciente
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			El médico introducirá en el sistema los datos que crea convenientes para el paciente y el sistema los asignará a la ficha del paciente, para mostrarlos cuando sea necesario.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+
+	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Asignar hábitos de vida la paciente}	& \multicolumn{2}{p{39pt}|}{\textbf{CU5}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Médico}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Opcional}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{El paciente puede tener asignados dieta-régimen de ingesta-medicamentos} & \multicolumn{5}{p{84pt}|}{Asignar/Modificar medicamentos-régimen de ingesta-dieta a paciente}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{El paciente debe estar en el sistema y puede que se le haya dado el alta}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{En la ficha del paciente habrá algunos hábitos de vida recomendados}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Guardar en la ficha del paciente hábitos de vida recomendados para el mismo.
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			El médico introducirá en el sistema los hábitos de vida que el paciente deberá seguir. El sistema lo almacenará y podrá mostrarlos en la ficha del paciente.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+
+	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Permitir la solicitud de una cita}	& \multicolumn{2}{p{39pt}|}{\textbf{CU6}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Cliente}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Esencial, Primario}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{La cita será la primera posible, si no es buena para el cliente, tendrá que solicitar una modificación} & \multicolumn{5}{p{84pt}|}{}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Debe haber médicos y horas disponibles para poder asignar la cita }\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{El cliente habrá solicitado una cita que esperará a ser aceptada}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Pedir al sistema que asigne una cita al paciente
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			El cliente solicitará una cita, el sistema comprobará cuándo es la próxima cita disponible y le indicará al cliente cuándo será su cita.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+
+	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Modificar/Cancelar Cita para el cliente}	& \multicolumn{2}{p{39pt}|}{\textbf{CU7}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Médico, Paciente}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Opcional}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{Debe haber una citas programadas en el sistema } & \multicolumn{5}{p{84pt}|}{Permitir la solicitud de una cita}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{El cliente debe tener ya al menos una cita asignada}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Se habrá cambiado el estado de la cita señalada por el cliente}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Cambiar una cita si no es buena para el cliente.
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			El cliente consultará sus citas en el sistema y solicitará una cancelación o modificación de una de sus citas en el sistema. El sistema cancelará la cita si asi lo desea el cliente, o buscará otro hueco para el cliente si este quiere cambiar la fecha/hora de la cita.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+
+	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Modificación de cita por parte del médico}	& \multicolumn{2}{p{39pt}|}{\textbf{CU8}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Médico}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Secundario}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{Se debe garantizar que la cita sea buena para el cliente} & \multicolumn{5}{p{84pt}|}{Modificación de cita para el cliente}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{El médico debe tener asignada la cita que quiere modificar y debe tener motivo justificado.}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{La cita cambiará de fecha y se comunicará al cliente.}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Que el médico pueda modificar las citas con los clientes
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			El médico solicitará la modificación de la cita, aportando la justificación de la misma. Si la justificación es aceptada, el sistema buscará una nueva fecha para la cita y se informará al cliente.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+
+
+	
+	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Modificación de la lista de espera}	& \multicolumn{2}{p{39pt}|}{\textbf{CU9}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Personal administrativo, médico}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Primario}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{En la lista de espera estarán los pacientes ordenados por orden de urgencia a ser atendidos} & \multicolumn{5}{p{84pt}|}{Asignación-Modificación de citas}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Cuando se modifique, debe haber pacientes por delante del paciente al que se le aumentará la prioridad.}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{El paciente será atendido por el centro antes que los que queden por detrás de él en la lista de espera}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 2.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Cambiar prioridad del paciente en la lista de espera
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			Se tomará el nombre de un paciente y se le indicará al sistema , por parte de un médico o de un administrativo, que aumente o disminuya la prioridad en la lista de espera de un paciente,según sea su grado de enfermedad o cambie repentinamente este grado.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+
+\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Asignación de prueba médica a paciente}	& \multicolumn{2}{p{39pt}|}{\textbf{CU1}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Médico, personal administrativo}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Primario}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{El paciente deberá tener una enfermedad} & \multicolumn{5}{p{84pt}|}{Modificación de la lista de espera}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{El cliente deberá haber tenido una cita con el médico y este le deberá haber recomendado una prueba médica}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{El cliente tendrá una cita para prueba médica asignada}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 8 Abril & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Dar una cita para una prueba médica a un cliente
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			Después de una cita en la consulta médica, el médico si considera que el paciente va a necesitar una prueba médica concreta, acudirá al sistema y solicitará que el sistema asigne una cita para una prueba médica a este cliente. El sistema buscará la cita más próxima para el cliente y se la asignará.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+
+
+
+\end{document}
