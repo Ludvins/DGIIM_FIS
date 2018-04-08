@@ -1,36 +1,82 @@
-% Created 2018-04-06 vie 19:40
-% Intended LaTeX compiler: pdflatex
-\documentclass[11pt]{article}
+\documentclass[10pt,a4paper,spanish]{report}
+
+\usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+\usepackage{amsmath, amsthm}
+\usepackage{amsfonts, amssymb, latexsym}
+\usepackage{enumerate}
+\usepackage[official]{eurosym}
 \usepackage{graphicx}
-\usepackage{grffile}
-\usepackage{longtable}
-\usepackage{wrapfig}
-\usepackage{rotating}
-\usepackage[normalem]{ulem}
-\usepackage{amsmath}
-\usepackage{textcomp}
-\usepackage{amssymb}
-\usepackage{capt-of}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{pseudocode}
+\usepackage[all]{xy}
 \usepackage{hyperref}
-\author{Laura Gómez Garrido, Daniel Pozo Escalona\\
-Luis Ortega Andrés, Javier Sáez Maldonado}
-\date{\today}
-\title{Descripción de Autores y Casos de Uso}
-\hypersetup{
- pdfauthor={Laura Gómez Garrido, Daniel Pozo Escalona\\
-Luis Ortega Andrés, Javier Sáez Maldonado},
- pdftitle={Descripción de Autores y Casos de Uso},
- pdfkeywords={},
- pdfsubject={},
- pdfcreator={Emacs 25.3.1 (Org mode 9.1.2)}, 
- pdflang={English}}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.5}
+
+% a4large.sty -- fill an A4 (210mm x 297mm) page
+% Note: 1 inch = 25.4 mm = 72.27 pt
+%       1 pt = 3.5 mm (approx)
+
+% vertical page layout -- one inch margin top and bottom
+\topmargin      0 mm    % top margin less 1 inch
+\headheight     0 mm    % height of box containing the head
+\headsep       10 mm    % space between the head and the body of the page
+\textheight   250 mm
+\footskip      14 mm    % distance from bottom of body to bottom of foot
+
+% horizontal page layout -- one inch margin each side
+%\oddsidemargin    0   mm    % inner margin less one inch on odd pages
+%\evensidemargin   0   mm    % inner margin less one inch on even pages
+%\textwidth      159.2 mm    % normal width of text on page
+
+\usepackage[math]{iwona}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+
+\definecolor{webgreen}{rgb}{0, 0.5, 0} % less intense green 
+\definecolor{webblue}{rgb}{0, 0, 0.5}  % less intense blue
+\definecolor{webred}{rgb}{0.5, 0, 0}   % less intense red
+\definecolor{dblackcolor}{rgb}{0.0,0.0,0.0}
+\definecolor{dbluecolor}{rgb}{.01,.02,0.7}
+\definecolor{dredcolor}{rgb}{0.8,0,0}
+\definecolor{dgraycolor}{rgb}{0.30,0.3,0.30}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\pagestyle{fancy}
+
+\renewcommand{\chaptermark}[1]{%
+\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{%
+\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt}
+\fancypagestyle{plain}{
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+}
+
+\usepackage{sectsty}
+\chapterfont{\fontfamily{pag}\selectfont} %% for chapter if you want
+\sectionfont{\fontfamily{pag}\selectfont}
+\subsectionfont{\fontfamily{pag}\selectfont}
+\subsubsectionfont{\fontfamily{pag}\selectfont}
+
+\renewcommand{\labelenumi}{\arabic{enumi}. }
+\renewcommand{\labelenumii}{\labelenumi\alph{enumii}) }
+\renewcommand{\labelenumiii}{\labelenumii\roman{enumiii}: }
 \begin{document}
-
-\maketitle
-\tableofcontents
-
 
 
 
@@ -310,4 +356,432 @@ Importancia & Media & Estabilidad & Alta\\
 \item Comentarios:
 \end{itemize}
 Si es el paciente el que solicita cambiar de sala, el personal administrativo deberá consultarle al paciente los motivos por los que solicita el cambio de sala y comprobar si son motivos suficientes para el cambio.
+
+
+		\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Modificacion y borrado de usuarios del sistema}	& \multicolumn{2}{p{39pt}|}{\textbf{34}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Tipo del caso de uso Primario, Secundario u Opcional \textbar{} Esencial o Real}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{Creacion de nuevos usuarios en el sistema y asignacion de permisos a usuarios del sistema} & \multicolumn{5}{p{84pt}|}{}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Se debe haber realizado un cambio en la situacion de trabajo de un usuario para su posible modificación.}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Ante un cambio de un usuario, se deberan establecer los nuevos permisos de este.}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 08-04 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Tener un control de los usuarios que se encuentran en el sistema.
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			El sistema debe gestionar la creación o borrado de un usuario cuando sea necesario, asi como ser capaz de modificar un usuario ya existente en el sistema.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+	
+		\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Emision de facturas a los pacientes}	& \multicolumn{2}{p{39pt}|}{\textbf{35}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Pacientes}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Primario}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{Registro de cobros de las facturas y envio de recordatorio de pago de facturas.} & \multicolumn{5}{p{84pt}|}{Registro de cobros y pagos de las facturas.}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Se debe haber realizado el pago por parte del paciente de las facturas pertinentes.}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Registro del pago, no se deben enviar mas recordatorios de pago una vez realizado este.}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 08-04 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Administrar el pago de las facturas enviadas a los pacientes.
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			El sistema debe encargarse de administrar y registrar el pago de las facturas de los pacientes, además, se encargara del envio de recordatorios en caso de que el pago no se haya realizado pasada la fecha asignada.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+	
+	
+
+	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Pago de facturas a proveedores}	& \multicolumn{2}{p{39pt}|}{\textbf{36}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Proveedores}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Real}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{Registro de pago de facturas} & \multicolumn{5}{p{84pt}|}{Registor de cobro y pago de las facturas}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Se debe haber realizado un pedido a un proveedor, el pedido debe ser correcto.}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Se debe ajustar el capital tras realizar el pago de la factura.}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 08-04 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Realizar el pago de los suministros y productos adquiridos de los proveedores.
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			Se han de pagar las facturas pendientes con los proveedores por su servicio prestado al reabastecer los suministros del centro, además, se debe llevar un registro de estos pagos.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+	
+	
+	
+	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Control de stock, inventario y consumo}	& \multicolumn{2}{p{39pt}|}{\textbf{37}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Real}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{Registro de los suministros que hay que adquirir} & \multicolumn{5}{p{84pt}|}{}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Es necesario que se haya producido el uso o consumo de un suministro.}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{La necesidad readquirir aquellos suministros utilizados.}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 08-04 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Tener el control total de los suministros y el inventario utilizado en el centro.
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			Se debe saber en todo momento y detalle el inventario del centro. Ante el uso de un suministro o la falta de alguno, el sistema debe ser capaz de registrar la necesidad de adquirir mas.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+	
+	
+	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Asignacion de turnos y guardias}	& \multicolumn{2}{p{39pt}|}{\textbf{38}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Personal}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Primario}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{Asignación de turnos para el personal y asignación de guardias} & \multicolumn{5}{p{84pt}|}{}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{El personal a asignar debe estar disponible en el sistema.}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Una vez asignado un turno o guardia, no se puede asignar otro a la misma hora.}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 08-04 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Organizar los horarios de trabajo y de guardias de cada uno de los integrantes del personal.
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			El sistema debe poder organizar los horarios necesarios, tanto regulares como de guardias, teniendo en cuenta que el msimo personal no puede tener dos turnos asignados a la misma hora.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+	
+	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Control de las vacaciones del personal}	& \multicolumn{2}{p{39pt}|}{\textbf{39}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Personal}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Esencial}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{} & \multicolumn{5}{p{84pt}|}{Asignacion de guardias y de turnos}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Haber trabajado las horas estipuladas necesarias para disponer de dias libres.}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{No se deben poder asignar turnos o guardias a aquel personal que se encuentre en periodo vacacional.}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Grupo 9 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 08-04 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+			Proporcionar al personal de un periodo de descanso de sus funciones.
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			Facilitar a todo integrante del personal un periodo vacacional de descanso.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+	
+	
+	\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Pago al personal}	& \multicolumn{2}{p{39pt}|}{\textbf{40}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Personal a ser pagado}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Tipo del caso de uso Primario, Secundario u Opcional \textbar{} Esencial o Real}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{Registro de pago al personal} & \multicolumn{5}{p{84pt}|}{}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{El personal correspondiente ha realizado correctamente el trabajo, y no se ha producido ningún incidente .}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Todo el personal ha recibido el salario correspondiente.}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} &  Grupo 9 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 08-04 & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Proposito} \tabularnewline \hline
+	Realizar el pago correspondiente al indicado en su contrato a cada integrante del personal.
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+		El sistema debe ser capaz de realizar el pago a cada uno de los integrantes del personal, teniendo en cuenta los diferentes salarios de cada uno.
+		Además debe dejar registro del pago realizado.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+	
+
+
 \end{document}
