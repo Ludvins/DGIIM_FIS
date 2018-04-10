@@ -84,32 +84,32 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Nombre del CU}	& \multicolumn{2}{p{39pt}|}{\textbf{Identificador}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Iniciar consulta}	& \multicolumn{2}{p{39pt}|}{\textbf{CU1}}\tabularnewline
 
 	\hline
 
 	%Listado de actores
-	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Listado de los actores participantes en el CU Podemos indicar quien es el que inicia el CU usando (I)}\tabularnewline
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Paciente, Sanitario}\tabularnewline
 	\hline
 
 	%Tipo de CU
-	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Tipo del caso de uso Primario, Secundario u Opcional \textbar{} Esencial o Real}\tabularnewline
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Principal,real}\tabularnewline
 	\hline
 
 	%Requisitos del CU
-	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{Indicamos que requisitos se pueden incluir dentro} & \multicolumn{5}{p{84pt}|}{CU que tienen relación con este}\tabularnewline
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{El paciente deberá sentir algun tipo de molestia} & \multicolumn{5}{p{84pt}|}{Crear HC, Abrir HC}\tabularnewline
 	\hline
 
 	%Precondiciones
-	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Condiciones sobre el estado del sistema que tienen	que ser ciertas para que se pueda realizar el CU}\tabularnewline
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{El paciente debe haber solicitado una cita y se le debe haber concedido}\tabularnewline
 	\hline
 
 	%Postcondiciones
-	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Efectos que de forma inmediata tiene la realización	del CU sobre el estado del sistema}\tabularnewline
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{La cita entre el paciente y el sanitario ha comenzado}\tabularnewline
 	\hline
 
 	%Autor y fecha
-	\textbf{Autor} & Grupo 9  & \multicolumn{2}{p{30pt}|}{
+	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
 	\textbf{Fecha}} & \today & \multicolumn{2}{p{30pt}|}{
 	\textbf{Versión}} & 1.0 \tabularnewline
 	\hline
@@ -121,7 +121,7 @@
 	\begin{tabular}{|>{\raggedright}p{337pt}|}
 		\hline
 		\textbf{Propósito} \tabularnewline \hline
-			Rellenar aquí
+			Empezar la cita para tratar de hallar la enfermedad del paciente
 		\tabularnewline
 		\hline
 	\end{tabular}
@@ -132,7 +132,7 @@
 		\hline
 		\textbf{Resumen}\tabularnewline
 		\hline
-			Rellenar aquí
+			Tras la solicitud y concesión de la cita, el paciente llegará a la consulta y entrará a la sala donde se le indique para comenzar la conversación con el médico.
 		\tabularnewline
 		\hline
 	\end{tabular}
@@ -145,18 +145,14 @@
 		\multicolumn{4}{|p{301pt}|}{
 		\textbf{Curso normal (básico)}}\tabularnewline
 		\hline
-		\centering 1 & Actor 1: Acción realizada por el actor & \centering  & \tabularnewline
+		\centering 1 & Paciente: Llega al hospital & \centering  2 & Indica la sala al paciente\tabularnewline
 		\hline
-		\centering 2 & Actor 2: Acción realizada por el actor & \centering 3 &  Acción realizada por el sistema\tabularnewline
+		\centering 3 & Paciente: Entra en la sala marcada por el sistema & \centering  &  \tabularnewline
 		\hline
-		\centering  &  & \centering  & \tabularnewline
+		\centering 4& Médico: Comienza la conversación con el paciente & \centering 5 & El sistema marca la cita como comenzada\\ Include CU3- Abrir HC\\
+\textbf{Punto de extensión:} Crear HC\tabularnewline
 		\hline
-		\centering  &  & \centering N & Cuando se realiza la inclusión de otro caso de uso lo representaremos de la forma. Incluir (CU\_identificador. CU\_Nombre)\tabularnewline
-		\hline
-		\centering  &  & \centering  & \tabularnewline
-		\hline
-		\centering  & Se incluyen la secuencia de acciones realizadas por los actores que intervienen en el CU , se usaran, frases 	cortas, que describan el dialogo entre los actores y el sistema \linebreak{} Se pueden añadir referencias a elementos de un boceto del Interfaz del Usuario & \centering  & Se incluyen la secuencia de acciones que realiza el sistema ante las acciones de los actores \tabularnewline
-		\hline
+
 	\end{tabular}
 
 	\vspace{0.5cm}
@@ -168,12 +164,15 @@
 		\multicolumn{5}{|p{337pt}|}{\textbf{Cursos alternos}}\tabularnewline
 		\hline
 		\centering \textbf{1a} & \multicolumn{4}{p{278pt}|}{
-		 Descripción de la secuencia de acciones alternas a la acción 1 del Curso Normal}\tabularnewline
+		 El médico no está en el hospital}\tabularnewline
 		\hline
-		\centering \textbf{1b} & \multicolumn{4}{p{278pt}|}{
+		\centering \textbf{1b} & \multicolumn{4}{p{278pt}|}{ El sistema indica al paciente que su cita es pospuesta e intenta reasignar una cita
 		}\tabularnewline
 		\hline
-		\centering  & \multicolumn{4}{p{278pt}|}{Secuencia de los cursos alternos del CU}\tabularnewline
+		\centering \textbf{3b} & \multicolumn{4}{p{278pt}|}{El médico no ha terminado su cita anterior.}\tabularnewline
+		\hline
+		\hline
+		\centering \textbf{3c} & \multicolumn{4}{p{278pt}|}{El sistema pospone la hora de la cita hasta que termine la cita actual y el paciente debe esperar.}\tabularnewline
 		\hline
 	\end{tabular}
 	\vspace{0.5cm}
@@ -185,21 +184,20 @@
 		\hline
 		
 		 \multicolumn{2}{|p{68pt}|}{
-		\textbf{Frecuencia esperada}} & Numero de	veces que se realiza el CU por unidad de tiempo \quad & \textbf{Rendimiento} & 
-		Rendimiento esperado de la secuencia de acciones del CU \tabularnewline
+		\textbf{Frecuencia esperada}} & Alta \quad & \textbf{Rendimiento} & 
+		Alto \tabularnewline
 		\hline
 		
 		
 		 \multicolumn{2}{|p{68pt}|}{
-		\textbf{Importancia}} & Importancia de este CU en el sistema (vital, alta, moderada, baja) \quad  & \textbf{Urgencia} &
-		Urgencia en la realización de este CU, durante el desarrollo (alta, moderada,
-		baja) \tabularnewline
+		\textbf{Importancia}} & Vital\quad  & \textbf{Urgencia} &
+		Media \tabularnewline
 		\hline
-		\multicolumn{2}{|p{68pt}|}{\textbf{Estado}} & Estado actual del CU en
-		el desarrollo \quad  & \textbf{Estabilidad} &
-		Estabilidad de los requisitos asociados a este CU (alta, moderada, baja) \tabularnewline
+		\multicolumn{2}{|p{68pt}|}{\textbf{Estado}} &  \quad  & \textbf{Estabilidad} &
+		Alta \tabularnewline
 		\hline
 	\end{tabular}
+
 
 	%Comentarios
 	\vspace{0.5cm}
@@ -207,10 +205,9 @@
 		\hline
 		\multicolumn{1}{|p{337pt}|}{\textbf{Comentarios}}\tabularnewline
 		\hline
-		\multicolumn{1}{|p{337pt}|}{Comentarios adicionales sobre este CU} \tabularnewline
+		\multicolumn{1}{|p{337pt}|}{Si al abrir el historial clínico del paciente este no existe, se lanzará un mensaje de error y saltará la ventana de crear un nuevo HC.} \tabularnewline
 		\hline
 	\end{tabular}
-	
 
 \end{document}
 
