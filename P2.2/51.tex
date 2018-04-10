@@ -1,19 +1,20 @@
 
+
 \begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
 	\hline
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Realizar prueba}	& \multicolumn{2}{p{39pt}|}{\textbf{CU-52}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Registrar asistencia a cita}.	& \multicolumn{2}{p{39pt}|}{\textbf{CU-52}}\tabularnewline
 
 	\hline
 
 	%Listado de actores
-	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Sanitario (I) y paciente.}\tabularnewline
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Paciente (I)}\tabularnewline
 	\hline
 
 	%Tipo de CU
-	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Primario y esencial.}\tabularnewline
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Primario y esecial.}\tabularnewline
 	\hline
 
 	%Requisitos del CU
@@ -21,17 +22,17 @@
 	\hline
 
 	%Precondiciones
-	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{El paciente debe haber solicitado una cita para la realización de la prueba.}\tabularnewline
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Es necesario que se haya concertado una cita médica con anterioridad, ya sea por petición del paciente o del médico.}\tabularnewline
 	\hline
 
 	%Postcondiciones
-	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Tras la realización de la prueba, sera necesario realizar el informe correspondiente.}\tabularnewline
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Se confirma la asistencia a la cita y con ello la realización de las pruebas médicas.}\tabularnewline
 	\hline
 
 	%Autor y fecha
 	\textbf{Autor} & Luis Antonio Ortega Andrés & \multicolumn{2}{p{30pt}|}{
 	\textbf{Fecha}} & 10 de abril & \multicolumn{2}{p{30pt}|}{
-	\textbf{Versión}} & 1.1 \tabularnewline
+	\textbf{Versión}} & 1.0 \tabularnewline
 	\hline
 	\end{tabular}
 
@@ -41,7 +42,7 @@
 	\begin{tabular}{|>{\raggedright}p{337pt}|}
 		\hline
 		\textbf{Propósito} \tabularnewline \hline
-			Realizar la prueba médica correspondiente a la cita solicitada por el paciente.
+			Confirmar en el sistema la asistencia del paciente a la cita médica.
 		\tabularnewline
 		\hline
 	\end{tabular}
@@ -52,7 +53,7 @@
 		\hline
 		\textbf{Resumen}\tabularnewline
 		\hline
-			Ante la petición por parte del paciente o que el médico encargado de este lo vea conveniente, se realizará una prueba médica adecuada a cada situación.
+			Ante la petición de una cita médica, será necesario registrar en el sistema la asistencia a dicha cita por parte del paciente.
 		\tabularnewline
 		\hline
 	\end{tabular}
@@ -65,9 +66,7 @@
 		\multicolumn{4}{|p{301pt}|}{
 		\textbf{Curso normal (básico)}}\tabularnewline
 		\hline
-		\centering 1 & Médico: Realiza la prueba al paciente. & \centering  & \tabularnewline
-		\hline
-		\centering 2 & Paciente: Le es realizada la prueba. & \centering  &  \tabularnewline
+		\centering 1 & Paciente: Petición de cita médica. & \centering  & Registro de la cita en el sistema. \tabularnewline
 		\hline
 	\end{tabular}
 
@@ -80,11 +79,10 @@
 		\multicolumn{5}{|p{337pt}|}{\textbf{Cursos alternos}}\tabularnewline
 		\hline
 		\centering \textbf{1a} & \multicolumn{4}{p{278pt}|}{
-		 Debido a fallos en los aparatos médicos, la prueba no puede ser realizada correctamente.}\tabularnewline
+		 No es posible realizar el registro de la cita por un fallo en el sistema o porque ya existe una cita concertada por el mismo paciente a la misma hora dle mismo día.}\tabularnewline
 		\hline
 	\end{tabular}
 	\vspace{0.5cm}
-
 
 	%Otros Datos
 	\begin{tabular}{|>{\raggedright}p{11pt}|>{\raggedright}p{56pt}|>{\raggedright}p{88pt}|>{\raggedright}p{50pt}|>{\raggedright}p{83pt}|}
@@ -94,7 +92,7 @@
 		
 		 \multicolumn{2}{|p{68pt}|}{
 		\textbf{Frecuencia esperada}} & Número actual de pacientes al año.\quad & \textbf{Rendimiento} & 
-		No más de unas horas.\tabularnewline
+		Casi inmediato.\tabularnewline
 		\hline
 		
 		
@@ -111,7 +109,8 @@
 		\hline
 		\multicolumn{1}{|p{337pt}|}{\textbf{Comentarios}}\tabularnewline
 		\hline
-		\multicolumn{1}{|p{337pt}|}{La frecuencia media del caso de uso, será la estimación de que cada paciente realiza una prueba médica al año.} \tabularnewline
+		\multicolumn{1}{|p{337pt}|}{La frecuencia de este caso de uso como el de los que le preceden en la realización de la prueba médica será una estimación de el número de pruebas que se realizan en un año, tomando como esta el número de pacientes actuales.} \tabularnewline
 		\hline
 	\end{tabular}
 	
+
