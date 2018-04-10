@@ -1,16 +1,15 @@
 
-
 \begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
 	\hline
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Informar prueba.}	& \multicolumn{2}{p{39pt}|}{\textbf{CU-53}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Realizar prueba}	& \multicolumn{2}{p{39pt}|}{\textbf{CU-52}}\tabularnewline
 
 	\hline
 
 	%Listado de actores
-	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Médico (I)}\tabularnewline
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Sanitario (I) y paciente.}\tabularnewline
 	\hline
 
 	%Tipo de CU
@@ -18,21 +17,21 @@
 	\hline
 
 	%Requisitos del CU
-	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{} & \multicolumn{5}{p{84pt}|}{}\tabularnewline
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{-} & \multicolumn{5}{p{84pt}|}{-}\tabularnewline
 	\hline
 
 	%Precondiciones
-	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Se debe haber realizado una prueba a un paciente sobre la que realizar el informe.}\tabularnewline
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{El paciente debe haber solicitado una cita para la realización de la prueba.}\tabularnewline
 	\hline
 
 	%Postcondiciones
-	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Se dispone en el sistema del informe resultante del diagnóstico realizado.}\tabularnewline
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Tras la realización de la prueba, sera necesario realizar el informe correspondiente.}\tabularnewline
 	\hline
 
 	%Autor y fecha
 	\textbf{Autor} & Luis Antonio Ortega Andrés & \multicolumn{2}{p{30pt}|}{
 	\textbf{Fecha}} & 10 de abril & \multicolumn{2}{p{30pt}|}{
-	\textbf{Versión}} & 1.1 \tabularnewline
+	\textbf{Versión}} & 1.0 \tabularnewline
 	\hline
 	\end{tabular}
 
@@ -42,7 +41,7 @@
 	\begin{tabular}{|>{\raggedright}p{337pt}|}
 		\hline
 		\textbf{Propósito} \tabularnewline \hline
-			Disponer en el sistema del informe del diagnostico realizado a cada paciente.
+			Realizar la prueba médica correspondiente a la cita solicitada por el paciente.
 		\tabularnewline
 		\hline
 	\end{tabular}
@@ -53,7 +52,7 @@
 		\hline
 		\textbf{Resumen}\tabularnewline
 		\hline
-			Se debe realizar un informe de cada prueba por parte del médico responsable, esto será necesario para la posterior recogida de pruebas por parte del paciente, además del registor resultante en el historial clínico.
+			Ante la petición por parte del paciente o que el médico encargado de este lo vea conveniente, se realizará una prueba médica adecuada a cada situación.
 		\tabularnewline
 		\hline
 	\end{tabular}
@@ -66,9 +65,9 @@
 		\multicolumn{4}{|p{301pt}|}{
 		\textbf{Curso normal (básico)}}\tabularnewline
 		\hline
-		\centering 1 & Médico: Realiza el informe de las pruebas. & \centering  & \tabularnewline
+		\centering 1 & Médico: Realiza la prueba al paciente. & \centering  & \tabularnewline
 		\hline
-		\centering 2 & Médico: Envía informe al sistema. & \centering 3 &  Recibe y almacena el informe.\tabularnewline
+		\centering 2 & Paciente: Le es realizada la prueba. & \centering  &  \tabularnewline
 		\hline
 	\end{tabular}
 
@@ -80,15 +79,12 @@
 		\hline
 		\multicolumn{5}{|p{337pt}|}{\textbf{Cursos alternos}}\tabularnewline
 		\hline
-		\centering \textbf{2a} & \multicolumn{4}{p{278pt}|}{
-		 Debido a errores del sistema, no es posible la subida del informe.}\tabularnewline
-		\hline
-		\centering \textbf{2b} & \multicolumn{4}{p{278pt}|}{
-		El informe presenta errores fatales y no es posible su correcto archivado.
-		}\tabularnewline
+		\centering \textbf{1a} & \multicolumn{4}{p{278pt}|}{
+		 Debido a fallos en los aparatos médicos, la prueba no puede ser realizada correctamente.}\tabularnewline
 		\hline
 	\end{tabular}
 	\vspace{0.5cm}
+
 
 	%Otros Datos
 	\begin{tabular}{|>{\raggedright}p{11pt}|>{\raggedright}p{56pt}|>{\raggedright}p{88pt}|>{\raggedright}p{50pt}|>{\raggedright}p{83pt}|}
@@ -98,15 +94,14 @@
 		
 		 \multicolumn{2}{|p{68pt}|}{
 		\textbf{Frecuencia esperada}} & Número actual de pacientes al año.\quad & \textbf{Rendimiento} & 
-		No más de una semana.\tabularnewline
+		No más de unas horas.\tabularnewline
 		\hline
 		
 		
 		 \multicolumn{2}{|p{68pt}|}{
-		\textbf{Importancia}} & Alta \quad  & \textbf{Urgencia} & Moderada \tabularnewline
+		\textbf{Importancia}} & Alta \quad  & \textbf{Urgencia} & Alta \tabularnewline
 		\hline
-		\multicolumn{2}{|p{68pt}|}{\textbf{Estado}} & - & \textbf{Estabilidad} &
-		Alta \tabularnewline
+		\multicolumn{2}{|p{68pt}|}{\textbf{Estado}} & - & \textbf{Estabilidad} & Alta \tabularnewline
 		\hline
 	\end{tabular}
 
@@ -119,3 +114,4 @@
 		\multicolumn{1}{|p{337pt}|}{La frecuencia media del caso de uso es de una petición de resultados por cada vez que un paciente se realiza una prueba, tomando como estimación que esto ocurre de forma anual.} \tabularnewline
 		\hline
 	\end{tabular}
+	
