@@ -5,7 +5,7 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Registrar asistencia a cita}.	& \multicolumn{2}{p{39pt}|}{\textbf{CU-52}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Pedir cita remoto}	& \multicolumn{2}{p{39pt}|}{\textbf{CU-44}}\tabularnewline
 
 	\hline
 
@@ -14,7 +14,7 @@
 	\hline
 
 	%Tipo de CU
-	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Primario y esecial.}\tabularnewline
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Primario y esencial}\tabularnewline
 	\hline
 
 	%Requisitos del CU
@@ -22,11 +22,11 @@
 	\hline
 
 	%Precondiciones
-	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Es necesario que se haya concertado una cita médica con anterioridad, ya sea por petición del paciente o del médico.}\tabularnewline
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Se debe realizar de forma correcta la petición de cita médica por parte del paciente.}\tabularnewline
 	\hline
 
 	%Postcondiciones
-	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Se confirma la asistencia a la cita y con ello la realización de las pruebas médicas.}\tabularnewline
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Se debe registrar de forma inmediata la cita médica pedida por el paciente.}\tabularnewline
 	\hline
 
 	%Autor y fecha
@@ -42,7 +42,7 @@
 	\begin{tabular}{|>{\raggedright}p{337pt}|}
 		\hline
 		\textbf{Propósito} \tabularnewline \hline
-			Confirmar en el sistema la asistencia del paciente a la cita médica.
+			Permitir al paciente realizar una petición de cita médita de forma remota.
 		\tabularnewline
 		\hline
 	\end{tabular}
@@ -53,7 +53,7 @@
 		\hline
 		\textbf{Resumen}\tabularnewline
 		\hline
-			Ante la petición de una cita médica, será necesario registrar en el sistema la asistencia a dicha cita por parte del paciente.
+			Los pacientes deben tener la posibilidad de realizar una petición de cita médica de forma remota, y ante esta petición el sistema debe ser capaz de registrarlo de forma inmediata y eficiente.
 		\tabularnewline
 		\hline
 	\end{tabular}
@@ -66,7 +66,7 @@
 		\multicolumn{4}{|p{301pt}|}{
 		\textbf{Curso normal (básico)}}\tabularnewline
 		\hline
-		\centering 1 & Paciente: Petición de cita médica. & \centering  & Registro de la cita en el sistema. \tabularnewline
+		\centering 1 & Paciente: Realiza la petición de cita remota. & \centering  &  Registra la cita del paciente. \tabularnewline
 		\hline
 	\end{tabular}
 
@@ -78,7 +78,7 @@
 		\multicolumn{5}{|p{337pt}|}{\textbf{Cursos alternos}}\tabularnewline
 		\hline
 		\centering \textbf{1a} & \multicolumn{4}{p{278pt}|}{
-		 No es posible realizar el registro de la cita por un fallo en el sistema o porque ya existe una cita concertada por el mismo paciente a la misma hora dle mismo día.}\tabularnewline
+		 El paciente intenta registrar una cita ya concertada, luego no es posible realizar la acción.}\tabularnewline
 		\hline
 	\end{tabular}
 	\vspace{0.5cm}
@@ -90,15 +90,17 @@
 		\hline
 		
 		 \multicolumn{2}{|p{68pt}|}{
-		\textbf{Frecuencia esperada}} & Número actual de pacientes al año.\quad & \textbf{Rendimiento} & 
-		Casi inmediato.\tabularnewline
+		\textbf{Frecuencia esperada}} & Número de pacientes actuales por año. \quad & \textbf{Rendimiento} & 
+		Casi inmediato. \tabularnewline
 		\hline
 		
 		
 		 \multicolumn{2}{|p{68pt}|}{
-		\textbf{Importancia}} & Alta \quad  & \textbf{Urgencia} & Alta \tabularnewline
+		\textbf{Importancia}} & Alta. \quad  & \textbf{Urgencia} &
+		Alta. \tabularnewline
 		\hline
-		\multicolumn{2}{|p{68pt}|}{\textbf{Estado}} & - & \textbf{Estabilidad} & Alta \tabularnewline
+		\multicolumn{2}{|p{68pt}|}{\textbf{Estado}} & - \quad  & \textbf{Estabilidad} &
+		Alta \tabularnewline
 		\hline
 	\end{tabular}
 
@@ -108,8 +110,6 @@
 		\hline
 		\multicolumn{1}{|p{337pt}|}{\textbf{Comentarios}}\tabularnewline
 		\hline
-		\multicolumn{1}{|p{337pt}|}{La frecuencia de este caso de uso como el de los que le preceden en la realización de la prueba médica será una estimación de el número de pruebas que se realizan en un año, tomando como esta el número de pacientes actuales.} \tabularnewline
+		\multicolumn{1}{|p{337pt}|}{Sobre la frecuencia esperada, la frecuencia esperada de peciciones de citas en general es que cada paciente concierte una cita al año, luego la cantidad de citas remotas debe ser menor.} \tabularnewline
 		\hline
 	\end{tabular}
-	
-
