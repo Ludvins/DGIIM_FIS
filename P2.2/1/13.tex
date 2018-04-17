@@ -1,0 +1,127 @@
+
+
+\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Consultar horario de consulta}	& \multicolumn{2}{p{39pt}|}{\textbf{CU13}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Usuario del sistema}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Secundario, Real}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{El usuario debe haber hecho login con su nombre de usuario y contraseña} & \multicolumn{5}{p{84pt}|}{}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{El usuario debe estar registrado en el sistema}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{El usuario conocerá su horario de consulta}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Javier Sáez  & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & \today & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Propósito} \tabularnewline \hline
+			El usuario tiene el propósito de conocer su horario de consulta
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			El usuario accede al sistema y le comunica que quiere conocer el horario de consulta. El sistema verifica el tipo de usuario que tiene este usuario y le muestra su horario de consulta.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+	%Plantilla Extendida
+
+	\begin{tabular}{|>{\raggedright}p{11pt}|>{\raggedright}p{138pt}|>{\raggedright}p{10pt}|>{\raggedright}p{140pt}|}
+		\hline
+		\multicolumn{4}{|p{301pt}|}{
+		\textbf{Curso normal (básico)}}\tabularnewline
+		\hline
+		\centering 1 & Usuario: Accede al sistema & \centering 2 & Verifica que las credenciales son correctas \tabularnewline
+		\hline
+		\centering 3 & Usuario: Solicita conocer su horario de consulta & \centering 4 &  Comprueba qué tipo de usuario es y le muestra el horario de consulta\tabularnewline
+		\hline
+		
+	\end{tabular}
+
+	\vspace{0.5cm}
+	\newpage
+
+	%CU Alternos
+	\begin{tabular}{|>{\raggedright}p{11pt}|>{\raggedright}p{56pt}|>{\raggedright}p{91pt}|>{\raggedright}p{46pt}|>{\raggedright}p{83pt}|}
+		\hline
+		\multicolumn{5}{|p{337pt}|}{\textbf{Cursos alternos}}\tabularnewline
+		\hline
+		\centering \textbf{2a} & \multicolumn{4}{p{278pt}|}{
+		 El sistema detecta que el usuario no está registrado en el sistema o que las credenciales no son correctas}\tabularnewline
+		\hline
+		\centering \textbf{2b} & \multicolumn{4}{p{278pt}|}{ El sistema le pide que introduzca correctamente las credenciales, o que cree un nuevo usuario en el sistema si aún no es usuario
+		}\tabularnewline
+		\hline
+		\centering 2c & \multicolumn{4}{p{278pt}|}{El usuario crea una cuenta si no es usuario aún y si lo es, intenta introducir las credenciales correctamente}\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+	%Otros Datos
+	\begin{tabular}{|>{\raggedright}p{11pt}|>{\raggedright}p{56pt}|>{\raggedright}p{88pt}|>{\raggedright}p{50pt}|>{\raggedright}p{83pt}|}
+		\hline
+		\multicolumn{5}{|p{337pt}|}{\textbf{Otros datos}}\tabularnewline
+		\hline
+		
+		 \multicolumn{2}{|p{68pt}|}{
+		\textbf{Frecuencia esperada}} & Baja \quad & \textbf{Rendimiento} & 
+		Alto \tabularnewline
+		\hline
+		
+		
+		 \multicolumn{2}{|p{68pt}|}{
+		\textbf{Importancia}} & Baja \quad  & \textbf{Urgencia} &
+		Baja \tabularnewline
+		\hline
+		\multicolumn{2}{|p{68pt}|}{\textbf{Estado}} & Activo \quad  & \textbf{Estabilidad} &
+		Alta\tabularnewline
+		\hline
+	\end{tabular}
+
+	%Comentarios
+	\vspace{0.5cm}
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\multicolumn{1}{|p{337pt}|}{\textbf{Comentarios}}\tabularnewline
+		\hline
+		\multicolumn{1}{|p{337pt}|}{Si el usuario es creado, el sistema no podrá mostrar el horario de consultas pues el usuario no tendrá aún horario de consulta.} \tabularnewline
+		\hline
+	\end{tabular}
+	
+
+

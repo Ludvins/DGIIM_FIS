@@ -1,0 +1,120 @@
+
+
+\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Cura}	& \multicolumn{2}{p{39pt}|}{\textbf{CU6}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Sanitario}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Primario, Real}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{El médico puede necesitar tiempo para realizar su tarea} & \multicolumn{5}{p{84pt}|}{CU que tienen relación con este}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{El paciente estará marcado como explorado y la exploración debe haber terminado}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Se habrá determinado la enfermedad del cliente}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & \today & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Propósito} \tabularnewline \hline
+			Determinar de forma precisa la enfermedad del paciente
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			El médico, tras haber analizado al paciente, deberá viendo los síntomas y dónde está el problema, determinar la enfermedad e introducirla en el sistema
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+	%Plantilla Extendida
+
+	\begin{tabular}{|>{\raggedright}p{11pt}|>{\raggedright}p{138pt}|>{\raggedright}p{10pt}|>{\raggedright}p{140pt}|}
+		\hline
+		\multicolumn{4}{|p{301pt}|}{
+		\textbf{Curso normal (básico)}}\tabularnewline
+		\hline
+		\centering 1 & Sanitario: Termina la exploración & \centering  & \tabularnewline
+		\hline
+		\centering 2 & Sanitario: Determina la enfermedad y la introduce en el sistema & \centering 3 &  Guarda en el sistema la enfermedad que padece el paciente\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	\newpage
+
+	%CU Alternos
+	\begin{tabular}{|>{\raggedright}p{11pt}|>{\raggedright}p{56pt}|>{\raggedright}p{91pt}|>{\raggedright}p{46pt}|>{\raggedright}p{83pt}|}
+		\hline
+		\multicolumn{5}{|p{337pt}|}{\textbf{Cursos alternos}}\tabularnewline
+		\hline
+		\centering \textbf{2a} & \multicolumn{4}{p{278pt}|}{
+		 El médico no es capaz de determinar la enfermedad}\tabularnewline
+		\hline
+		\centering \textbf{2b} & \multicolumn{4}{p{278pt}|}{ El médico consulta en su base de datos qué tipo de enfermerdad puede ser, y se vuelve al paso 2.
+		}\tabularnewline
+		\hline
+		\centering  3a& \multicolumn{4}{p{278pt}|}{Si aun así el médico sigue sin poder ser capaz de determinar la enfermedad, se pasará al \textbf{CU10}, pasar a un especialista }\tabularnewline
+		\hline
+		\centering  3b& \multicolumn{4}{p{278pt}|}{El sistema anota en su base de datos lo ocurrido, e intentará concertar una cita con el especialista. }\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+	%Otros Datos
+	\begin{tabular}{|>{\raggedright}p{11pt}|>{\raggedright}p{56pt}|>{\raggedright}p{88pt}|>{\raggedright}p{50pt}|>{\raggedright}p{83pt}|}
+		\hline
+		\multicolumn{5}{|p{337pt}|}{\textbf{Otros datos}}\tabularnewline
+		\hline
+		
+		 \multicolumn{2}{|p{68pt}|}{
+		\textbf{Frecuencia esperada}} & Numero de	veces que se realiza el CU por unidad de tiempo \quad & \textbf{Rendimiento} & 
+		Rendimiento esperado de la secuencia de acciones del CU \tabularnewline
+		\hline
+		
+		
+		 \multicolumn{2}{|p{68pt}|}{
+		\textbf{Importancia}} & Alta\quad  & \textbf{Urgencia} &
+		Moderada \tabularnewline
+		\hline
+		\multicolumn{2}{|p{68pt}|}{\textbf{Estado}} & En espera \quad  & \textbf{Estabilidad} &
+		Alta \tabularnewline
+		\hline
+	\end{tabular}
+
+	
+
+
+
