@@ -5,12 +5,12 @@
 	 \textbf{Caso de Uso} &
 
 	%Nombre del CU e identificador
-	\multicolumn{5}{p{155pt}|}{Valoración remota}	& \multicolumn{2}{p{39pt}|}{\textbf{CU-47}}\tabularnewline
+	\multicolumn{5}{p{155pt}|}{Valoración remota de consulta.}	& \multicolumn{2}{p{39pt}|}{\textbf{CU-49}}\tabularnewline
 
 	\hline
 
 	%Listado de actores
-	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Paciente (I).}\tabularnewline
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Paciente (I)}\tabularnewline
 	\hline
 
 	%Tipo de CU
@@ -18,21 +18,21 @@
 	\hline
 
 	%Requisitos del CU
-	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{-} & \multicolumn{5}{p{84pt}|}{Valoración remota de sanitario, valoración remota de consulta y valoraciónremota de unidad de diagnóstico.}\tabularnewline
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{-} & \multicolumn{5}{p{84pt}|}{CU-47}\tabularnewline
 	\hline
 
 	%Precondiciones
-	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Es necesario que el paciente haya accedido a los servicios que desea valorar. }\tabularnewline
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{ - }\tabularnewline
 	\hline
 
 	%Postcondiciones
-	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{ - }\tabularnewline
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{Se almacenará la valoración realizada de la consulta para su después uso.}\tabularnewline
 	\hline
 
 	%Autor y fecha
-	\textbf{Autor} & Luis antonio Ortega Andrés  & \multicolumn{2}{p{30pt}|}{
-	\textbf{Fecha}} & 11 de abril & \multicolumn{2}{p{30pt}|}{
-	\textbf{Versión}} & 1.1 \tabularnewline
+	\textbf{Autor} & Luis Antonio Ortega Andrés & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & 17 de abril & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
 	\hline
 	\end{tabular}
 
@@ -42,7 +42,7 @@
 	\begin{tabular}{|>{\raggedright}p{337pt}|}
 		\hline
 		\textbf{Propósito} \tabularnewline \hline
-			Permitir la valoración de forma remota por parte de los pacientes de los distintos servicios prestados.
+			Permitir la valoración por parte del paciente de un servicio de consulta.
 		\tabularnewline
 		\hline
 	\end{tabular}
@@ -53,7 +53,7 @@
 		\hline
 		\textbf{Resumen}\tabularnewline
 		\hline
-			Se debe prestar a los pacientes de un servicio remoto de valoración donde poder dar su opinión sobre los diferentes servicios que le hayan sido prestados.
+			Dado un servicio de consulta prestado a un paciente, este tiene la posibilidad de realizar una valoración de éste de forma remota.
 		\tabularnewline
 		\hline
 	\end{tabular}
@@ -66,7 +66,7 @@
 		\multicolumn{4}{|p{301pt}|}{
 		\textbf{Curso normal (básico)}}\tabularnewline
 		\hline
-		\centering 1 & Paciente: Realiza la valoración. & \centering  2 & El sistema almacena la información. \tabularnewline
+		\centering 1 & Paciente: Realiza la valoración remota de consulta. & \centering  2 & Almacena la valoración realizada. \tabularnewline
 		\hline
 	\end{tabular}
 
@@ -77,8 +77,8 @@
 		\hline
 		\multicolumn{5}{|p{337pt}|}{\textbf{Cursos alternos}}\tabularnewline
 		\hline
-		\centering \textbf{1a} & \multicolumn{4}{p{278pt}|}{
-		 -}\tabularnewline
+		\centering \textbf{2a} & \multicolumn{4}{p{278pt}|}{
+		 No es posible almacenar la valoracion debido a un fallo en el sistema.}\tabularnewline
 		\hline
 	\end{tabular}
 	\vspace{0.5cm}
@@ -90,17 +90,15 @@
 		\hline
 		
 		 \multicolumn{2}{|p{68pt}|}{
-		\textbf{Frecuencia esperada}} & Un 50\% de las veces que se utilice un servicio por parte de un paciente. \quad & \textbf{Rendimiento} & 
-		Casi-inmediato. \tabularnewline
+		\textbf{Frecuencia esperada}} & 30\% de los pacientes \quad & \textbf{Rendimiento} & 
+		Casi inmediato. \tabularnewline
 		\hline
 		
 		
 		 \multicolumn{2}{|p{68pt}|}{
-		\textbf{Importancia}} & Alta) \quad  & \textbf{Urgencia} &
-		Moderada \tabularnewline
+		\textbf{Importancia}} & Alta \quad  & \textbf{Urgencia} & Moderada \tabularnewline
 		\hline
-		\multicolumn{2}{|p{68pt}|}{\textbf{Estado}} & - \quad  & \textbf{Estabilidad} &
-		Alta \tabularnewline
+		\multicolumn{2}{|p{68pt}|}{\textbf{Estado}} & - \quad  & \textbf{Estabilidad} &	Alta \tabularnewline
 		\hline
 	\end{tabular}
 
@@ -110,7 +108,7 @@
 		\hline
 		\multicolumn{1}{|p{337pt}|}{\textbf{Comentarios}}\tabularnewline
 		\hline
-		\multicolumn{1}{|p{337pt}|}{-} \tabularnewline
+		\multicolumn{1}{|p{337pt}|}{Este caso de uso se refiere a un caso concreto de la valoración remota.} \tabularnewline
 		\hline
 	\end{tabular}
-
+	
