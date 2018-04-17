@@ -1,0 +1,196 @@
+\documentclass[10pt,a4paper,spanish]{report}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath, amsthm}
+\usepackage{amsfonts, amssymb, latexsym}
+\usepackage{enumerate}
+\usepackage[official]{eurosym}
+\usepackage{graphicx}
+\usepackage[usenames, dvipsnames]{color}
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{fancybox}
+\usepackage{pseudocode}
+\usepackage[all]{xy}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\pgfplotsset{compat=1.5}
+
+% a4large.sty -- fill an A4 (210mm x 297mm) page
+% Note: 1 inch = 25.4 mm = 72.27 pt
+%       1 pt = 3.5 mm (approx)
+
+% vertical page layout -- one inch margin top and bottom
+\topmargin      0 mm    % top margin less 1 inch
+\headheight     0 mm    % height of box containing the head
+\headsep       10 mm    % space between the head and the body of the page
+\textheight   250 mm
+\footskip      14 mm    % distance from bottom of body to bottom of foot
+
+% horizontal page layout -- one inch margin each side
+%\oddsidemargin    0   mm    % inner margin less one inch on odd pages
+%\evensidemargin   0   mm    % inner margin less one inch on even pages
+%\textwidth      159.2 mm    % normal width of text on page
+
+\usepackage[math]{iwona}
+\usepackage[T1]{fontenc}
+\usepackage{inconsolata}
+
+\definecolor{webgreen}{rgb}{0, 0.5, 0} % less intense green 
+\definecolor{webblue}{rgb}{0, 0, 0.5}  % less intense blue
+\definecolor{webred}{rgb}{0.5, 0, 0}   % less intense red
+\definecolor{dblackcolor}{rgb}{0.0,0.0,0.0}
+\definecolor{dbluecolor}{rgb}{.01,.02,0.7}
+\definecolor{dredcolor}{rgb}{0.8,0,0}
+\definecolor{dgraycolor}{rgb}{0.30,0.3,0.30}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\pagestyle{fancy}
+
+\renewcommand{\chaptermark}[1]{%
+\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{%
+\markright{\thesection\ #1}}
+\fancyhf{}
+\fancyhead[LE,RO]{\bfseries\thepage}
+\fancyhead[LO]{\bfseries\leftmark}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
+\addtolength{\headheight}{0.5pt}
+\fancypagestyle{plain}{
+\fancyhead{}
+\renewcommand{\headrulewidth}{0pt}
+}
+
+\usepackage{sectsty}
+\chapterfont{\fontfamily{pag}\selectfont} %% for chapter if you want
+\sectionfont{\fontfamily{pag}\selectfont}
+\subsectionfont{\fontfamily{pag}\selectfont}
+\subsubsectionfont{\fontfamily{pag}\selectfont}
+
+\renewcommand{\labelenumi}{\arabic{enumi}. }
+\renewcommand{\labelenumii}{\labelenumi\alph{enumii}) }
+\renewcommand{\labelenumiii}{\labelenumii\roman{enumiii}: }
+
+\begin{document}
+
+\begin{tabular}{|>{\raggedright}p{58pt}|>{\raggedright}p{109pt}|>{\raggedright}p{1pt}|>{\raggedright}p{17pt}|>{\raggedright}p{28pt}|>{\raggedright}p{0pt}|>{\raggedright}p{18pt}|>{\raggedright}p{20pt}|}
+	\hline
+	 \textbf{Caso de Uso} &
+
+	%Nombre del CU e identificador
+	\multicolumn{5}{p{155pt}|}{Explorar paciente}	& \multicolumn{2}{p{39pt}|}{\textbf{CU5}}\tabularnewline
+
+	\hline
+
+	%Listado de actores
+	\textbf{Actores} & \multicolumn{7}{p{194pt}|}{Sanitario, Paciente}\tabularnewline
+	\hline
+
+	%Tipo de CU
+	\textbf{Tipo} & \multicolumn{7}{p{194pt}|}{Primario-Real}\tabularnewline
+	\hline
+
+	%Requisitos del CU
+	\textbf{Referencias} & \multicolumn{2}{p{110pt}|}{El paciente deberá dejarse ser explorado por el médico para encontrar su enfermedad} & \multicolumn{5}{p{84pt}|}{}\tabularnewline
+	\hline
+
+	%Precondiciones
+	\textbf{Precondición} & \multicolumn{7}{p{194pt}|}{Los datos clínicos deben haber sido añadidos y la cita comenzada.}\tabularnewline
+	\hline
+
+	%Postcondiciones
+	\textbf{Postcondición} & \multicolumn{7}{p{194pt}|}{El paciente habrá sido explorado y el sistema marcará como paciente explorado}\tabularnewline
+	\hline
+
+	%Autor y fecha
+	\textbf{Autor} & Javier Sáez & \multicolumn{2}{p{30pt}|}{
+	\textbf{Fecha}} & \today & \multicolumn{2}{p{30pt}|}{
+	\textbf{Versión}} & 1.0 \tabularnewline
+	\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+
+	%Proposito
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Propósito} \tabularnewline \hline
+			Buscar dónde está el problema del paciente
+		\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	%Resumen
+	\begin{tabular}{|>{\raggedright}p{337pt}|}
+		\hline
+		\textbf{Resumen}\tabularnewline
+		\hline
+			El médico, según los síntomas que le haya explicado el paciente, investigará sobre el cuerpo del mismo para ver dónde se sitúan exactamente los problemas del cliente.
+		\tabularnewline
+		\hline
+	\end{tabular}
+	\vspace{0.5cm}
+
+	%Plantilla Extendida
+
+	\begin{tabular}{|>{\raggedright}p{11pt}|>{\raggedright}p{138pt}|>{\raggedright}p{10pt}|>{\raggedright}p{140pt}|}
+		\hline
+		\multicolumn{4}{|p{301pt}|}{
+		\textbf{Curso normal (básico)}}\tabularnewline
+		\hline
+		\centering 1 & Paciente: Indica dolencias al médico & \centering  & \tabularnewline
+		\hline
+		\centering 2 & Sanitario: Explora la zona corporal indicada por el paciente & \centering 3 &  Marca el paciente como explorado\tabularnewline
+		\hline
+	\end{tabular}
+
+	\vspace{0.5cm}
+	\newpage
+
+	%CU Alternos
+	\begin{tabular}{|>{\raggedright}p{11pt}|>{\raggedright}p{56pt}|>{\raggedright}p{91pt}|>{\raggedright}p{46pt}|>{\raggedright}p{83pt}|}
+		\hline
+		\multicolumn{5}{|p{337pt}|}{\textbf{Cursos alternos}}\tabularnewline
+		\hline
+		\centering \textbf{2a} & \multicolumn{4}{p{278pt}|}{
+		 El doctor no encuentra ningún problema en el paciente}\tabularnewline
+		\hline
+		\centering \textbf{2b} & \multicolumn{4}{p{278pt}|}{ El doctor indica al paciente que tendrá que someterese a una prueba específica
+		}\tabularnewline
+		\hline
+
+	\end{tabular}
+	\vspace{0.5cm}
+
+	%Otros Datos
+	\begin{tabular}{|>{\raggedright}p{11pt}|>{\raggedright}p{56pt}|>{\raggedright}p{88pt}|>{\raggedright}p{50pt}|>{\raggedright}p{83pt}|}
+		\hline
+		\multicolumn{5}{|p{337pt}|}{\textbf{Otros datos}}\tabularnewline
+		\hline
+		
+		 \multicolumn{2}{|p{68pt}|}{
+		\textbf{Frecuencia esperada}} & Alta\quad & \textbf{Rendimiento} & 
+		Alto \tabularnewline
+		\hline
+		
+		
+		 \multicolumn{2}{|p{68pt}|}{
+		\textbf{Importancia}} & Alta\quad  & \textbf{Urgencia} &
+		Moderada \tabularnewline
+		\hline
+		\multicolumn{2}{|p{68pt}|}{\textbf{Estado}} & En espera \quad  & \textbf{Estabilidad} &
+		Alta \tabularnewline
+		\hline
+	\end{tabular}
+
+	
+
+\end{document}
+
