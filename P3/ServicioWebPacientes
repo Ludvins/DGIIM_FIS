@@ -1,0 +1,48 @@
+@startuml
+!pragma teoz true
+
+skinparam backgroundColor #EEEBDC
+skinparam handwritten true
+
+skinparam sequence {
+	ArrowColor DeepSkyBlue
+	ActorBorderColor DeepSkyBlue
+	LifeLineBorderColor blue
+	LifeLineBackgroundColor #A9DCDF
+	
+	ParticipantBorderColor DeepSkyBlue
+	ParticipantBackgroundColor DodgerBlue
+	ParticipantFontName Impact
+	ParticipantFontSize 17
+	ParticipantFontColor #A9DCDF
+	
+	ActorBackgroundColor aqua
+	ActorFontColor DeepSkyBlue
+	ActorFontSize 17
+	ActorFontName Aapex
+}
+
+
+actor Paciente as P
+participant "Servicio Web Pacientes" as SW
+
+activate P
+activate SW
+
+P -> SW : 1. PedirCitaRemoto(DNI)
+SW --> P : 1.1. resguardodecita
+
+P -> SW : 2. PedirCambioDeCitaRemoto(DNI)
+SW --> P : 2.2. resguardodecita
+
+P -> SW : 3. AnularCitaRemoto(DNI)
+SW --> P : 3.1. confirmacion
+
+P -> SW : 4. ValoracionRemota(DNI, Valoracion)
+SW --> P : 4.1. confirmacion
+
+
+
+
+
+@enduml
