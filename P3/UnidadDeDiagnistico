@@ -1,5 +1,5 @@
 @startuml
-
+!pragma teoz true
 actor Administrativo
 actor Sanitario
 actor Médico
@@ -29,4 +29,5 @@ UD --> Administrativo : 4.1. resultadosdelaspruebas
 Administrativo --> Paciente : 4.2. DarResultados(resultadosdelaspruebas)
 deactivate Administrativo
 deactivate UD
+deactivate Paciente
 @enduml
