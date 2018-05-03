@@ -1,0 +1,80 @@
+@startuml
+!pragma teoz true
+
+skinparam backgroundColor #EEEBDC
+skinparam handwritten true
+
+skinparam sequence {
+	ArrowColor DeepSkyBlue
+	ActorBorderColor DeepSkyBlue
+	LifeLineBorderColor blue
+	LifeLineBackgroundColor #A9DCDF
+	
+	ParticipantBorderColor DeepSkyBlue
+	ParticipantBackgroundColor DodgerBlue
+	ParticipantFontName Impact
+	ParticipantFontSize 17
+	ParticipantFontColor #A9DCDF
+	
+	ActorBackgroundColor aqua
+	ActorFontColor DeepSkyBlue
+	ActorFontSize 17
+	ActorFontName Aapex
+}
+
+
+actor Paciente as P
+actor "Sistema de Avisos" as SA
+actor Sanitario as Sa
+actor Medico as M
+participant Sistema as Sis
+
+
+activate Sa
+Sa -> P :  IniciarConsulta(paciente)
+activate P
+
+activate Sis
+Sa -> Sis :  AbrirHC(paciente)
+alt PrimeraVisita
+Sis -> P :  CrearHC(paciente)
+end
+Sis --> Sa :  mostrarHC(paciente)
+
+
+Sa -> Sis :  AñadirDatosClínicos(paciente)
+
+deactivate Sis
+
+P --> Sa :  comunicarDolencias(sanitario)
+
+Sa -> P :  ExplorarPaciente(paciente)
+
+Sa -> P :  EncontrarCura(paciente)
+
+
+
+activate M
+Sa --> M :  ComunicarCura(cura,medico)
+deactivate Sa
+
+M -> P :  RecetarMedicamento(paciente,enfermedad)
+
+M -> P :  ImponerTratamiento(paciente)
+
+activate Sis
+M -> Sis :  PedirPruebaMedica(paciente,prueba)
+
+Sis --> P :  ComunicarFechaPrueba(paciente,fecha)
+
+M -> P  :  DesviarAEspecialista(paciente, especialista)
+
+M -> Sis :  TerminarConsulta(paciente)
+deactivate M
+
+activate SA
+SA -> Sa :  LlamarSiguientePaciente(paciente,sanitario)
+deactivate SA
+
+
+@enduml

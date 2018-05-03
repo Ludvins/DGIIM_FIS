@@ -29,17 +29,17 @@ participant "Servicio Web Pacientes" as SW
 activate P
 activate SW
 
-P -> SW : 1. PedirCitaRemoto(DNI)
-SW --> P : 1.1. resguardodecita
+P -> SW : PedirCitaRemoto(DNI)
+SW --> P :  resguardodecita
 
-P -> SW : 2. PedirCambioDeCitaRemoto(DNI)
-SW --> P : 2.2. resguardodecita
+P -> SW :  PedirCambioDeCitaRemoto(DNI)
+SW --> P :  resguardodecita
 
-P -> SW : 3. AnularCitaRemoto(DNI)
-SW --> P : 3.1. confirmacion
+P -> SW : AnularCitaRemoto(DNI)
+SW --> P :  confirmacion
 
-P -> SW : 4. ValoracionRemota(DNI, Valoracion)
-SW --> P : 4.1. confirmacion
+P -> SW :  ValoracionRemota(DNI, Valoracion)
+SW --> P :  confirmacion
 
 
 

@@ -1,0 +1,56 @@
+@startuml
+!pragma teoz true
+
+skinparam backgroundColor #EEEBDC
+skinparam handwritten true
+
+skinparam sequence {
+	ArrowColor DeepSkyBlue
+	ActorBorderColor DeepSkyBlue
+	LifeLineBorderColor blue
+	LifeLineBackgroundColor #A9DCDF
+	
+	ParticipantBorderColor DeepSkyBlue
+	ParticipantBackgroundColor DodgerBlue
+	ParticipantFontName Impact
+	ParticipantFontSize 17
+	ParticipantFontColor #A9DCDF
+	
+	ActorBackgroundColor aqua
+	ActorFontColor DeepSkyBlue
+	ActorFontSize 17
+	ActorFontName Aapex
+}
+
+
+actor Usuario as U
+actor Administrativo as A
+participant Sistema as Sis
+
+activate U
+activate Sis
+U -> Sis :  ConsultarHorarioDeConsulta()
+Sis--> U :  HorarioDeConsulta(medicoAsignado)
+deactivate U
+
+activate A
+A -> Sis : CrearConsultaMedica(paciente)
+Sis --> A :  AnunciarConsulta(fecha,medico,paciente)
+
+A -> Sis :  ModificarConsultaMedica(consulta,modificacion)
+Sis --> A :  ConfirmacionModificacion(fecha,medico,paciente)
+
+A -> Sis :  EliminarConsultaMedica(consulta)
+Sis --> A :  ConsultaEliminada()
+
+A -> Sis :  DefinirHorarioConsulta(medico,horas)
+
+A -> Sis : ModificarHorarioConsulta(consulta, nuevoHorario)
+Sis --> A :  ConfirmacionModificacion(consulta)
+
+A -> Sis :  ModificacionPuntualHorarioConsulta(consulta,nuevoHorario)
+Sis --> A :  ConfirmacionModificacionPuntual(consultaTemporal)
+
+
+
+@enduml

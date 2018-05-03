@@ -33,25 +33,25 @@ participant "Unidad de diagnóstico" as UD
 
 activate UD
 activate Paciente
-Paciente -> UD : 1. RegistrarAsistenciaACita(DNI)
-UD --> Paciente : 1.1. confirmacion
+Paciente -> UD :  RegistrarAsistenciaACita(DNI)
+UD --> Paciente :  confirmacion
 deactivate UD
 
 activate Sanitario
-Sanitario -> Paciente : 2.RealizarPrueba()
+Sanitario -> Paciente : RealizarPrueba()
 deactivate Sanitario
 
 activate UD
 activate Médico
-Médico -> UD : 3. InformarPrueba(Informe)
-UD --> Médico : 3.1. confimacion
+Médico -> UD :  InformarPrueba(Informe)
+UD --> Médico :  confimacion
 deactivate Médico
 
 
 activate Administrativo
-Administrativo -> UD : 4. RecogerResultadosPrueba(DNI)
-UD --> Administrativo : 4.1. resultadosdelaspruebas
-Administrativo --> Paciente : 4.2. DarResultados(resultadosdelaspruebas)
+Administrativo -> UD :  RecogerResultadosPrueba(DNI)
+UD --> Administrativo :  resultadosdelaspruebas
+Administrativo --> Paciente :  DarResultados(resultadosdelaspruebas)
 deactivate Administrativo
 deactivate UD
 deactivate Paciente
