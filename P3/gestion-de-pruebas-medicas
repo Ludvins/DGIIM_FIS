@@ -18,8 +18,6 @@ P -> Sis :  ConsultaResultados(prueba)
 Sa -> Sis : ModificaDatosPrueba(prueba,datos)
 Sis --> P : NotificaModificacion()
 
-alt TiempoTranscurridoDesdeDefuncion
-Sis -> Sis : BorrarPruebas()
 
 
 
