@@ -6,8 +6,9 @@ actor Administrativo
 actor Sanitario
 actor Médico
 actor Paciente
+box
 participant "Unidad de diagnóstico" as UD
-
+endbox
 activate UD
 activate Paciente
 Paciente -> UD :  RegistrarAsistenciaACita(DNI)
@@ -28,7 +29,7 @@ deactivate Médico
 activate Administrativo
 Administrativo -> UD :  RecogerResultadosPrueba(DNI)
 UD --> Administrativo :  resultadosdelaspruebas
-Administrativo --> Paciente :  DarResultados(resultadosdelaspruebas)
+Administrativo -> Paciente :  DarResultados(resultadosdelaspruebas)
 deactivate Administrativo
 deactivate UD
 deactivate Paciente

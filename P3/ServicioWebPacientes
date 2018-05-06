@@ -3,7 +3,10 @@
 
 
 actor Paciente as P
+
+box
 participant "Servicio Web Pacientes" as SW
+end box
 
 activate P
 activate SW
