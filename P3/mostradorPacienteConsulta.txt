@@ -27,7 +27,7 @@ activate P
 
 P -> Sis : CitasDisponibles=PedirCita()
 P -> Sis : SeleccionarCita(CitasDisponibles)
-Sis -> Sis : ActualizarCitas()
+Sis --> P : confirmacion
 
 ...
 P -> Ad : Solicita un cambio de cita
@@ -42,7 +42,7 @@ Ad -> P : Notifica del cambio realizado.
 P -> Ad : Solicita anular una cita
 Ad -> Ad : Comprueba que la información es correcta
 Ad -> Sis : AnularCita(cita)
-Sis -> Sis : ActualizarCitas()
+Sis --> Ad : confirmacion
 
 ...
 
@@ -52,7 +52,7 @@ Ad -> P : Entrega un formulario de valoración al paciente.
 P -> Ad : Entrega la valoración
 Ad -> Ad : Comprueba que se haya rellenado correctamente.
 Ad -> Sis : IntroducirValoracion(valoracion)
-Sis -> Sis : ActualizarValoraciones(valoracion)
+Sis --> Ad : confirmacion
 
 
 deactivate Ad
