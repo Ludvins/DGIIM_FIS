@@ -1,7 +1,7 @@
 @startuml
 !pragma teoz true
 
-skinparam backgroundColor #EEEBDC
+' skinparam backgroundColor #EEEBDC
 
 
 
