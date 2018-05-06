@@ -1,0 +1,55 @@
+@startuml
+!pragma teoz true
+
+skinparam backgroundColor #EEEBDC
+
+
+
+
+' actor Paciente as P
+' actor "Sistema de Avisos" as SA
+' actor Sanitario as Sa
+' actor Medico as M
+actor Administrativo as Ad
+participant Sistema as Sis
+
+activate Sis
+activate Ad
+Ad -> Sis : NuevoRecurso(recurso)
+Sis -> Sis : GuardarRecurso(recurso)
+Sis -> Sis : Notificar()
+
+...
+
+Ad -> Sis : ModificarRecurso(recurso)
+Sis -> Sis : GuardarRecurso(recurso)
+Sis -> Sis : Notificar()
+
+...
+
+Ad -> Sis : BajaRecurso(recurso)
+Sis -> Sis : Eliminar(recurso)
+Sis -> Sis : Notificar()
+
+...
+
+Ad -> Sis : AsignacionPermanente(recurso)
+Sis -> Sis : Asignar(recurso,permanente)
+Sis -> Sis : Notificar()
+
+...
+
+Ad -> Sis : EliminarAsignacion(recurso,tiempo)
+Sis -> Sis : BorrarAsignacion(recurso,tiempo)
+Sis -> Sis : Notificar()
+
+...
+
+Ad -> Sis : AsignacionPuntual(recurso,tiempo)
+Sis -> Sis : Asignar(recurso,tiempo)
+Sis -> Sis : Notificar()
+
+
+deactivate Ad
+deactivate Sis
+@endumls

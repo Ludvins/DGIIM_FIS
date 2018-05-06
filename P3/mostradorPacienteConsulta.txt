@@ -1,0 +1,60 @@
+@startuml
+!pragma teoz true
+
+skinparam backgroundColor #EEEBDC
+
+
+
+
+actor Visitante as Visi
+actor Paciente as P
+' actor Sanitario as Sa
+' actor Medico as M
+actor Administrativo as Ad
+participant Sistema as Sis
+
+activate Sis
+activate Ad
+activate Visi
+
+Visi -> Ad : Consulta verbal para pedir información sobre un paciente.
+Ad -> Sis : Consulta(Paciente)
+Ad -> Visi : Informa debidamente al visitante.
+deactivate Visi
+activate P
+
+...
+
+P -> Sis : CitasDisponibles=PedirCita()
+P -> Sis : SeleccionarCita(CitasDisponibles)
+Sis -> Sis : ActualizarCitas()
+
+...
+P -> Ad : Solicita un cambio de cita
+Ad -> Sis : CitasDisponibles=ConsultarCitas()
+opt !CitasDisponibles.empty
+  Ad -> Sis : ModificarCita(cita)
+end
+Ad -> P : Notifica del cambio realizado.
+
+...
+
+P -> Ad : Solicita anular una cita
+Ad -> Ad : Comprueba que la información es correcta
+Ad -> Sis : AnularCita(cita)
+Sis -> Sis : ActualizarCitas()
+
+...
+
+P -> P : Asiste a la cita
+Ad -> Ad : Se asegura de que todo vaya correcto
+Ad -> P : Entrega un formulario de valoración al paciente.
+P -> Ad : Entrega la valoración
+Ad -> Ad : Comprueba que se haya rellenado correctamente.
+Ad -> Sis : IntroducirValoracion(valoracion)
+Sis -> Sis : ActualizarValoraciones(valoracion)
+
+
+deactivate Ad
+deactivate Sis
+@endumls
