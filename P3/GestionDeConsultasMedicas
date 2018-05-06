@@ -3,7 +3,9 @@
 
 actor Usuario as U
 actor Administrativo as A
+box
 participant Sistema as Sis
+endbox
 
 activate U
 activate Sis

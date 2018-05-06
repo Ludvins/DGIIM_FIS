@@ -11,8 +11,9 @@ actor Paciente as P
 ' actor Sanitario as Sa
 ' actor Medico as M
 actor Administrativo as Ad
+box
 participant Sistema as Sis
-
+endbox
 activate Sis
 activate Ad
 

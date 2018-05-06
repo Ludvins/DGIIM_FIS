@@ -3,7 +3,9 @@
 
 actor Sanitario as Sa
 actor Administrativo as A
+box
 participant Sistema as Sis
+endbox
 
 
 activate Sa
