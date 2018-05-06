@@ -3,7 +3,6 @@
 
 
 actor Administrativo
-actor Sanitario
 actor Médico
 actor Paciente
 box
@@ -13,13 +12,7 @@ activate UD
 activate Paciente
 Paciente -> UD :  RegistrarAsistenciaACita(DNI)
 UD --> Paciente :  confirmacion
-deactivate UD
 
-activate Sanitario
-Sanitario -> Paciente : RealizarPrueba()
-deactivate Sanitario
-
-activate UD
 activate Médico
 Médico -> UD :  InformarPrueba(Informe)
 UD --> Médico :  confimacion
@@ -29,7 +22,6 @@ deactivate Médico
 activate Administrativo
 Administrativo -> UD :  RecogerResultadosPrueba(DNI)
 UD --> Administrativo :  resultadosdelaspruebas
-Administrativo -> Paciente :  DarResultados(resultadosdelaspruebas)
 deactivate Administrativo
 deactivate UD
 deactivate Paciente
