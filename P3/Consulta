@@ -5,54 +5,38 @@ actor Paciente as P
 actor "Sistema de Avisos" as SA
 actor Sanitario as Sa
 actor Medico as M
-box
 participant Sistema as Sis
-endbox
+
 
 activate Sa
-Sa -> P :  IniciarConsulta(paciente)
+activate Sis
+Sa -> Sis :  IniciarConsulta(paciente)
 activate P
 
-activate Sis
+
 Sa -> Sis :  AbrirHC(paciente)
 alt PrimeraVisita
-Sis -> P :  CrearHC(paciente)
+P -> Sis :  CrearHC(datos)
 end
 Sis --> Sa :  HCpaciente
 
 
 Sa -> Sis :  AñadirDatosClínicos(paciente)
 
-deactivate Sis
-
-P --> Sa :  comunicarDolencias(sanitario)
-
-Sa -> P :  ExplorarPaciente(paciente)
-
-Sa -> P :  EncontrarCura(paciente)
-
-
 
 activate M
-Sa --> M :  ComunicarCura(cura,medico)
-deactivate Sa
-
-M -> P :  RecetarMedicamento(paciente,enfermedad)
-
-M -> P :  ImponerTratamiento(paciente)
-
-activate Sis
 M -> Sis :  PedirPruebaMedica(paciente,prueba)
+deactivate M
 
 Sis --> P :  fechaPrueba
 
-M -> P  :  DesviarAEspecialista(paciente, especialista)
 
+activate M
 M -> Sis :  TerminarConsulta(paciente)
 deactivate M
 
 activate SA
-SA -> Sa :  LlamarSiguientePaciente(paciente,sanitario)
+SA -> Sis :  siguientePaciente()
 deactivate SA
 
 
