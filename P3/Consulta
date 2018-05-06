@@ -5,7 +5,9 @@ actor Paciente as P
 actor "Sistema de Avisos" as SA
 actor Sanitario as Sa
 actor Medico as M
+box
 participant Sistema as Sis
+endbox
 
 
 activate Sa
