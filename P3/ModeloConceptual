@@ -1,0 +1,117 @@
+@startuml
+skinparam classAttributeIconSize 0
+left to right direction
+!pragma teoz true
+
+package "Hospital" { 
+class CompañiaMedica  {
+	- nombreCompañia
+}
+
+class SistemaDeAvisos { 
+	
+
+}
+
+
+class Usuario {
+	- centroAsignado
+	- identificador
+	- datosPersonales
+}
+
+
+class Paciente {
+	- historialClinico
+	- medicoAsignado
+}
+
+class Personal { 
+	- tipoDePersonal
+	- horario
+	
+}
+
+
+class Sanitario {
+
+	- salaAsignada
+}
+
+class Administrativo {
+	- permisosSobreElSistema
+}
+
+class Enfermero{ 
+	- historialExploraciones
+}
+
+class Medico{
+	- historialDeRecetas
+	- especialidad
+}
+
+class Visitante {
+	- identificador
+	- fechaDeVisita
+	- pacienteVisitado
+}
+
+class Consulta { 
+	- participantes
+	- fecha
+}
+
+class Recurso{
+	- identificador
+	- tipo
+	- ocupación
+}
+
+class ServicioWeb {
+	- url
+	- tipoDeSercivio
+	- historialDeVisitas
+}
+
+class Contrato{
+	- fechaAlta
+	- condiciones
+	- Sueldo
+}
+
+CompañiaMedica --> "1" ServicioWeb : presta
+
+Personal --> Contrato : cumple
+
+Paciente --> "1.." ServicioWeb : utiliza
+
+Paciente ..> "1.." Consulta : tiene
+
+Medico ..> "1.." Consulta : tiene
+
+Administrativo ..> Recurso : maneja
+
+Visitante ..> "0.." Paciente : visitante
+
+Paciente --> Usuario
+
+Personal --> Usuario
+
+Administrativo --> Personal
+
+Sanitario --> Personal
+
+Enfermero --> Sanitario
+
+Medico --> Sanitario
+
+ServicioWeb --> "0.." Consulta : asigna
+
+SistemaDeAvisos --> Paciente : avisa
+
+
+
+@enduml
+
+

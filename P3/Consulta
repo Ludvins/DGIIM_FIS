@@ -17,7 +17,7 @@ Sa -> Sis :  AbrirHC(paciente)
 alt PrimeraVisita
 Sis -> P :  CrearHC(paciente)
 end
-Sis --> Sa :  mostrarHC(paciente)
+Sis --> Sa :  HCpaciente
 
 
 Sa -> Sis :  AñadirDatosClínicos(paciente)
@@ -43,7 +43,7 @@ M -> P :  ImponerTratamiento(paciente)
 activate Sis
 M -> Sis :  PedirPruebaMedica(paciente,prueba)
 
-Sis --> P :  ComunicarFechaPrueba(paciente,fecha)
+Sis --> P :  fechaPrueba
 
 M -> P  :  DesviarAEspecialista(paciente, especialista)
 

@@ -8,26 +8,26 @@ participant Sistema as Sis
 activate U
 activate Sis
 U -> Sis :  ConsultarHorarioDeConsulta()
-Sis--> U :  HorarioDeConsulta(medicoAsignado)
+Sis--> U :  HorarioMedicoAsignado
 deactivate U
 
 activate A
 A -> Sis : CrearConsultaMedica(paciente)
-Sis --> A :  AnunciarConsulta(fecha,medico,paciente)
+Sis --> A :  consultaCreada
 
 A -> Sis :  ModificarConsultaMedica(consulta,modificacion)
-Sis --> A :  ConfirmacionModificacion(fecha,medico,paciente)
+Sis --> A :  consultaModificada
 
 A -> Sis :  EliminarConsultaMedica(consulta)
-Sis --> A :  ConsultaEliminada()
+Sis --> A :  consultaEliminada
 
 A -> Sis :  DefinirHorarioConsulta(medico,horas)
 
 A -> Sis : ModificarHorarioConsulta(consulta, nuevoHorario)
-Sis --> A :  ConfirmacionModificacion(consulta)
+Sis --> A :  horarioCambiado
 
 A -> Sis :  ModificacionPuntualHorarioConsulta(consulta,nuevoHorario)
-Sis --> A :  ConfirmacionModificacionPuntual(consultaTemporal)
+Sis --> A :  modificadoPuntualmente
 
 
 
