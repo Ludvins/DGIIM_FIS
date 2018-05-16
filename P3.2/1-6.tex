@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{tabularx}
+
+\begin{document}
+
+
+
+\begin{table}[htbp]
+	  \begin{tabularx}{\textwidth}{l|l}
+    \textbf{Nombre}        & lalmarSiguientePaciente(idSanitario) \\ 
+    \textbf{Responsabilidad}  &  Se deberá avisar al siguiente paciente para que pase a la consulta del sanitario idSanitario \\ 
+    \textbf{Tipo}  ClinicaFIS      &  \\ 
+    \textbf{Notas}        & Supondré que el estado Pendiente indica que el paciente está esperando, que el estado En espera indica que el paciente ha sido llamado ,que el estado Atendida significará que el paciente está siendo atendido y que el estado libre indica que la cita ha terminado.  \\ 
+    \textbf{Excepciones}    & No hay siguiente paciente \\ 
+    \textbf{Salida}        & Nombre del siguiente paciente\\ 
+    \textbf{Precondiciones}    & La cita del paciente debe estar marcada como Pendiente \\ 
+    \textbf{Postcondiciones}  & La cita en cuestión estará marcada como En Espera \\ 
+  \end{tabularx}
+
+\end{table}
+
+
+\begin{table}[htbp]
+	  \begin{tabularx}{\textwidth}{l|l}
+    \textbf{Nombre}        & terminarConsulta(idPaciente,idSanitario) \\ 
+    \textbf{Responsabilidad}  & Indicar que la cita actual ha terminado entre el paciente idPaciente y el sanitario idSanitario \\ 
+    \textbf{Tipo}        &  ClinicaFis\\ 
+    \textbf{Notas}        &  \\ 
+    \textbf{Excepciones}    &  \\ 
+    \textbf{Salida}        &  \\ 
+    \textbf{Precondiciones}    & El estado de la cita era Atendida  \\ 
+    \textbf{Postcondiciones}  & El nuevo estado de la cita es Libre\\ 
+  \end{tabularx}
+
+\end{table}
+
+\begin{table}[htbp]
+	  \begin{tabularx}{\textwidth}{l|l}
+    \textbf{Nombre}        & iniciarConsulta(idPaciente) \\ 
+    \textbf{Responsabilidad}  & Dar comienzo a la cita y mostrar el historial clínico del paciente \\ 
+    \textbf{Tipo}        &  ClinicaFis\\ 
+    \textbf{Notas}        &  \\ 
+    \textbf{Excepciones}    & El paciente no tiene un historial clínico creado \\ 
+    \textbf{Salida}        & Historial clínico del paciente \\ 
+    \textbf{Precondiciones}    & El estado de la cita debe ser En Espera \\ 
+    \textbf{Postcondiciones}  &  El estado nuevo de la cita es Atendida\\ 
+  \end{tabularx}
+
+\end{table}
+
+
+\begin{table}[htbp]
+	  \begin{tabularx}{\textwidth}{l|l}
+    \textbf{Nombre}        & registrarAlergia(idHC,tipoAlergia,textoExplicativo) \\ 
+    \textbf{Responsabilidad}  & Introducir en el historial clínico idHC la alercia tipoAlergia con el comentario textoExplicativo \\ 
+    \textbf{Tipo}        & ClinicaFis \\ 
+    \textbf{Notas}        &  \\ 
+    \textbf{Excepciones}    & El idHC no existe o el tipoAlergia no es un dato válido \\ 
+    \textbf{Salida}        &  \\ 
+    \textbf{Precondiciones}    &  \\ 
+    \textbf{Postcondiciones}  &  Se crea un nuevo objeto de Alergia, con el texto explicativo y el tipo pasados como parámetros.
+    Se crea un enlace  entre HistoriaClínica y el objeto de Alergia que se ha creado \\ 
+  \end{tabularx}
+
+\end{table}
+
+
+\begin{table}[htbp]
+	  \begin{tabularx}{\textwidth}{l|l}
+    \textbf{Nombre}        & diagnosticar(idHC,codDiagnostico,textoExplicativo) \\ 
+    \textbf{Responsabilidad}  & ClinicaFis \\ 
+    \textbf{Tipo}        &  ClinicaFis\\ 
+    \textbf{Notas}        &  Supondré que el sistema es capaz de dado el código de Diagnóstico indicar qué enfermedad sufre el paciente.\\ 
+    \textbf{Excepciones}    & No existe ninguna enfermedad con ese código de Diagnóstico y ese texto explicativo \\ 
+    \textbf{Salida}        & Enfermedad sufrida por el paciente  \\ 
+    \textbf{Precondiciones}    &  \\ 
+    \textbf{Postcondiciones}  & Se creará un objeto Diagnóstico, se creará un objeto AnotaciónHC con la fecha de la cita y el comentario textoExplicativo y se creará un enlace entre el Diagnóstico creado y el AnotacionHC creado. Luego, se creará otro enlace entre el AnotaciónHC creado y la HistoriaClínica del paciente. \\ 
+  \end{tabularx}
+
+\end{table}
+
+
+\begin{table}[htbp]
+	  \begin{tabularx}{\textwidth}{l|l}
+    \textbf{Nombre}        & imponerTratamiento(idHC,tipoTratamiento,duracion,comentario) \\ 
+    \textbf{Responsabilidad}  & Dotar a un paciente de un tratamiento para que se le sea impuesto  \\ 
+    \textbf{Tipo}        & ClinicaFis \\ 
+    \textbf{Notas}        &  El tratamiento será acorde a la enfermedad que padezca\\ 
+    \textbf{Excepciones}    & No Existe el tipo de tratamiento indicado \\ 
+    \textbf{Salida}        &  \\ 
+    \textbf{Precondiciones}    & El paciente no deberá tener ya en su Historia clínica ese tratamiento activo \\ 
+    \textbf{Postcondiciones}  &  Se creará un objeto tratamiento con el tipo y el periodo indicados como parámetros. Se creará un objeto de tipo AnotacionHC con la fecha de la cita y el comentario pasado como parámetro y se enlazará con el tratamiento. Se enlazarán la HistoriaClínica del paciente con la AnotaciónHC creada.\\ 
+  \end{tabularx}
+
+\end{table}
+
+
+
+
+\end{document}
