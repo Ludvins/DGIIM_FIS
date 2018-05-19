@@ -1,0 +1,22 @@
+ \begin{table}[H]
+  \centering
+  \begin{tabularx}{\textwidth}{l|X}
+    \textbf{Nombre}        &  mensajeConfirmacion = anularCita (idCita) \\ 
+    \textbf{Responsabilidad}  & Anula cita existente identificada por idCita. \\ 
+    \textbf{Tipo}        &  ClínicaFIS \\ 
+    \textbf{Notas}        &  \\
+    \textbf{Excepciones}    & \\
+    \textbf{Salida}        &  Mensaje confirmando la anulación de la cita.\\ 
+    \textbf{Precondiciones}    &
+    \begin{itemizenomargins}
+    \item[--] La cita identificada por idCita existe en el sistema.
+    \end{itemizenomargins} \\ 
+    \textbf{Postcondiciones}  &
+    \begin{itemizenomargins}
+    \item[--] Se destruyen los enlaces del objeto de la clase Cita identificado
+      por idCita con las clases Paciente y Consulta
+    \item[--] Se destruye el objeto de tipo Cita identificado por idCita.
+    \end{itemizenomargins}
+
+  \end{tabularx}
+\end{table}

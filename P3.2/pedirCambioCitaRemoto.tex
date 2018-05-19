@@ -1,0 +1,25 @@
+ \begin{table}[H]
+  \centering
+  \begin{tabularx}{\textwidth}{l|X}
+    \textbf{Nombre}        &  listaPosiblesFechaHoras = pedirCambioCitaRemoto ( idCita ) \\ 
+    \textbf{Responsabilidad}  &  Crea una lista de otras posibles fechas y horas
+    de citas para sustituir la cita ya existente identificada por idCita.\\ 
+    \textbf{Tipo}        &  ClínicaFIS \\ 
+    \textbf{Notas}        &  \\ 
+    \textbf{Excepciones}    & \\
+    \textbf{Salida}        &  listaPosiblesFechaHoras = lista de \{fecha, hora\} para todos los objetos de la clase Cita que cumplan con los criterios de consulta. \\ 
+    \textbf{Precondiciones}    &
+    \begin{itemizenomargins}
+    \item[--] La cita identificada por idCita existe en el sistema.
+    \end{itemizenomargins} \\ \\
+    \textbf{Postcondiciones}  & Para cada elemento de listaPosiblesFechasHoras
+     \begin{itemize}
+    \item[--] Se creó un objeto de tipo Cita.
+    \item[--] Se creó un enlace entre el objeto de la clase Paciente identificado
+      por idPaciente y el objeto de la clase Cita.
+    \item[--] Se creó un enlace entre el objeto de la clase Consulta identificado
+      por idConsulta y el objeto de la clase Cita.
+    \end{itemize}
+  \end{tabularx}
+\end{table}
+

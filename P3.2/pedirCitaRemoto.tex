@@ -1,0 +1,26 @@
+
+ \begin{table}[H]
+  \centering
+  \begin{tabularx}{\textwidth}{l|X}
+    \textbf{Nombre}        &  listaPosiblesFechasHoras=pedirCitaRemoto(idPaciente, idConsulta) \\ 
+    \textbf{Responsabilidad}  &  Crea una lista de posibles fechas y horas de citas para el paciente y la consulta identificados. \\ 
+    \textbf{Tipo}        &  ClínicaFIS \\ 
+    \textbf{Notas}        &  \\ 
+    \textbf{Excepciones}    & Si ya existe una cita en el sistema pedida por este mismo paciente. \\ 
+    \textbf{Salida}        &  listaPosiblesFechasHoras = lista de \{fecha, hora\} para todos los objetos de la clase Cita que cumplan con los criterios de consulta. \\ 
+    \textbf{Precondiciones}    &
+    \begin{itemizenomargins}
+    \item[--] El paciente identificado por idPaciente existe en el sistema.
+    \item[--] La consulta identificada por idConsulta existe en el sistema.
+    \end{itemizenomargins} \\ \\
+    \textbf{Postcondiciones}  & Para cada elemento de listaPosiblesFechasHoras
+     \begin{itemize}
+    \item[--] Se creó un objeto de tipo Cita.
+    \item[--] Se creó un enlace entre el objeto de la clase Paciente identificado
+      por idPaciente y el objeto de la clase Cita.
+    \item[--] Se creó un enlace entre el objeto de la clase Consulta identificado
+      por idConsulta y el objeto de la clase Cita.
+    \end{itemize}
+  \end{tabularx}
+\end{table}
+ 

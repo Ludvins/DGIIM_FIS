@@ -1,0 +1,29 @@
+ \begin{table}[H]
+  \centering
+  \begin{tabularx}{\textwidth}{l|X}
+    \textbf{Nombre}        &  infoValoracion = valorarConsulta (idPaciente,
+    idCita, puntuacion, comentario) \\ 
+    \textbf{Responsabilidad}  & Crea una valoración por parte del paciente
+    identificado por idPaciente sobre la cita identificada por idCita,
+    utilizando el comentario y la puntuacion indicados.  \\ 
+    \textbf{Tipo}        &  ClínicaFIS \\ 
+    \textbf{Notas}        & No es necesario por parte del paciente indicar la
+    fecha de la valoración, ya que el sistema dispondrá de ese dato. \\
+    \textbf{Excepciones}    & El atributo ``estado'' de la cita es ATENDIDA.\\
+    \textbf{Salida}        & infoValoracion\\ 
+    \textbf{Precondiciones}    &
+    \begin{itemizenomargins}
+    \item[--] La cita identificada por idCita existe en el sistema.
+    \item[--] El paciente identificado por idPaciente existe en el sistema.
+    \end{itemizenomargins} \\ 
+    \textbf{Postcondiciones}  &
+    \begin{itemizenomargins}
+    \item[--] Se creó un objeto de tipo Valoracion.
+    \item[--] Se creó un enlace entre el objeto de la clase Valoracion con el que
+      se encuentra relacionado el objeto de la clase Cita identificado por
+      idCita.
+      
+    \end{itemizenomargins}
+
+  \end{tabularx}
+\end{table}

@@ -1,0 +1,36 @@
+ \begin{table}[H]
+  \centering
+  \begin{tabularx}{\textwidth}{l|X}
+    \textbf{Nombre}        &  infoCita = pedirCambioCita ( idCita, fecha, hora ) \\ 
+    \textbf{Responsabilidad}  &  Crea una nueva cita a la fecha y hora
+    especificadas, sustituyendo la cita existente identificada por idCita. \\ 
+    \textbf{Tipo}        &  ClínicaFIS \\ 
+    \textbf{Notas}        &  Se presupone que se puede hacer uso de esta
+    operación sin haber utilizado pedirCambioCitaRemoto, luego la fecha y la
+    hora no tienen porque ser válidas.\\
+    \textbf{Excepciones}    &
+    \begin{itemizenomargins}
+    \item[--] La fecha y la hora indicadas no son válidas.
+    \end{itemizenomargins} \\
+    \textbf{Salida}        &  infoCita = objeto de la clase Cita con la fecha y
+    hora especificadas junto con el estado: pendiente.\\ 
+    \textbf{Precondiciones}    &
+    \begin{itemizenomargins}
+    \item[--] La cita identificada por idCita existe en el sistema.
+    \end{itemizenomargins} \\ 
+    \textbf{Postcondiciones}  &
+    \begin{itemizenomargins}
+    \item[--] Se creó un objeto de tipo Cita.
+    \item[--] Se creó un enlace entre el objeto de la clase Paciente con el que
+      se encuentra relacionado el objeto de la clase Cita identificado por idCita y el objeto de la clase Cita.
+    \item[--] Se creó un enlace entre el objeto de la clase Consulta con el que
+      se encuentra relacionado el objeto de la clase Cita identificado por idCita y el objeto de la clase Cita.
+    \item[--] Se destruyen los enlaces del objeto de la clase Cita identificado
+      por idCita con las clases Paciente y Consulta
+    \item[--] Se destruye el objeto de tipo Cita identificado por idCita.
+      
+    \end{itemizenomargins}
+
+  \end{tabularx}
+\end{table}
+

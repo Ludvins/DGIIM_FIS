@@ -1,0 +1,35 @@
+ \begin{table}[H]
+  \centering
+  \begin{tabularx}{\textwidth}{l|X}
+    \textbf{Nombre}        &  infoCita = pedirCita ( idPaciente, idConsulta, fecha, hora ) \\ 
+    \textbf{Responsabilidad}  &  Crea la información sobre la cita del paciente
+    en la consulta a la fecha y hora especificadas. \\ 
+    \textbf{Tipo}        &  ClínicaFIS \\ 
+    \textbf{Notas}        &  Se presupone que se puede hacer uso de esta
+    operación sin haber utilizado pedirCitaRemoto. De forma que se crea el
+    objeto cita y sus enlaces en lugar de modificarse unos ya existentes. Además
+    de que la fecha y hora indicadas podrían no ser válidas.\\ 
+    \textbf{Excepciones}    &
+    \begin{itemizenomargins}
+    \item[--] La fecha y la hora indicadas no son válidas.
+    \item[--] Si ya existe una cita en el sistema pedida por este mismo
+      paciente, para la misma consulta. \\
+    \end{itemizenomargins} \\
+    \textbf{Salida}        &  infoCita = objeto de la clase Cita con la fecha y
+    hora especificadas junto con el estado: pendiente.\\ 
+    \textbf{Precondiciones}    &
+    \begin{itemizenomargins}
+    \item[--] El paciente identificado por idPaciente existe en el sistema.
+    \item[--] La consulta identificada por idConsulta existe en el sistema.
+    \end{itemizenomargins} \\ \\
+    \textbf{Postcondiciones}  &
+     \begin{itemizenomargins}
+    \item[--] Se creó un objeto de tipo Cita.
+    \item[--] Se creó un enlace entre el objeto de la clase Paciente identificado
+      por idPaciente y el objeto de la clase Cita.
+    \item[--] Se creó un enlace entre el objeto de la clase Consulta identificado
+      por idConsulta y el objeto de la clase Cita.
+    \end{itemizenomargins}
+  \end{tabularx}
+\end{table}
+
