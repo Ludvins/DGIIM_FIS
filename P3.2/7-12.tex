@@ -1,0 +1,103 @@
+
+\begin{table}[htbp]
+	  \begin{tabularx}{\textwidth}{l|l}
+    \textbf{Nombre}        & desviarAEspecialista(idHC, especialidad, comentario) \\ 
+    \textbf{Responsabilidad}  & Se debe informar tanto al paciente como al especialista del desvío \\ 
+    \textbf{Tipo} & ClinicaFIS   \\ 
+    \textbf{Notas}        &   \\ 
+    \textbf{Excepciones}    & No existe la especialidad indicada \\ 
+    \textbf{Salida}        & volanteEspecialista \\ 
+    \textbf{Precondiciones}    &  \\ 
+    \textbf{Postcondiciones}  &     \begin{itemizenomargins}
+    \item[--] Se creó un objeto de tipo Cita identificado por cita debidamente inicializado.
+    \item[--] Se creó un enlace entre cita y la Consulta que tiene como tespecialidad\\ especialidad.
+    \item[--] Se creó un enlace entre cita y el paciente.\\
+    \end{itemizenomargins} \\
+
+  \end{tabularx}
+
+\end{table}
+
+
+\begin{table}[htbp]
+	  \begin{tabularx}{\textwidth}{l|l}
+    \textbf{Nombre}        & crearCM(especialidad, idSanitario) \\ 
+    \textbf{Responsabilidad}  & Crear una consulta médica \\ 
+    \textbf{Tipo}        &  ClinicaFIS\\ 
+    \textbf{Notas}        &  \\ 
+    \textbf{Excepciones}    &  \\ 
+    \textbf{Salida}        & idConsulta \\ 
+    \textbf{Precondiciones}    & idSanitario es un identificador válido de un sanitario  \\ 
+    \textbf{Postcondiciones}  & \begin{itemizenomargins}
+    \item[--] Se creó un objeto de tipo Consulta identificado por idConsulta debidamente\\ inicializado.
+    \item[--] Se creó un enlace entre idConsulta y el sanitario idSanitario. \\
+    \end{itemizenomargins} \\ 
+  \end{tabularx}
+
+\end{table}
+
+\begin{table}[htbp]
+	  \begin{tabularx}{\textwidth}{l|l}
+    \textbf{Nombre}        & modificarCM(idConsulta, especialidad, idSanitario) \\ 
+    \textbf{Responsabilidad}  & Modificar la especialidad y el sanitario de una consulta \\ 
+    \textbf{Tipo}        &  ClinicaFIS\\ 
+    \textbf{Notas}        &  \\ 
+    \textbf{Excepciones}    & idConsulta no representa a una consulta válida \\ 
+    \textbf{Salida}        & Historial clínico del paciente \\ 
+    \textbf{Precondiciones}    &  \\ 
+    \textbf{Postcondiciones}  & Se modificó el objeto idConsulta correspondientemente. \\ 
+  \end{tabularx}
+
+\end{table}
+
+
+\begin{table}[htbp]
+	  \begin{tabularx}{\textwidth}{l|l}
+    \textbf{Nombre}        & eliminarCM(idConsulta) \\ 
+    \textbf{Responsabilidad}  & Eliminar una consulta médica \\ 
+    \textbf{Tipo}        & ClinicaFIS \\ 
+    \textbf{Notas}        &  \\ 
+    \textbf{Excepciones}    & idConsulta no representa una consulta válida \\ 
+    \textbf{Salida}        &  \\ 
+    \textbf{Precondiciones}    &  \\ 
+    \textbf{Postcondiciones}  & \begin{itemizenomargins}
+  \item[--] Se eliminó el objeto idConsulta correspondientemente.
+      \item[--] Se eliminaron los enlaces entre idConsulta y los objetos de tipo Cita y\\ Sanitario. \\
+    \end{itemizenomargins} \\ 
+  \end{tabularx}
+
+\end{table}
+
+
+\begin{table}[htbp]
+	  \begin{tabularx}{\textwidth}{l|l}
+    \textbf{Nombre}        &  consultarCM(idConsulta) \\ 
+    \textbf{Responsabilidad}  & Devolver los datos de una consulta \\ 
+    \textbf{Tipo}        &  ClinicaFIS\\ 
+    \textbf{Notas}        & \\ 
+    \textbf{Excepciones}    &  \\ 
+    \textbf{Salida}        & infoConsulta \\ 
+    \textbf{Precondiciones}    &  \\ 
+    \textbf{Postcondiciones}  &  \\ 
+  \end{tabularx}
+
+\end{table}
+
+
+\begin{table}[htbp]
+	  \begin{tabularx}{\textwidth}{l|l}
+    \textbf{Nombre}        & modificarHorarioCM(idConsulta, datosNuevoHorario) \\ 
+    \textbf{Responsabilidad}  & Modificar el horario de una consulta \\ 
+    \textbf{Tipo}        & ClinicaFIS \\ 
+    \textbf{Notas}        &  \\ 
+    \textbf{Excepciones}    & No existe la consulta identificada por idConsulta \\ 
+    \textbf{Salida}        &  \\ 
+    \textbf{Precondiciones}    &  \\ 
+    \textbf{Postcondiciones}  &  Se sustituyeron los objetos de tipo HorarioUso enlazados con idConsulta por\\ datosNuevoHorario. \\ 
+  \end{tabularx}
+
+\end{table}
+
+
+
+

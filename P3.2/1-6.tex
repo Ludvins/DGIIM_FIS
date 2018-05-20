@@ -18,7 +18,7 @@
 	  \begin{tabularx}{\textwidth}{l|l}
     \textbf{Nombre}        & terminarConsulta(idPaciente,idSanitario) \\ 
     \textbf{Responsabilidad}  & Indicar que la cita actual ha terminado entre el paciente idPaciente y el sanitario idSanitario \\ 
-    \textbf{Tipo}        &  ClinicaFis\\ 
+    \textbf{Tipo}        &  ClinicaFIS\\ 
     \textbf{Notas}        &  \\ 
     \textbf{Excepciones}    &  \\ 
     \textbf{Salida}        &  \\ 
@@ -32,7 +32,7 @@
 	  \begin{tabularx}{\textwidth}{l|l}
     \textbf{Nombre}        & iniciarConsulta(idPaciente) \\ 
     \textbf{Responsabilidad}  & Dar comienzo a la cita y mostrar el historial clínico del paciente \\ 
-    \textbf{Tipo}        &  ClinicaFis\\ 
+    \textbf{Tipo}        &  ClinicaFIS\\ 
     \textbf{Notas}        &  \\ 
     \textbf{Excepciones}    & El paciente no tiene un historial clínico creado \\ 
     \textbf{Salida}        & Historial clínico del paciente \\ 
@@ -47,7 +47,7 @@
 	  \begin{tabularx}{\textwidth}{l|l}
     \textbf{Nombre}        & registrarAlergia(idHC,tipoAlergia,textoExplicativo) \\ 
     \textbf{Responsabilidad}  & Introducir en el historial clínico idHC la alercia tipoAlergia con el comentario textoExplicativo \\ 
-    \textbf{Tipo}        & ClinicaFis \\ 
+    \textbf{Tipo}        & ClinicaFIS \\ 
     \textbf{Notas}        &  \\ 
     \textbf{Excepciones}    & El idHC no existe o el tipoAlergia no es un dato válido \\ 
     \textbf{Salida}        &  \\ 
@@ -62,8 +62,8 @@
 \begin{table}[htbp]
 	  \begin{tabularx}{\textwidth}{l|l}
     \textbf{Nombre}        & diagnosticar(idHC,codDiagnostico,textoExplicativo) \\ 
-    \textbf{Responsabilidad}  & ClinicaFis \\ 
-    \textbf{Tipo}        &  ClinicaFis\\ 
+    \textbf{Responsabilidad}  & ClinicaFIS \\ 
+    \textbf{Tipo}        &  ClinicaFIS\\ 
     \textbf{Notas}        &  Supondré que el sistema es capaz de dado el código de Diagnóstico indicar qué enfermedad sufre el paciente.\\ 
     \textbf{Excepciones}    & No existe ninguna enfermedad con ese código de Diagnóstico y ese texto explicativo \\ 
     \textbf{Salida}        & Enfermedad sufrida por el paciente  \\ 
@@ -78,7 +78,7 @@
 	  \begin{tabularx}{\textwidth}{l|l}
     \textbf{Nombre}        & imponerTratamiento(idHC,tipoTratamiento,duracion,comentario) \\ 
     \textbf{Responsabilidad}  & Dotar a un paciente de un tratamiento para que se le sea impuesto  \\ 
-    \textbf{Tipo}        & ClinicaFis \\ 
+    \textbf{Tipo}        & ClinicaFIS \\ 
     \textbf{Notas}        &  El tratamiento será acorde a la enfermedad que padezca\\ 
     \textbf{Excepciones}    & No Existe el tipo de tratamiento indicado \\ 
     \textbf{Salida}        &  \\ 
