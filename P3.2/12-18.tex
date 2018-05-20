@@ -49,6 +49,29 @@
 \begin{table}[H]
  \centering
  \begin{tabularx}{\textwidth}{l|X}
+   \textbf{Nombre}        &  idPaciente=crearPaciente(dni,nombre,numeroTarjeta) \\
+   \textbf{Responsabilidad}  &  Crear un nuevo paciente identificado por su idPaciente a través de su información más básica. \\
+   \textbf{Tipo}        &  ClínicaFIS \\
+   \textbf{Notas}        & El idPaciente es único y lo genera automáticamente el sistema, será gracias a este que podremos identificar los distintos pacientes atendidos en nuestro hospital. \\
+   \textbf{Excepciones}    &
+   \begin{itemizenomargins}
+   \item[--] Ya existe un paciente con los mismos datos asociados. \\
+   \end{itemizenomargins} \\
+   \textbf{Salida}        &  idPaciente = identificador numérico único e invariante del nuevo paciente.\\
+   \textbf{Precondiciones}    &
+   \begin{itemizenomargins}
+   \item[--] No debe de existir ningún paciente con exactamente los mismos valores asociados. Pueden coincidir en alguno de los valores, pero no en los tres.
+   \end{itemizenomargins} \\ \\
+   \textbf{Postcondiciones}  &
+    \begin{itemizenomargins}
+   \item[--] Se creó un objeto de tipo Paciente y su identificador asociado a partir de los parámetros recibidos.
+   \end{itemizenomargins}
+ \end{tabularx}
+\end{table}
+
+\begin{table}[H]
+ \centering
+ \begin{tabularx}{\textwidth}{l|X}
    \textbf{Nombre}        &  modificarPaciente(idPaciente,dni,nombre,numeroTarjeta,direccion,telefono) \\
    \textbf{Responsabilidad}  &  Modifica los campos asociados a un paciente identificado por idPaciente. \\
    \textbf{Tipo}        &  ClínicaFIS \\
