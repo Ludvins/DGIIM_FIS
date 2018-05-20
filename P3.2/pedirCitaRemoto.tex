@@ -6,7 +6,11 @@
     \textbf{Responsabilidad}  &  Crea una lista de posibles fechas y horas de citas para el paciente y la consulta identificados. \\ 
     \textbf{Tipo}        &  ClínicaFIS \\ 
     \textbf{Notas}        &  \\ 
-    \textbf{Excepciones}    & Si ya existe una cita en el sistema pedida por este mismo paciente. \\ 
+    \textbf{Excepciones}    &
+    \begin{itemizenomargins}
+    \item[--] Si ya existe una cita en el sistema pedida por este mismo paciente.
+    \item[--] No hay citas disponibles para la consulta identificada por idConsulta.\\
+    \end{itemizenomargins} \\
     \textbf{Salida}        &  listaPosiblesFechasHoras = lista de \{fecha, hora\} para todos los objetos de la clase Cita que cumplan con los criterios de consulta. \\ 
     \textbf{Precondiciones}    &
     \begin{itemizenomargins}
