@@ -31,7 +31,9 @@
     \textbf{Excepciones}    &  \\ 
     \textbf{Salida}        &  \\ 
     \textbf{Precondiciones}    & El estado de la cita era Atendida  \\ 
-    \textbf{Postcondiciones}  & El nuevo estado de la cita es Libre\\ 
+    \textbf{Postcondiciones}  & \begin{itemizenomargins}
+   \item[--] El estado de la cita cambia a Libre
+   \end{itemizenomargins} \\ \\
   \end{tabularx}
 
 \end{table}
@@ -46,7 +48,9 @@
     \textbf{Excepciones}    & El paciente no tiene un historial clínico creado \\ 
     \textbf{Salida}        & Historial clínico del paciente \\ 
     \textbf{Precondiciones}    & El estado de la cita debe ser En Espera \\ 
-    \textbf{Postcondiciones}  &  El estado nuevo de la cita es Atendida\\ 
+    \textbf{Postcondiciones}  &  \begin{itemizenomargins}
+   \item[--] El estado nuevo de la cita es Atendida
+   \end{itemizenomargins} \\ \\
   \end{tabularx}
 
 \end{table}
@@ -62,8 +66,12 @@
     \textbf{Excepciones}    & El idHC no existe o el tipoAlergia no es un dato válido \\ 
     \textbf{Salida}        &  \\ 
     \textbf{Precondiciones}    &  \\ 
-    \textbf{Postcondiciones}  &  Se crea un nuevo objeto de Alergia, con el texto explicativo y el tipo pasados como parámetros.
-    Se crea un enlace  entre HistoriaClínica y el objeto de Alergia que se ha creado \\ 
+    \textbf{Postcondiciones}  &  
+    \begin{itemizenomargins}
+   \item[--] Se crea un nuevo objeto de Alergia
+   \item[--] Se asigna a ese objeto el tipo y el texto pasados como parámetros
+   \item[--] Se crea un enlace entre HistoriaClínica y el objeto Alergia que se ha creado
+   \end{itemizenomargins} \\ \\ 
   \end{tabularx}
 
 \end{table}
@@ -79,7 +87,14 @@
     \textbf{Excepciones}    & No existe ninguna enfermedad con ese código de Diagnóstico y ese texto explicativo \\ 
     \textbf{Salida}        & Enfermedad sufrida por el paciente  \\ 
     \textbf{Precondiciones}    &  \\ 
-    \textbf{Postcondiciones}  & Se creará un objeto Diagnóstico, se creará un objeto AnotaciónHC con la fecha de la cita y el comentario textoExplicativo y se creará un enlace entre el Diagnóstico creado y el AnotacionHC creado. Luego, se creará otro enlace entre el AnotaciónHC creado y la HistoriaClínica del paciente. \\ 
+    \textbf{Postcondiciones}  & 
+    \begin{itemizenomargins}
+   \item[--] Se crea un objeto Diagnóstico
+   \item[--] Se crea un objeto AnotaciónHC
+   \item[--] Se asigna el comentario textoExplicativo y la fecha de la cita a los datos del objeto AnotaciónHC
+   \item[--] Se crea un enlace entre el Diagnóstico y el AnotaciónHC creados.
+   \item[--] Se crea un nuevo enlace entre la AnotaciónHC y la HistoriaClínica del paciente
+   \end{itemizenomargins} \\ \\ 
   \end{tabularx}
 
 \end{table}
@@ -95,7 +110,14 @@
     \textbf{Excepciones}    & No Existe el tipo de tratamiento indicado \\ 
     \textbf{Salida}        &  \\ 
     \textbf{Precondiciones}    & El paciente no deberá tener ya en su Historia clínica ese tratamiento activo \\ 
-    \textbf{Postcondiciones}  &  Se creará un objeto tratamiento con el tipo y el periodo indicados como parámetros. Se creará un objeto de tipo AnotacionHC con la fecha de la cita y el comentario pasado como parámetro y se enlazará con el tratamiento. Se enlazarán la HistoriaClínica del paciente con la AnotaciónHC creada.\\ 
+    \textbf{Postcondiciones}  &  
+    \begin{itemizenomargins}
+   \item[--] Se crea un objeto Tratamiento
+   \item[--] Se asigna el tipo y el perido indicados a los datos del tratamiento.
+   \item[--] Se crea un objeto AnotacionHC con la fecha de la cita y el comentario pasados como parámetros
+   \item[--] Se crea un enlace entre el objeto AnotacionHC y el objeto Tratamiento
+   \item[--] Se crea un enlace entre la AnotacionHC y la HistoriaClinica del paciente.
+   \end{itemizenomargins}\\ \\ 
   \end{tabularx}
 
 \end{table}
