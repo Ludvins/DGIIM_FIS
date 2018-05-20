@@ -1,21 +1,29 @@
 
-\begin{table}[htbp]
-	  \begin{tabularx}{\textwidth}{l|l}
-    \textbf{Nombre}        & lalmarSiguientePaciente(idSanitario) \\ 
+
+
+
+\begin{table}[H]
+\centering
+	  \begin{tabularx}{\textwidth}{l|X}
+    \textbf{Nombre}        & llamarSiguientePaciente(idSanitario) \\ 
     \textbf{Responsabilidad}  &  Se deberá avisar al siguiente paciente para que pase a la consulta del sanitario idSanitario \\ 
-    \textbf{Tipo}  ClinicaFIS      &  \\ 
+    \textbf{Tipo}       & ClinicaFIS  \\ 
     \textbf{Notas}        & Supondré que el estado Pendiente indica que el paciente está esperando, que el estado En espera indica que el paciente ha sido llamado ,que el estado Atendida significará que el paciente está siendo atendido y que el estado libre indica que la cita ha terminado.  \\ 
     \textbf{Excepciones}    & No hay siguiente paciente \\ 
     \textbf{Salida}        & Nombre del siguiente paciente\\ 
     \textbf{Precondiciones}    & La cita del paciente debe estar marcada como Pendiente \\ 
-    \textbf{Postcondiciones}  & La cita en cuestión estará marcada como En Espera \\ 
+    \textbf{Postcondiciones}  &
+    \begin{itemizenomargins}
+   \item[--] El estado de la cita cambia a En Espera
+   \end{itemizenomargins} \\ \\
   \end{tabularx}
 
 \end{table}
 
 
-\begin{table}[htbp]
-	  \begin{tabularx}{\textwidth}{l|l}
+\begin{table}[H]
+\centering
+	  \begin{tabularx}{\textwidth}{l|X}
     \textbf{Nombre}        & terminarConsulta(idPaciente,idSanitario) \\ 
     \textbf{Responsabilidad}  & Indicar que la cita actual ha terminado entre el paciente idPaciente y el sanitario idSanitario \\ 
     \textbf{Tipo}        &  ClinicaFIS\\ 
@@ -28,8 +36,9 @@
 
 \end{table}
 
-\begin{table}[htbp]
-	  \begin{tabularx}{\textwidth}{l|l}
+\begin{table}[H]
+\centering
+	  \begin{tabularx}{\textwidth}{l|X}
     \textbf{Nombre}        & iniciarConsulta(idPaciente) \\ 
     \textbf{Responsabilidad}  & Dar comienzo a la cita y mostrar el historial clínico del paciente \\ 
     \textbf{Tipo}        &  ClinicaFIS\\ 
@@ -43,8 +52,9 @@
 \end{table}
 
 
-\begin{table}[htbp]
-	  \begin{tabularx}{\textwidth}{l|l}
+\begin{table}[H]
+\centering
+	  \begin{tabularx}{\textwidth}{l|X}
     \textbf{Nombre}        & registrarAlergia(idHC,tipoAlergia,textoExplicativo) \\ 
     \textbf{Responsabilidad}  & Introducir en el historial clínico idHC la alercia tipoAlergia con el comentario textoExplicativo \\ 
     \textbf{Tipo}        & ClinicaFIS \\ 
@@ -59,8 +69,9 @@
 \end{table}
 
 
-\begin{table}[htbp]
-	  \begin{tabularx}{\textwidth}{l|l}
+\begin{table}[H]
+\centering
+	  \begin{tabularx}{\textwidth}{l|X}
     \textbf{Nombre}        & diagnosticar(idHC,codDiagnostico,textoExplicativo) \\ 
     \textbf{Responsabilidad}  & ClinicaFIS \\ 
     \textbf{Tipo}        &  ClinicaFIS\\ 
@@ -74,8 +85,9 @@
 \end{table}
 
 
-\begin{table}[htbp]
-	  \begin{tabularx}{\textwidth}{l|l}
+\begin{table}[H]
+\centering
+	  \begin{tabularx}{\textwidth}{l|X}
     \textbf{Nombre}        & imponerTratamiento(idHC,tipoTratamiento,duracion,comentario) \\ 
     \textbf{Responsabilidad}  & Dotar a un paciente de un tratamiento para que se le sea impuesto  \\ 
     \textbf{Tipo}        & ClinicaFIS \\ 
