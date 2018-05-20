@@ -1,0 +1,123 @@
+\begin{table}[H]
+ \centering
+ \begin{tabularx}{\textwidth}{l|X}
+   \textbf{Nombre}        &  infoHorarioConsulta=consultarHorarioCM(idConsulta) \\
+   \textbf{Responsabilidad}  &  Muestra el horario correspondiente a una consulta concreta \\
+   \textbf{Tipo}        &  ClínicaFIS \\
+   \textbf{Notas}        &  \\
+   \textbf{Excepciones}    &
+   \begin{itemizenomargins}
+   \item[--] El ID indicado no corresponde con ninguna consulta existente. \\
+   \end{itemizenomargins} \\
+   \textbf{Salida}        &  infoCita = objeto de la clase Consulta.\\
+   \textbf{Precondiciones}    &
+   \begin{itemizenomargins}
+   \item[--] La consulta identificada por idConsulta existe en el sistema.
+   \end{itemizenomargins} \\ \\
+   \textbf{Postcondiciones}  &
+    \begin{itemizenomargins}
+   \item[--] Se creó un objeto de tipo Consulta copia de la consulta original, este será eliminado tras finalizar la consulta de información.
+   \end{itemizenomargins}
+ \end{tabularx}
+\end{table}
+
+\begin{table}[H]
+ \centering
+ \begin{tabularx}{\textwidth}{l|X}
+   \textbf{Nombre}        &  infoPaciente=ConsultaPaciente(idPaciente) \\
+   \textbf{Responsabilidad}  &  Muestra toda la información correspondiente de un paciente concreto. \\
+   \textbf{Tipo}        &  ClínicaFIS \\
+   \textbf{Notas}        &  \\
+   \textbf{Excepciones}    &
+   \begin{itemizenomargins}
+   \item[--] El ID indicado no corresponde con ningún paciente existente. \\
+   \end{itemizenomargins} \\
+   \textbf{Salida}        &  infoPaciente = objeto de la clase Paciente con los datos de:
+   dni, nombre, numeroTarjeta, direccion, telefono, fechaNacimiento y listaIdCita\\
+   \textbf{Precondiciones}    &
+   \begin{itemizenomargins}
+   \item[--] El paciente identificado por idPaciente existe en el sistema.
+   \item[--] El usuario tiene acceso Autorizado a la información del paciente.
+   \end{itemizenomargins} \\ \\
+   \textbf{Postcondiciones}  &
+    \begin{itemizenomargins}
+   \item[--] Se creó un objeto de tipo Paciente copia del paciente original, este será eliminado tras finalizar la consulta de información.
+   \end{itemizenomargins}
+ \end{tabularx}
+\end{table}
+
+\begin{table}[H]
+ \centering
+ \begin{tabularx}{\textwidth}{l|X}
+   \textbf{Nombre}        &  modificarPaciente(idPaciente,dni,nombre,numeroTarjeta,direccion,telefono) \\
+   \textbf{Responsabilidad}  &  Modifica los campos asociados a un paciente identificado por idPaciente. \\
+   \textbf{Tipo}        &  ClínicaFIS \\
+   \textbf{Notas}        & Se modifican los campos dni, nombre, numeroTarjeta, direccion y telefono de un determinado paciente identificado por idPaciente, actualizándose por los valores pasados por parámetro y siendo idPaciente invariante. \\
+   \textbf{Excepciones}    &
+   \begin{itemizenomargins}
+   \item[--] No existe ningún paciente identificado por idPaciente.
+   \item[--] Alguno de los parámetros tiene un formato incorrecto.\\
+   \end{itemizenomargins} \\
+   \textbf{Salida}        &  \\
+   \textbf{Precondiciones}    &
+   \begin{itemizenomargins}
+   \item[--] Debe de existir algún paciente indentificado por idPaciente.
+   \item[--] Los parámetros deben de poseer un formato correcto, por ejemplo un número de teléfono no deberá contener ningún carácter no numérico.
+  \end{itemizenomargins} \\ \\
+   \textbf{Postcondiciones}  &
+    \begin{itemizenomargins}
+   \item[--] La información del paciente habrá sido modificada y actualizada correctamente en el sistema.
+   \end{itemizenomargins}
+ \end{tabularx}
+\end{table}
+
+
+\begin{table}[H]
+ \centering
+ \begin{tabularx}{\textwidth}{l|X}
+   \textbf{Nombre}        &  eliminarPaciente(idpaciente)\\
+   \textbf{Responsabilidad}  &  Elimina el paciente indicado por idPaciente del sistema y le notifica. \\
+   \textbf{Tipo}        &  ClínicaFIS \\
+   \textbf{Notas}        &  \\
+   \textbf{Excepciones}    &
+   \begin{itemizenomargins}
+   \item[--] El ID indicado no corresponde con ningún paciente existente. \\
+   \end{itemizenomargins} \\
+   \textbf{Salida}        &  infoBajaEnClinica es una notificación que recibe el paciente que ha sido eliminado.\\
+   \textbf{Precondiciones}    &
+   \begin{itemizenomargins}
+   \item[--] El paciente identificado por idPaciente existe en el sistema.
+   \end{itemizenomargins} \\ \\
+   \textbf{Postcondiciones}  &
+    \begin{itemizenomargins}
+   \item[--] Se eliminó el objeto tipo Paciente identificado por idPaciente.
+   \item[--] Se eliminaron todos los enlaces asociados a dicho objeto.
+   \item[--] Se notificó al paciente de que ha sido dado de baja en el sistema.
+   \end{itemizenomargins}
+ \end{tabularx}
+\end{table}
+
+
+\begin{table}[H]
+ \centering
+ \begin{tabularx}{\textwidth}{l|X}
+   \textbf{Nombre}        &  listadoCita=consultarCitas(idPaciente)\\
+   \textbf{Responsabilidad}  &  Devolver el listado de citas asociadas a un paciente concreto identificado por su ID. \\
+   \textbf{Tipo}        &  ClínicaFIS \\
+   \textbf{Notas}        &  \\
+   \textbf{Excepciones}    &
+   \begin{itemizenomargins}
+   \item[--] El ID indicado no corresponde con ningún paciente existente. \\
+   \end{itemizenomargins} \\
+   \textbf{Salida}        &  listadoCita= lista de todos los identificadores de citas que posean algún enlace con el paciente indicado.\\
+   \textbf{Precondiciones}    &
+   \begin{itemizenomargins}
+   \item[--] El paciente identificado por idPaciente existe en el sistema.
+   \end{itemizenomargins} \\ \\
+   \textbf{Postcondiciones}  &
+    \begin{itemizenomargins}
+   \item[--] Las citas identificadas por los identificados almacenados en listadoCita existen el sistema.
+   \item[--] Dichas citas poseen un enlace con el paciente indicado.
+   \end{itemizenomargins}
+ \end{tabularx}
+\end{table}
