@@ -1,24 +1,44 @@
 @startuml
 
 class Paciente {
-
+- nombre : string
 + obtenerNombre() : string
-+ obtenerListaCitas() : lista
++ obtenerListaCitas() : lista[citas]
 }
 
 class Cita {
-
+- fecha : date
+- hora : date
 + obtenerMedico() : medico
 + obtenerFecha() : date
-+ modificarEstado(estado) : void
++ modificarEstado(estado : TipoEstado) : void
 + obtenerEstado() : estado
 }
 
-class Medico {
-
-+ obtenerNombre() : string
-+ obtenerListaCitas() : lista
+enum TipoEstado {
+PENDIENTE
+ENESPERA
+ATENDIDA
+LIBRE
 }
 
+class Medico {
+- nombre : string
++ obtenerNombre() : string
++ obtenerListaCitas() : lista[citas]
+}
 
+class ClinicaFIS {
+
++ obtenerPosiblesCitas(idMedico : integer, idPaciente : integer) : lista[fechas]
++ anularCita(idPaciente : integer, idCita : integer) : string
++ pedirCita(idPaciente : integer, idMedico : integer, fecha : date) : string
+}
+
+Cita "0..*"-- Paciente
+Cita "0..*"-- Medico
+Cita -- TipoEstado
+ClinicaFIS -->"0..*" Paciente
+ClinicaFIS -->"0..*" Medico
+ClinicaFIS -->"0..*" Cita
 @enduml

@@ -18,11 +18,11 @@ agent "listaPosiblesFechasHoras" as lpfh
 Admin --> system : listaPosiblesFechasHoras = obtenerPosiblesCitas(idMedico, idPaciente)
 system --> pacientes : 1. mipaciente = obtenerPaciente(idPaciente) \n <<A>>
 system --> mipaciente : 2. listaCitas = obtenerListaCitas() \n <<L>>
-system --> lcp : 3. [ ]
+system --> lcp : 3. *[para todos] micita = siguiente() \n <<L>>
 system --> ex : 3.1. [micita.fecha > fechaactual && micita.estado == PENDIENTE]crear(''...'') \n <<L>>
 system --> medicos : 4. mimedico = obtenerMedico(idMedico) \n <<A>>
 system --> mimedico : 5. listaCitasMedico = obtenerListaCitas() <<A>>
-system --> lcm : 6[ ]
+system --> lcm : 6. *[para todos] micita = siguiente() \n <<L>>
 system --> micita : 6.1. [cita.fecha > fechaactual && cita.ESTADO == LIBRE] fecha = cita.getfecha() <<L>>
 system --> lpfh : 6.1.1. incluir(fecha) \n <<A>>
 
