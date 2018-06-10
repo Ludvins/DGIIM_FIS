@@ -46,12 +46,20 @@ class ClinicaFIS {
 + pedirCita(idPaciente : integer, idMedico : integer, fecha : date) : string
 + datosClinicosPaciente(idPaciente : integer) : string []
 + crearPaciente(dni : string, nombre : string, numeroTarjeta : string, direccion : string, telefono : string, fechaNacimiento : string) : integer
++ terminarConsulta(idMedico : string , idPaciente : string)
 }
 
 class HistoriaClinica {
 - numeroHistoria : integer
 - fechaApertura : date
 }
+
+
+class ClinicaFISExcepcion {
++ crear(mensaje : String)
+}
+
+
 
 Cita "0..*"-- Paciente
 Cita "0..*"-- Medico
@@ -60,4 +68,5 @@ ClinicaFIS -->"0..*" Paciente
 ClinicaFIS -->"0..*" Medico
 ClinicaFIS -->"0..*" Cita
 Paciente "0..1" -- HistoriaClinica
+ClinicaFIS -- ClinicaFISExcepcion
 @enduml

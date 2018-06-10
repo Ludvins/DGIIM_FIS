@@ -11,7 +11,7 @@ rectangle "cit : Cita" as cit
 rectangle ": ClinicaFISExcepcion" as Ex
 
 
-Ad-->CLI : terminarConsulta(idMedico,idPaciente)
+San-->CLI : terminarConsulta(idMedico,idPaciente)
 CLI-left->C :  <<A>> 1: cit = getCita(idMedico,idPaciente)
 CLI-down->Ex : <<L>> 2: [cit.fecha != fechaActual] \n crear("Error: la cita consultada no es de hoy.")
 CLI-right->cit : <<A>> 3: modificarEstado(ATENDIDA)
