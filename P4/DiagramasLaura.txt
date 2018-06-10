@@ -1,0 +1,44 @@
+@startuml
+
+rectangle ":ClínicaFIS" as FIS
+rectangle "paciente : Paciente" as paciente
+rectangle "infoDiagnostico : String []" as info
+collections ":Paciente" as Paci
+
+: : -> FIS : "infoPaciente=datosClinicosPaciente(idPaciente)"
+
+FIS -down-> "<<A>>" Paci : "1:paciente=obtenerPaciente(idPaciente)"
+FIS -down-> "<<L>>" paciente : 2:nombre = obtenerNombre() \n 3:numeroHistoria = obtenerNumHC() \n 4:fechaApertura = obtenerFechaApertura() \n 5:infoAnotacionHC=obtenerInfoAnotacionHC()
+FIS -down-> "<<L>>" info : "6: incluir(nombre,numeroHistoria,fechaApertura,infoAnotacionHC)"
+
+@enduml
+
+@startuml
+
+rectangle ":ClínicaFIS" as FIS
+rectangle "unPaciente : Paciente" as unPaci
+collections ":Paciente" as Paci
+
+:Medico: -> FIS : "modificarPaciente(dni,nombre,numeroTarjeta,direccion,telefono,fechaNacimiento)"
+
+FIS -down-> "<<A>>" Paci : 1:unPaciente=obtenerPaciente(idPaciente)
+FIS -down-> "<<L>>" unPaci : 2:modDNI(dni) \n 3:modNumTarjeta(numeroTarjeta) \n 4:modDireccion(direccion) \n 5:modTelefono(telefono) \n 6:modNacimiento(fechaNacimiento)
+
+
+@enduml
+
+@startuml
+
+rectangle ":ClínicaFIS" as FIS
+rectangle "unPaciente : Paciente" as unPaci
+rectangle "unaHC : HistorialClinica" as histo
+
+collections ":Paciente" as Paci
+
+:Medico: -> FIS : "idPaciente=crearPaciente(dni,nombre,numeroTarjeta,direccion,telefono,fechaNacimiento)"
+
+FIS -down-> "<<A>>" Paci : 1:numeroHistoria=obtenerUltimaHistoria() \n 4:incluir(unPaciente) \n 5:idPaciente=obtenerIdPaciente(unPaciente)
+FIS -down-> "<<L>>" histo : 2:crear(numeroHistoria+1,diaActual)
+FIS -down-> "<<L>> {new}" unPaci : 3:crear(dni,nombre,numeroTarjeta,direccion,telefono,fechaNacimiento,unaHC,true)
+
+@enduml
