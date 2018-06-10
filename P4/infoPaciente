@@ -1,0 +1,20 @@
+@startuml
+!pragma teoz true
+
+
+
+actor Usuario as U
+
+rectangle ":ClinicaFIS" as CLI
+collections ":Paciente" as P
+rectangle "paciente : Paciente" as pac
+
+
+
+
+U -> CLI : :consultarPaciente(idPaciente)
+CLI --> P : <<A>> 1:paciente = getPaciente(idPaciente)
+CLI --> pac : <<A>> 2:infoPaciente = getInfo()
+
+@enduml
+

@@ -1,0 +1,25 @@
+@startuml
+
+
+
+:Médico: as Me
+
+rectangle ": ClinicaFIS " as CLI
+collections ": Médico " as M
+rectangle "unDiagnostico : Diagnostico " as diag
+rectangle "hist : HistoriaClinica " as hist
+collections ": HistoriaClínica " as H
+rectangle "med : Medico" as me
+rectangle "infoDiagnostico" as I
+
+Me-down->CLI :  :infoDiagnostico = diagnosticar(idHC, codDiagnostico, textoExplicativo, idMedico)
+CLI-down->diag :  <<A>> 1: crear(codDiagnostico, fechaActual, textoExplicativo)
+diag-down-hist : <<L>> {new}
+CLI-right->M : <<A>>2:med = buscarMedico(idMedico)
+CLI-left->H : <<A>>3: hist = buscarHistC(idHC)
+diag-left-me : <<L>> {new}
+CLI-down->me : <<A>> 4:nombreMed = getNombre()
+CLI-down->hist : <<A>> 5: nombrePac = getNombrePac()
+
+CLI-down->I : <<L>> \n 6:incluir(nombreMed) \n 7: incluir(textoExplicativo) \n 8: incluir(fechaActual) \n 9: incluir(nombrePac)
+@enduml
