@@ -1,9 +1,19 @@
 @startuml
 
 class Paciente {
+- dni : string
 - nombre : string
+- numeroTarjeta : string
+- direccion : string
+- telefono : string
+- fechaNacimiento : date
+- activo : boolean
 + obtenerNombre() : string
 + obtenerListaCitas() : lista[citas]
++ obtenerNumHC() : string
++ obtenerFechaApertura() : string
++ obtenerInfoAnotacionHC() : string
++ crear(dni : string, nombre : string, numeroTarjeta : string, direccion : string, telefono : string, fechaNacimiento: string, unaHC : HistoriaClinica, activo : boolean)
 }
 
 class Cita {
@@ -13,6 +23,7 @@ class Cita {
 + obtenerFecha() : date
 + modificarEstado(estado : TipoEstado) : void
 + obtenerEstado() : estado
++ obtenerUltimaHistoria() : integer
 }
 
 enum TipoEstado {
@@ -33,6 +44,13 @@ class ClinicaFIS {
 + obtenerPosiblesCitas(idMedico : integer, idPaciente : integer) : lista[fechas]
 + anularCita(idPaciente : integer, idCita : integer) : string
 + pedirCita(idPaciente : integer, idMedico : integer, fecha : date) : string
++ datosClinicosPaciente(idPaciente : integer) : string []
++ crearPaciente(dni : string, nombre : string, numeroTarjeta : string, direccion : string, telefono : string, fechaNacimiento : string) : integer
+}
+
+class HistoriaClinica {
+- numeroHistoria : integer
+- fechaApertura : date
 }
 
 Cita "0..*"-- Paciente
@@ -41,4 +59,5 @@ Cita -- TipoEstado
 ClinicaFIS -->"0..*" Paciente
 ClinicaFIS -->"0..*" Medico
 ClinicaFIS -->"0..*" Cita
+Paciente "0..1" -- HistoriaClinica
 @enduml
