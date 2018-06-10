@@ -1,0 +1,27 @@
+@startuml
+!pragma teoz true
+
+
+
+actor Administrativo as admin
+
+agent ":ClinicaFIS" as clinica
+collections ":Paciente" as Paciente
+agent "paciente : Paciente" as paciente
+collections "listaCitas :Cita" as listaCitas
+agent "c :Cita" as c
+agent "infoBajaEnClinica" as info
+
+admin --> clinica : infoBajaEnClinica = eliminarPaciente(idPaciente)
+clinica --> Paciente : 1: paciente = buscar(idPaciente)
+clinica --> paciente : 2: setActivo(false)
+clinica --> paciente : 3: listaCitas = getCitas()
+clinica --> listaCitas : 4: *[para todos] c = siguiente()
+clinica --> c : {destroyed}
+clinica --> paciente : 5: dni = getDNI()
+clinica --> paciente : 6: nombre = getNombre()
+clinica --> info : 7: incluir(dni)
+clinica --> info : 8: incluir(nombre)
+
+
+@enduml
