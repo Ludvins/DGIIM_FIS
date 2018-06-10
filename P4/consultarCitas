@@ -1,0 +1,28 @@
+@startuml
+!pragma teoz true
+
+
+
+actor Administrativo as admin
+
+agent ":ClinicaFIS" as clinica
+agent "medico :Medico" as medico
+agent "paciente : Paciente" as paciente
+agent listaCitas
+agent listadoCitas
+agent "c :Cita" as c
+
+
+admin --> clinica : listadoCitas = consultarCitas(idPaciente)
+clinica --> paciente : 1: listaCitas = getCitas()
+clinica --> listaCitas : 2: *[para todos] c = siguiente()
+clinica --> c : 2.1: [estado == PENDIENTE]\nfechaCita = getFecha()
+clinica --> c : 2.2: [estado == PENDIENTE]\nmedico = getMedico()
+clinica --> medico : 3: nombre = getNombre()
+clinica --> medico : 4: especialidad = getEspecialidad()
+
+clinica --> listadoCitas : 5: incluir(fechaCita)
+clinica --> listadoCitas : 6: incluir(nombre)
+clinica --> listadoCitas : 7: incluir(especialidad)
+
+@enduml
