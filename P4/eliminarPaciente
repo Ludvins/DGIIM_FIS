@@ -13,15 +13,15 @@ agent "c :Cita" as c
 agent "infoBajaEnClinica" as info
 
 admin --> clinica : infoBajaEnClinica = eliminarPaciente(idPaciente)
-clinica --> Paciente : 1: paciente = buscar(idPaciente)
-clinica --> paciente : 2: setActivo(false)
-clinica --> paciente : 3: listaCitas = getCitas()
-clinica --> listaCitas : 4: *[para todos] c = siguiente()
+clinica --> Paciente : 1: paciente = buscar(idPaciente)\n<<A>>
+clinica --> paciente : 2: setActivo(false)\n<<L>>
+clinica --> paciente : 3: listaCitas = getCitas()\n<<L>>
+clinica --> listaCitas : 4: *[para todos] c = siguiente()\n<<L>>
 clinica --> c : {destroyed}
-clinica --> paciente : 5: dni = getDNI()
-clinica --> paciente : 6: nombre = getNombre()
-clinica --> info : 7: incluir(dni)
-clinica --> info : 8: incluir(nombre)
+clinica --> paciente : 5: dni = getDNI()\n<<L>>
+clinica --> paciente : 6: nombre = getNombre()\n<<L>>
+clinica --> info : 7: incluir(dni)\n<<L>>
+clinica --> info : 8: incluir(nombre)\n<<L>>
 
 
 @enduml

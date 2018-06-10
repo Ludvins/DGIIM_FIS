@@ -12,10 +12,10 @@ agent ":Consulta" as consulta
 agent "unaConsulta :Consulta" as unaConsulta
 
 admin --> clinica : idConsulta = crearCM(especialidad, idSanitario)
-clinica --> Sanitario : 2: sanitario = buscar(idSanitario)
-clinica --> consulta : 1: unaConsulta = crear(especialidad)
+clinica --> Sanitario : 2: sanitario = buscar(idSanitario)\n<<A>>
+clinica --> consulta : 1: unaConsulta = crear(especialidad)\n<<L>>
 consulta --- sanitario : {new}
-clinica --> unaConsulta : idConsulta = getId()
+clinica --> unaConsulta : idConsulta = getId()\n<<L>>
 
 
 @enduml
