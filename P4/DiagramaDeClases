@@ -14,6 +14,11 @@ class Paciente {
 + obtenerFechaApertura() : string
 + obtenerInfoAnotacionHC() : string
 + crear(dni : string, nombre : string, numeroTarjeta : string, direccion : string, telefono : string, fechaNacimiento: string, unaHC : HistoriaClinica, activo : boolean)
++ modDNI(dni : string) : boolean
++ modNumTarjeta(numeroTarjeta: string) : boolean
++ modDireccion(direccion : string) : boolean
++ modTelefono(telefono: string) : boolean
++ modNacimiento(fechaNacimiento : string) : boolean
 }
 
 class Cita {
@@ -46,7 +51,11 @@ class ClinicaFIS {
 + pedirCita(idPaciente : integer, idMedico : integer, fecha : date) : string
 + datosClinicosPaciente(idPaciente : integer) : string []
 + crearPaciente(dni : string, nombre : string, numeroTarjeta : string, direccion : string, telefono : string, fechaNacimiento : string) : integer
+<<<<<<< HEAD
 + terminarConsulta(idMedico : string , idPaciente : string)
+=======
++ crearPaciente(idPaciente : integer, dni : string, nombre : string, numeroTarjeta : string, direccion : string, telefono : string, fechaNacimiento : string)
+>>>>>>> 435b74d141738f5f44ddb930aef7a467e50f0ccf
 }
 
 class HistoriaClinica {
