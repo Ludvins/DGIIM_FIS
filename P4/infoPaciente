@@ -12,7 +12,7 @@ rectangle "paciente : Paciente" as pac
 
 
 
-U -> CLI : :consultarPaciente(idPaciente)
+U -down-> CLI : :consultarPaciente(idPaciente)
 CLI --> P : <<A>> 1:paciente = getPaciente(idPaciente)
 CLI --> pac : <<A>> 2:infoPaciente = getInfo()
 

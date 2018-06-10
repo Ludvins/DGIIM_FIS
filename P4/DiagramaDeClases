@@ -19,6 +19,8 @@ class Paciente {
 + modDireccion(direccion : string) : boolean
 + modTelefono(telefono: string) : boolean
 + modNacimiento(fechaNacimiento : string) : boolean
++ getInfo() : lista[string]
++ setActivo( b : boolean )
 }
 
 class Cita {
@@ -38,9 +40,13 @@ ATENDIDA
 LIBRE
 }
 
-class Medico {
+class Sanitario {
 - nombre : string
 + obtenerNombre() : string
+
+}
+
+class Medico {
 + obtenerListaCitas() : lista[citas]
 }
 
@@ -51,11 +57,10 @@ class ClinicaFIS {
 + pedirCita(idPaciente : integer, idMedico : integer, fecha : date) : string
 + datosClinicosPaciente(idPaciente : integer) : string []
 + crearPaciente(dni : string, nombre : string, numeroTarjeta : string, direccion : string, telefono : string, fechaNacimiento : string) : integer
-<<<<<<< HEAD
-+ terminarConsulta(idMedico : string , idPaciente : string)
-=======
-+ crearPaciente(idPaciente : integer, dni : string, nombre : string, numeroTarjeta : string, direccion : string, telefono : string, fechaNacimiento : string)
->>>>>>> 435b74d141738f5f44ddb930aef7a467e50f0ccf
++ terminarConsulta(idMedico : string , idPaciente : string) : void
++ crearPaciente(idPaciente : integer, dni : string, nombre : string, numeroTarjeta : string, direccion : string, telefono : string, fechaNacimiento : string) : Paciente
++ diagnosticar( idHC : string, codDiagnostico : string, textoExplicativo : string, idMedico : string) : Diagnostico
++ crearCM( especialidad : string, idSanitario : string) : Consulta
 }
 
 class HistoriaClinica {
@@ -68,14 +73,29 @@ class ClinicaFISExcepcion {
 + crear(mensaje : String)
 }
 
+class Diagnostico {
+- codigo : string
+- fecha : string
+- texto : string
++ crear( codDiagnostico : string, fechaActual : string, textoExplicativo : string)
 
+}
 
+class Consulta {
+- fecha : string
+- especialidad : string
++ crear( especialidad : string )
+}
+
+Medico --|> Sanitario
 Cita "0..*"-- Paciente
-Cita "0..*"-- Medico
-Cita -- TipoEstado
+Cita "0..*"-- Sanitario
+Cita -left- TipoEstado
 ClinicaFIS -->"0..*" Paciente
-ClinicaFIS -->"0..*" Medico
+ClinicaFIS -->"0..*" Sanitario
 ClinicaFIS -->"0..*" Cita
 Paciente "0..1" -- HistoriaClinica
-ClinicaFIS -- ClinicaFISExcepcion
+ClinicaFIS -right- ClinicaFISExcepcion
+Diagnostico "0..*" -up-> HistoriaClinica
+Consulta "0..*" -down- Cita
 @enduml
