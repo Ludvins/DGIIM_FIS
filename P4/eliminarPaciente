@@ -1,6 +1,6 @@
 @startuml
 !pragma teoz true
-
+left to right direction
 
 
 actor Administrativo as admin
