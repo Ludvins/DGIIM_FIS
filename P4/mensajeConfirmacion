@@ -1,0 +1,31 @@
+
+@startuml
+left to right direction
+actor Administrativo as Admin
+
+agent ":ClinicaFIS" as system
+agent ":ClinicaFISExcepcion" as ex
+collections ":Cita" as citas
+agent ":micita:Cita" as micita
+collections ":Paciente" as pacientes
+agent "mipaciente:Paciente" as mipaciente
+agent "mensageConfirmacion" as mc
+
+Admin --> system : mensajeConfirmación = anularCita(idPaciente, idCita)
+system --> citas : 1.micita = getCita(idCita) \n <<A>>
+system --> micita : 2.estado = getEstado() \n  <<L>>
+system --> ex : 3:[estado != ATENDIDA] crear("..") \n <<L>>
+system --> ex : 4:[micita.fecha > fechactual] crear("..") \n <<L>>
+
+system --> micita : 5:modificarEstado(LIBRE) \n <<L>>
+system --> pacientes : 6: mipaciente = buscarPaciente(idPaciente) \n <<A>>
+system --> mipaciente : 7: nombrePaciente = getNombre() \n <<L>>
+micita -- mipaciente : {destroyed} \n <<L>>
+
+system --> micita : 8: medico = getMedico() \n <<L>>
+
+system --> mc : 9: incluir(fecha) \n <<L>>
+system --> mc: 10: incluir(nombrePaciente) \n <<L>>
+system --> mc: 11: incluir(medico) \n <<L>>
+
+@enduml

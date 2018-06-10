@@ -1,0 +1,24 @@
+@startuml
+
+class Paciente {
+
++ obtenerNombre() : string
++ obtenerListaCitas() : lista
+}
+
+class Cita {
+
++ obtenerMedico() : medico
++ obtenerFecha() : date
++ modificarEstado(estado) : void
++ obtenerEstado() : estado
+}
+
+class Medico {
+
++ obtenerNombre() : string
++ obtenerListaCitas() : lista
+}
+
+
+@enduml
